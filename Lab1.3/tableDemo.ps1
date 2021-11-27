@@ -20,15 +20,12 @@ for( $day = (Get-Date).addDays(-10); $day -le (Get-date); $day = $day.AddDays(1)
     
         "insert into serverstats (dateRun, servername, diskfree, cpuavg, uptime) values "
         "('$today', '$hostname', $diskfree, $cpuAvg, $uptimeDays);"
-        # "sec557.demo.table.$hostname.diskfree $diskFree $todaySec"
-        # "sec557.demo.table.$hostname.cpuavg $cpuAvg $todaySec"
-        # "sec557.demo.table.$hostname.uptimedays $uptimeDays $todaySec"
     }
 }
 
 "#data in table is:"
 "select * from serverstats;"
-<#
+<# This SQL query will be used in the Grafana Table Visualization:
 SELECT
   daterun as time,
   servername, diskfree,cpuavg,uptime
