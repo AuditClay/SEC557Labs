@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
+  "id": 4,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -299,11 +299,11 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "format": "table",
+          "format": "time_series",
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  daterun,\n  servername, diskfree,cpuavg,uptime\nFROM serverstats\nwhere $__timeFilter(daterun)",
+          "rawSql": "SELECT\n  daterun as time,\n  servername,diskfree,cpuavg,uptime\nFROM serverstats\nwhere $__timeFilter(daterun)",
           "refId": "A",
           "select": [
             [
@@ -364,10 +364,6 @@
             },
             "properties": [
               {
-                "id": "custom.displayMode",
-                "value": "color-background-solid"
-              },
-              {
                 "id": "thresholds",
                 "value": {
                   "mode": "absolute",
@@ -386,6 +382,10 @@
                     }
                   ]
                 }
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "color-background-solid"
               }
             ]
           }
@@ -405,7 +405,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "sec557.demo.table.*.cpuavg"
+          "target": "aliasByNode(sec557.demo.table.*.cpuavg, 3, 4)"
         }
       ],
       "title": "Table From TSDB",
@@ -425,12 +425,12 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Table Demo",
   "uid": "SW1MWuc7z",
-  "version": 5
+  "version": 2
 }
