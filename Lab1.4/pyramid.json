@@ -98,7 +98,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(averageSeries(summarize(benchdemo.cloud.aws.*.failPct, '1w', 'sum', false)), 0, 1, 2, 3)"
+          "target": "aliasByNode(averageSeries(summarize(benchdemo.cloud.aws.*.failPct, '1w', 'last', false)), 0, 1, 2, 3)"
         }
       ],
       "title": "Benchmark Fail Pct - Cloud",
@@ -160,7 +160,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(averageSeries(summarize(benchdemo.onprem.*.*.failPct, '1w', 'sum', false)), 0, 1, 2, 3)"
+          "target": "aliasByNode(averageSeries(summarize(benchdemo.onprem.*.*.failPct, '1w', 'last', false)), 0, 1, 2, 3)"
         }
       ],
       "title": "Benchmark Fail Pct - OnPrem",
@@ -222,7 +222,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(averageSeries(summarize(benchdemo.*.*.*.failPct, '1w', 'sum', false)), 0, 4)"
+          "target": "aliasByNode(averageSeries(summarize(benchdemo.*.*.*.failPct, '1w', 'last', false)), 0, 4)"
         }
       ],
       "title": "Benchmark Fail Pct - Total",
@@ -308,7 +308,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias(averageSeries(summarize(benchdemo.*.*.*.failPct, '1w', 'sum', true)), 'Company-Wide Average')"
+          "target": "alias(averageSeries(summarize(benchdemo.*.*.*.failPct, '1w', 'last', true)), 'Company-Wide Average')"
         }
       ],
       "timeFrom": null,
@@ -633,7 +633,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(summarize(benchdemo.cloud.aws.*.failPct, '1w', 'sum', false), 3)"
+          "target": "aliasByNode(summarize(benchdemo.cloud.aws.*.failPct, '1w', 'last', false), 3)"
         }
       ],
       "timeFrom": "13w",
@@ -719,7 +719,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "groupByNode(summarize(benchdemo.onprem.*.*.failPct, '1w', 'sum', false), 2, 'avg')"
+          "target": "groupByNode(summarize(benchdemo.onprem.*.*.failPct, '1w', 'last', false), 2, 'avg')"
         }
       ],
       "timeFrom": "13w",
@@ -828,7 +828,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(averageSeries(summarize(benchdemo.onprem.windows.*.failPct, '1w', 'sum', false)), 2)"
+          "target": "aliasByNode(averageSeries(summarize(benchdemo.onprem.windows.*.failPct, '1w', 'last', false)), 2)"
         }
       ],
       "timeFrom": "8w",
@@ -914,7 +914,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(averageSeries(summarize(benchdemo.onprem.linux.*.failPct, '1w', 'sum', false)), 2)"
+          "target": "aliasByNode(averageSeries(summarize(benchdemo.onprem.linux.*.failPct, '1w', 'last', false)), 2)"
         }
       ],
       "timeFrom": "8w",
@@ -1008,12 +1008,7 @@
       "id": 20,
       "options": {
         "showHeader": true,
-        "sortBy": [
-          {
-            "desc": false,
-            "displayName": "Server"
-          }
-        ]
+        "sortBy": []
       },
       "pluginVersion": "8.2.3",
       "targets": [
@@ -1121,12 +1116,7 @@
       "id": 23,
       "options": {
         "showHeader": true,
-        "sortBy": [
-          {
-            "desc": false,
-            "displayName": "Server"
-          }
-        ]
+        "sortBy": []
       },
       "pluginVersion": "8.2.3",
       "targets": [
@@ -1163,5 +1153,5 @@
   "timezone": "",
   "title": "Reporting Pyramid",
   "uid": "RwF6fB5nz",
-  "version": 2
+  "version": 4
 }
