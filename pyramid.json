@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -919,7 +919,7 @@
       ],
       "timeFrom": "8w",
       "timeShift": null,
-      "title": "Windows Compliance History",
+      "title": "Linux Compliance History",
       "type": "timeseries"
     },
     {
@@ -1163,5 +1163,5 @@
   "timezone": "",
   "title": "Reporting Pyramid",
   "uid": "RwF6fB5nz",
-  "version": 5
+  "version": 2
 }
