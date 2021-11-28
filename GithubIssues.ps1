@@ -18,7 +18,7 @@ function Get-SinceDate{
 
     $returnValue = Get-Date -Date (Get-Date).addDays(-$HistoryDays) -AsUtc -Format "yyyyMMddTHHmmssZ" `
         -Hour 0 -Minute 0 -Second 0 -Millisecond 0
-    Write-Verbose $returnValue
+    Write-Verbose "Setting -since date to $returnValue"
     return $returnValue
 }
 
@@ -55,6 +55,7 @@ while ( $count -eq $resultsPerPage)
     #Get the next page and add the contents to the $issues variable
     $nextPage = Invoke-RestMethod -Credential $cred -Uri $uri
     $count = $nextPage.count
+    Write-Verbose "$count results returned in this query"
     $issues += $nextPage
 }
 Write-Verbose "${$issues.count} issues retrieved for the last $HistoryDays days"
