@@ -2,6 +2,13 @@
 This script retrieves multiple days of closed issue data from GitHub to ingest into a Graphite database. 
 It is intended to be run daily through a scheduled task.
 #>
+#Comdlet binding allows the script to see the Verbosity settings from the caller.
+#Useful for using write-verbose in the script.
+
+[cmdletbinding()]
+param (
+    [int]$HistoryDays = 90
+)
 
 function Get-SinceDate{
     [CmdletBinding()]
@@ -9,19 +16,22 @@ function Get-SinceDate{
         [int]$HistoryDays = 90
     )
 
-    Get-Date -Date (Get-Date).addDays(-$HistoryDays) -AsUtc -Format "yyyyMMddTHHmmssZ" `
+    $returnValue = Get-Date -Date (Get-Date).addDays(-$HistoryDays) -AsUtc -Format "yyyyMMddTHHmmssZ" `
         -Hour 0 -Minute 0 -Second 0 -Millisecond 0
+    Write-Verbose $returnValue
+    return $returnValue
 }
 
 #Read the GitHub credentials from the PowerShell secret store
 $ghcred = Get-Secret -Name GitHub
 
+Write-Verbose "Retrieving GitHub credentials"
 if( $null -eq $ghcred) {
     Throw "Credentials not found. Aborting"
 }
 
 $resultsPerPage = 100
-$since = Get-SinceDate
+$since = Get-SinceDate -HistoryDays 90  
 $uri = "https://api.github.com/repos/PowerShell/PowerShell/issues?"
 $uri += "page=0&per_page=$resultsPerPage&state=closed&since=$since"
 $issues = $null
@@ -36,7 +46,7 @@ $count = 100
 while ( $count -eq $resultsPerPage)
 {  
     $page++
-    "Processing page: $page"
+    Write-Verbose "Processing page: $page"
     
     #Set the URL for the request, plugging in $page as the page number
     $uri = "https://api.github.com/repos/PowerShell/PowerShell/issues?"
@@ -47,6 +57,7 @@ while ( $count -eq $resultsPerPage)
     $count = $nextPage.count
     $issues += $nextPage
 }
+Write-Verbose "${$issues.count} issues retrieved for the last $HistoryDays days"
 
 #Dump the issues to the pipeline in Graphite import format
 $issues | 
