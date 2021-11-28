@@ -8,6 +8,6 @@ $logPath = "c:\users\auditor\sec557labs\$scriptName.txt"
 
 Start-Transcript -Path $logPath
 
-c:\users\auditor\sec557labs\GithubIssues.ps1
+c:\users\auditor\sec557labs\GithubIssues.ps1 -verbose
 
 Stop-Transcript
