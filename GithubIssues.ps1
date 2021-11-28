@@ -64,4 +64,4 @@ Write-Verbose "$($issues.count) issues retrieved for the last $HistoryDays days"
 $issues | 
   Select-Object @{n='ClosedDate'; e={Get-Date -Date $_.closed_at -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s}} | 
   Group-Object ClosedDate | 
-  Foreach {"issues.closed " + $_.count.ToString() + " " +$_.Name.ToString()}
+  Foreach-Object {"issues.closed " + $_.count.ToString() + " " +$_.Name.ToString()}
