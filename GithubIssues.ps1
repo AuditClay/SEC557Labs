@@ -10,7 +10,7 @@ function Get-SinceDate{
     )
 
     Get-Date -Date (Get-Date).addDays(-$HistoryDays) -AsUtc -Format "yyyyMMddTHHmmssZ" `
-        -Hour 0 -Minute 0 -Second 0 -Millisecond 
+        -Hour 0 -Minute 0 -Second 0 -Millisecond 0
 }
 
 #Read the GitHub credentials from the PowerShell secret store
@@ -39,7 +39,8 @@ while ( $count -eq $resultsPerPage)
     "Processing page: $page"
     
     #Set the URL for the request, plugging in $page as the page number
-    $uri = "https://api.github.com/repos/PowerShell/PowerShell/issues?page=$page&per_page=$resultsPerPage&state=closed&since=$since"
+    $uri = "https://api.github.com/repos/PowerShell/PowerShell/issues?"
+    $uri += "page=$page&per_page=$resultsPerPage&state=closed&since=$since"
 
     #Get the next page and add the contents to the $issues variable
     $nextPage = Invoke-RestMethod -Credential $cred -Uri $uri
