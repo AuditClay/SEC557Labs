@@ -14,7 +14,7 @@ function Get-SinceDate{
 }
 
 #Read the GitHub credentials from the PowerShell secret store
-$ghcred = Get-Secret -Name GitHubzz
+$ghcred = Get-Secret -Name GitHub
 
 if( $null -eq $ghcred) {
     Throw "Credentials not found. Aborting"
