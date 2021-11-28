@@ -58,7 +58,7 @@ while ( $count -eq $resultsPerPage)
     Write-Verbose "$count results returned in this query"
     $issues += $nextPage
 }
-Write-Verbose "${$issues.count} issues retrieved for the last $HistoryDays days"
+Write-Verbose "$($issues.count) issues retrieved for the last $HistoryDays days"
 
 #Dump the issues to the pipeline in Graphite import format
 $issues | 
