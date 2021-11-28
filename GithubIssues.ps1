@@ -13,6 +13,13 @@ function Get-SinceDate{
         -Hour 0 -Minute 0 -Second 0 -Millisecond 
 }
 
+#Read the GitHub credentials from the PowerShell secret store
+$ghcred = Get-Secret -Name GitHubzz
+
+if( $null -eq $ghcred) {
+    Throw "Credentials not found. Aborting"
+}
+
 $resultsPerPage = 100
 $since = Get-SinceDate
 $uri = "https://api.github.com/repos/PowerShell/PowerShell/issues?"
