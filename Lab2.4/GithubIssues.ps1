@@ -60,8 +60,15 @@ while ( $count -eq $resultsPerPage)
 }
 Write-Verbose "$($issues.count) issues retrieved for the last $HistoryDays days"
 
-#Dump the issues to the pipeline in Graphite import format
+#Dump the issues closed per day to the pipeline in Graphite import format
 $issues | 
-  Select-Object @{n='ClosedDate'; e={Get-Date -Date $_.closed_at -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s}} | 
-  Group-Object ClosedDate | 
-  Foreach-Object {"issues.closed " + $_.count.ToString() + " " +$_.Name.ToString()}
+    Select-Object @{n='ClosedDate'; e={Get-Date -Date $_.closed_at -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s}} | 
+    Group-Object ClosedDate | 
+    Foreach-Object {"issues.closed " + $_.count.ToString() + " " +$_.Name.ToString()}
+
+#Dump the 90-day MTTR to the pipeline in Graphite import format
+$MTTR = ($issues | 
+    Select-Object @{n='TimeToResolve'; e={(New-TimeSpan -Start (Get-Date -date $_.created_at) -End ($_.closed_at)).TotalDays} } | 
+    Measure-Object -Property TimeToResolve -Average).Average
+
+"issues.mttr $MTTR " + (Get-Date -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s)

@@ -3,7 +3,7 @@ Run script for the github issues metric database. This script will
 be run in a scheduled task every day
 #>
 #Dot-source the file of automation utility functions
-. .\AutomationFunctions.ps1
+. c:\automation\AutomationFunctions.ps1
 
 #Get the base name of the script to use as the base name of the transcript file
 $scriptName = $MyInvocation.MyCommand.Name.Replace(".ps1","")
