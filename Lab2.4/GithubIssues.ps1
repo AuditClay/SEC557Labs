@@ -26,7 +26,7 @@ function Get-SinceDate{
 $ghcred = Get-Secret -Name GitHub
 
 Write-Verbose "Retrieving GitHub credentials"
-if( $null -eq $ghcred) {
+if( $ghcred -eq $null) {
     Throw "Credentials not found. Aborting"
 }
 
