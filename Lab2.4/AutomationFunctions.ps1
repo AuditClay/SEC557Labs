@@ -13,7 +13,7 @@ function Send-TCPData {
         $socket = new-object System.Net.Sockets.TcpClient($remoteHost, $remotePort)
     }
     process {
-        $message += $metrics
+        $message += $metrics -split "`n"
         Write-Verbose "Received $metrics"
     }
     end {
