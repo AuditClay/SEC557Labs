@@ -44,7 +44,7 @@ function Send-TCPData {
             if( $PassThru) { $metrics }
         }
         catch {
-            Throw "Exception caught while sending data"
+            Throw "Exception while sending data"
         }
     }
     <#
