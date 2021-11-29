@@ -2,6 +2,7 @@ function Send-TCPData {
     #Allow for common parameters like -verbose
     [cmdletbinding()]
     param(
+        [Parameter(ValueFromPipeline)] $metrics,
         [int]$remotePort = 2003,
         [string]$remoteHost = "ubuntu"
     )
@@ -12,8 +13,8 @@ function Send-TCPData {
         $socket = new-object System.Net.Sockets.TcpClient($remoteHost, $remotePort)
     }
     process {
-        $message += $_
-        Write-Verbose "Received $_"
+        $message += $metrics
+        Write-Verbose "Received $metrics"
     }
     end {
         Write-Verbose "Sending $message"
