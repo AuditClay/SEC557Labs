@@ -49,3 +49,10 @@ pattern = .*
 retentions = 1m:30d
 
 ```
+
+
+CIS Benchmark Inspec Profiles
+----------
+
+Windows Server 2016
+https://github.com/dev-sec/windows-baseline.git
