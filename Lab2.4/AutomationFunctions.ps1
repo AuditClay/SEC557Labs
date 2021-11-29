@@ -6,8 +6,7 @@ function Send-TCPData {
     param(
         [Parameter(ValueFromPipeline)] $metrics,
         [string]$remoteHost = "ubuntu",
-        [int]$remotePort = 2003,
-        [switch] $PassThru        
+        [int]$remotePort = 2003
     )
 
     #process the metrics input
@@ -39,9 +38,6 @@ function Send-TCPData {
             $stream.Close()
             Write-Verbose "Closing socket"
             $socket.Close()
-            #If the $passThru parameter was set, then pass the metrics out on the
-            #pipeline for further processing
-            if( $PassThru) { $metrics }
         }
         catch {
             Throw "Exception while sending data"
@@ -66,6 +62,10 @@ function Send-TCPData {
     An array of strings representing metric lines in Graphite import format, i.e. 
     "servers.server1.cpu.average 45 1638147459"
 
+    .PARAMETER metrics
+    An array of strings representing metric lines in Graphite import format, i.e. 
+    "servers.server1.cpu.average 45 1638147459"
+    
     .PARAMETER remoteHost
     The name of the remote host running carbon-cache which will receive the data
 
