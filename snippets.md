@@ -56,3 +56,4 @@ CIS Benchmark Inspec Profiles
 
 Windows Server 2016
 https://github.com/dev-sec/windows-baseline.git
+https://dev-sec.io/baselines/windows/
