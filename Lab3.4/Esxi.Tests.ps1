@@ -1,16 +1,12 @@
 Describe "ESXi Tests" {
     BeforeAll {
-        #Retrieving data from the files
-        $keyFile = ".\keyFile"
-        $credFile = ".\esxiCreds"
+        #Get credentials from the secrets store to connect to the server
+        $cred=Get-Secret ESXICreds
 
-        #Grab the key/token, decrypt the password and store it in a credentials object
-        $key = Get-Content $keyFile
-        $username = 'root'
-        $securePwd = Get-Content $credFile
-        $cred = New-Object System.Management.Automation.PSCredential -ArgumentList $username, ($securePwd | 
-          ConvertTo-SecureString -Key $key)
-
+        if( $null -eq $cred )
+        {
+            throw "Credentials not found in secret store. Please set them using Set-Secret first!"
+        }
         #Create a connection to the server being tested
         Connect-VIServer -server esxi1 -Credential $cred
     }
