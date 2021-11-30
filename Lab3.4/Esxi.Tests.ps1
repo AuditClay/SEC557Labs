@@ -3,6 +3,10 @@ Describe "ESXi Tests" {
         #Get credentials from the secrets store to connect to the server
         $cred=Get-Secret ESXICreds
 
+        if( $null -eq $cred )
+        {
+            throw "Credentials not found in secret store. Please set them using Set-Secret first!"
+        }
         #Create a connection to the server being tested
         Connect-VIServer -server esxi1 -Credential $cred
     }
