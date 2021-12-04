@@ -17,11 +17,13 @@ while ( $count -eq 100)
 $issues | 
   Select-Object @{n='ClosedDate'; e={Get-Date -Date $_.closed_at -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s}} | 
   Group-Object ClosedDate | 
-  Foreach {"issues.closed " + $_.count.ToString() + " " +$_.Name.ToString()} | 
-  wsl nc -vv -N 10.50.7.50 2003
+  Foreach {"issues.closed " + $_.count.ToString() + " " +$_.Name.ToString()} #| wsl nc -vv -N 10.50.7.50 2003
 
-"issues.mttr $MTTR " + (Get-Date -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s) | 
-wsl nc -vv -N 10.50.7.50 2003
+$MTTR = ($issues | 
+  Select-Object @{n='TimeToResolve'; e={(New-TimeSpan -Start (Get-Date -date $_.created_at) -End ($_.closed_at)).TotalDays} } | 
+  Measure-Object -Property TimeToResolve -Average).Average
+
+"issues.mttr $MTTR " + (Get-Date -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s) #| wsl nc -vv -N 10.50.7.50 2003
 
 # Set-Location C:\SEC557\Lab2.1
 
