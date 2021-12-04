@@ -20,11 +20,11 @@ $hostname = (hostname)
 "patchage.$hostname $patchAge $epochTime" | nc -N -vv 10.50.7.50 2003
 
 
-#Inspec Benchmarks
-Set-Location /home/auditor/inspec
-inspec exec ./cis-dil-benchmark/ --reporter cli json:ubuntu.json
+# #Inspec Benchmarks
+# Set-Location /home/auditor/inspec
+# inspec exec ./cis-dil-benchmark/ --reporter cli json:ubuntu.json
 
-Convert-InspecResults -FileName ./ubuntu.json `
-    -MetricPath 'benchmark.linux.ubuntu' `
-    -DateRun (Get-Date).ToShortDateString() | 
-    nc -vv -N 10.50.7.50 2003
+# Convert-InspecResults -FileName ./ubuntu.json `
+#     -MetricPath 'benchmark.linux.ubuntu' `
+#     -DateRun (Get-Date).ToShortDateString() | 
+#     nc -vv -N 10.50.7.50 2003
