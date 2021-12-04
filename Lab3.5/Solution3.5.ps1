@@ -3,6 +3,12 @@
 #Add Ubuntu to the pach dashboard
 Set-Location /home/auditor
 . /home/auditor/SEC557Labs/Functions.ps1
+
+Get-Content /var/log/dpkg.log* | 
+    Select-String " install " -NoEmphasis | 
+    Out-File ./patches.txt -Encoding ascii
+$lines = Get-Content ./patches.txt
+
 ($lines | Where-Object { $_ -match "^[0-9]" }) -replace " .*$" | 
     Group-Object | 
     Convert-PatchVelocity -MetricPath patchvelocity.ubuntu | 
@@ -11,6 +17,7 @@ Set-Location /home/auditor
 $lastPatchDate = ($lines | 
     Where-Object { $_ -match "^[0-9]" }) -replace " .*$"  | 
     Select-Object -last 1
+
 $patchAge = (New-TimeSpan -Start (Get-Date -date $lastPatchDate) `
     -End (Get-Date)).TotalDays
 
