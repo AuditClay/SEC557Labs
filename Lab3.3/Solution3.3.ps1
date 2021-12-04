@@ -1,4 +1,5 @@
 #Run on Win10
+"Ensure that the 557WinDC VM is running..."
 Set-Location C:\Users\auditor\SEC557Labs\Lab3.3\
 $password = ConvertTo-SecureString "Password1" -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList("auditor",$password)
