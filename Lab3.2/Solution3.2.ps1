@@ -2,7 +2,7 @@
 Set-Location /home/auditor/inspec/
 . /home/auditor/SEC557Labs/Functions.ps1
 
-inspec exec ./microsoft-windows-10-stig-baseline -t winrm://auditor@10.50.7.101 --port 5985 --password Password1 --input-file /home/auditor/inspec/win10input.yml --reporter cli json:win10Results.json
+inspec exec ./microsoft-windows-10-stig-baseline -t winrm://auditor@10.50.7.101 --port 5985 --password Password1 --input-file /home/auditor/SEC557Labs/Lab3.2/win10input.yml --reporter cli json:win10Results.json
 
 Convert-InspecResults -FileName ./win10Results.json -MetricPath benchmark.windows.win10 `
  -DateRun (Get-Date).ToShortDateString() | nc -vv -N ubuntu 2003
