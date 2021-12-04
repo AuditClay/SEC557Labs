@@ -7,9 +7,9 @@ $password = ConvertTo-SecureString "Password1!" -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList("auditor",$password)
 
 Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
-$vmwareCred = Get-Secret -Name vmware
-$esxiUser = $vmwareCred.UserName
-$esxiPassword = $vmwareCred.GetNetworkCredential().Password
+
+$esxiUser = $cred.UserName
+$esxiPassword = $cred.GetNetworkCredential().Password
 
 inspec exec vmware-esxi-6.5-stig-baseline -t "vmware://$esxiuser`:$esxiPassword@10.50.7.31" --reporter=cli json:esxi.json
 
