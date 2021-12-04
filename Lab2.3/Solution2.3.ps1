@@ -55,7 +55,7 @@ while ( $count -eq $resultsPerPage)
 {  
     #increment the page counter
     $page++
-    Write-Verbose "Processing page: $page"
+    "Processing page: $page"
     
     #Set the URL for the request, plugging in $page as the page number
     $uri = "https://api.github.com/repos/PowerShell/PowerShell/issues?"
@@ -75,14 +75,14 @@ Write-Verbose "$($issues.count) issues retrieved for the last $HistoryDays days"
 $issues | 
     Select-Object @{n='ClosedDate'; e={Get-Date -Date $_.closed_at -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s}} | 
     Group-Object ClosedDate | 
-    Foreach-Object {"issues.closed " + $_.count.ToString() + " " +$_.Name.ToString()}
+    Foreach-Object {"issues.closed " + $_.count.ToString() + " " +$_.Name.ToString()} | wsl nc -vv -N 10.50.7.50 2003
 
 #Dump the 90-day MTTR to the pipeline in Graphite import format
 $MTTR = ($issues | 
     Select-Object @{n='TimeToResolve'; e={(New-TimeSpan -Start (Get-Date -date $_.created_at) -End ($_.closed_at)).TotalDays} } | 
     Measure-Object -Property TimeToResolve -Average).Average
 
-"issues.mttr $MTTR " + (Get-Date -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s)
+"issues.mttr $MTTR " + (Get-Date -Hour 0 -Min 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s) | wsl nc -vv -N 10.50.7.50 2003
 
 
 
