@@ -72,7 +72,7 @@ while ( $count -eq $resultsPerPage)
     $uri += "page=$page&per_page=$resultsPerPage&state=closed&since=$since"
 
     #Get the next page and add the contents to the $issues variable
-    $nextPage = Invoke-RestMethod -Method Get -Credential $cred -Uri $uri
+    $nextPage = Invoke-RestMethod -Method Get -Credential $ghcred -Uri $uri
     $count = $nextPage.count
     Write-Verbose "$count results returned in this query"
     #Add the issues returned by this request to the array of results
