@@ -9,14 +9,13 @@ function Get-NumberedName {
     return $Name + $returnValue
 }
 
-function Get-PSCustomObjectList {
+function Get-ObjectEntry {
     param (
-        [int]$RandomSeed,
-        [int]$MaxIterations,
-        
-        $ReturnTypeDescription,
-        $ObjectValues,
-        $AssignmentProbabilities
+        [string]$EntryName,
+        [int]$EntryID,
+
     )
+    
+}
     
 }

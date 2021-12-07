@@ -1,3 +1,5 @@
+
+#Lists
 $GroupNameList = @(
     "Administrators",
     "Backup Operators",
@@ -14,6 +16,12 @@ $GroupNameList = @(
     "System Managed Accounts Group",
     "Users"
 )
+
+
+#============================================================
+
+
+
 
 #Utilities
 function Get-NumberedName {
@@ -32,11 +40,91 @@ function Get-NumberedName {
 
 #Generators
 
-function Get-HostInventory {
+function Get-VulnScanData {
     param (
         [int]$MaxHosts = 100,
-        [int]$LocationBreak = 4,
-        [int]$OSBreak = 2
+        [int]$MaxMissingPatches = 10,
+        [int]$MaxWeeks = 10
+    )
+
+    #Setup
+    $ScannedHosts = @()
+    $MissingPatches = @()
+
+    for ($hostCount = 0; $hostCount -lt $MaxHosts; $hostCount++) {
+        $hostName = Get-NumberedName -Name "Host" -Digit ($hostCount + 1)
+
+        $scanValue = Get-Random -Minimum 0 -Maximum 99
+
+        if ($scanValue -ge 10) {
+            $scanDateOffset = -2
+        }
+        elseif ($scanValue -eq 4) {
+            $scanDateOffset = -9
+        }
+        elseif ($scanValue -eq 0) {
+            $scanDateOffset = -16
+        }
+        else {
+            $scanDateOffset = -99
+        }
+        
+
+        #$baseDate = Get-Date -Hour 0 -Minute 0 -Second 0 -Millisecond 0
+        $baseDate = Get-Date -Date ((Get-Date).ToShortDateString())
+        $lastScannedDate = ($baseDate.AddDays($scanDateOffset)).ToShortDateString()
+
+
+        for ($missingPatchCount = 0; $missingPatchCount -lt $MaxMissingPatches; $missingPatchCount++) {
+
+            $patchNumber = Get-Random -Minimum 11111 -Maximum 99999999
+            $patchID = Get-NumberedName -Name "" -Digit ($patchNumber) -PadAmt 8
+
+            $foundWeek = Get-Random -Minimum 0 -Maximum $MaxWeeks
+
+            if ($foundWeek -ge 2) {
+                $foundWeekOffset = (($foundWeek * 7) + 2) * -1
+            }
+            elseif ($foundWeek -eq 1) {
+                $foundWeekOffset = (($foundWeek * 7) + 2) * -1
+            }
+            elseif ($foundWeek -eq 0) {
+                $foundWeekOffset = (($foundWeek * 7) + 2) * -1
+            }
+            else {
+                $foundWeekOffset = -99
+            }
+
+            $lastScannedDateValue = (Get-Date -Date ((Get-Date).ToShortDateString())).AddDays($scanDateOffset)
+            $baseFoundDate = Get-Date -Date (($lastScannedDateValue).ToShortDateString())
+            $firstFoundDate = ($baseFoundDate.AddDays($foundWeekOffset)).ToShortDateString()
+
+            $missingPatchEntry = [PSCustomObject] @{
+                "PatchID" = $patchID
+                "FirstSeenDate" = $firstFoundDate
+            }
+
+            $MissingPatches += $missingPatchEntry
+        }
+
+
+        $scannedHostsEntry = [PSCustomObject] @{
+            "Hostname" = $hostName
+            "LastScanDate" = $lastScannedDate
+            "MissingPatches" = $MissingPatches
+        }
+
+        $ScannedHosts += $scannedHostsEntry
+    }
+
+    return $ScannedHosts
+}
+
+function Get-HostInventory {
+    param (
+        [int]$MaxHosts = 10,
+        [int]$LocationBias = 4,
+        [int]$OSBias = 2
     )
 
     #Inventory Setup
@@ -47,20 +135,20 @@ function Get-HostInventory {
 
         $locationValue = Get-Random -Minimum 0 -Maximum 10
         
-        if ($locationValue -lt $LocationBreak) {
-            $locationName = "Branch Office"
+        if ($locationValue -ge $LocationBias) {
+            $locationName = "Main Office"
         }
         else {
-            $locationName = "Main Office"
+            $locationName = "Branch Office"
         }
 
         $osValue = Get-Random -Minimum 0 -Maximum 10
         
-        if ($osValue -lt $OSBreak) {
-            $osName = "Server"
-        }
-        else {
+        if ($osValue -ge $OSBias) {
             $osName = "Workstation"
+        }
+        else {            
+            $osName = "Server"
         }
 
         $inventoryEntry = [PSCustomObject] @{
@@ -71,7 +159,7 @@ function Get-HostInventory {
         
         $Inventory += $inventoryEntry
     }
-    $Inventory
+    return $Inventory
 }
 
 function Get-HostGrouplists {
@@ -129,19 +217,20 @@ function Get-HostGrouplists {
         $Hosts += $hostEntry
     }
 
-    $Hosts
+    return $Hosts
 }
 
 #Set Random
 Get-Random -SetSeed 314159 | out-null
 
 
-Get-HostInventory -MaxHosts 100 | ConvertTo-Csv | Out-File "hostInventory.csv"
+#Get-HostInventory -MaxHosts 100 | ConvertTo-Csv | Out-File "hostInventory.csv"
 
 
 #$GroupListData = Get-HostGrouplists
-$GroupListData | ConvertTo-Json -Depth 5 -Compress | Out-File "groupList.json"
+#$GroupListData | ConvertTo-Json -Depth 5 -Compress | Out-File "groupList.json"
 #Solution:
 #.\Generate-Capstone.ps1 | ConvertFrom-Json | Select-Object @{Name="Hostname"; Expression={$_.Hostname}}, @{N="Admincount"; E={($_.Groups | Where-Object Groupname -eq "Administrators").Users.Count}}
 #Get-Content .\groupList.json | ConvertFrom-Json | Select-Object @{Name="Hostname"; Expression={$_.Hostname}}, @{N="Admincount"; E={($_.Groups | Where-Object Groupname -eq "Administrators").Users.Count}} | Where-Object Admincount -gt 4 | Measure-Object
 
+Get-VulnScanData -MaxHosts 100 -MaxMissingPatches 10 
