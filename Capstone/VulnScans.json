@@ -1,0 +1,3560 @@
+[
+  {
+    "Hostname": "Host001",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9676778
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3869293
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7414641
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9761592
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7496387
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4631906
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5963603
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7430101
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2863746
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6073558
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9397725
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 4063157
+      }
+    ]
+  },
+  {
+    "Hostname": "Host002",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3008223
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5544053
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9175745
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4147706
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3601208
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3672816
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3074525
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5323941
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5597633
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7070376
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9766187
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1904029
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5369272
+      }
+    ]
+  },
+  {
+    "Hostname": "Host003",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3109713
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5997303
+      }
+    ]
+  },
+  {
+    "Hostname": "Host004",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": null
+  },
+  {
+    "Hostname": "Host005",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8997292
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5324002
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8599961
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3986551
+      }
+    ]
+  },
+  {
+    "Hostname": "Host006",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8556358
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7905216
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6244104
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2050307
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 8279047
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2462525
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3322478
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1589143
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8135838
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1398482
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8897742
+      }
+    ]
+  },
+  {
+    "Hostname": "Host007",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1743919
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2130485
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7264378
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2977752
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5385436
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6416413
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3169968
+      }
+    ]
+  },
+  {
+    "Hostname": "Host008",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6976621
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6556420
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7448377
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7538795
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4969304
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2797918
+      }
+    ]
+  },
+  {
+    "Hostname": "Host009",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4077936
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9509651
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8734116
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3308474
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8570809
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7733145
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4571954
+      },
+      {
+        "FirstSeenDate": "11/18/2021",
+        "PatchID": 3490761
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9985684
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7771176
+      },
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 2341876
+      }
+    ]
+  },
+  {
+    "Hostname": "Host010",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3865277
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4976076
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7205319
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5772165
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4014218
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5770988
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6612007
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2300857
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2580830
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4510293
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3948508
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1804780
+      }
+    ]
+  },
+  {
+    "Hostname": "Host011",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 6535602
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5960981
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1069224
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8823813
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9010574
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 8125620
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3136094
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1729090
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5088736
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4383282
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3102403
+      }
+    ]
+  },
+  {
+    "Hostname": "Host012",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9358943
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2429857
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5104210
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4431013
+      }
+    ]
+  },
+  {
+    "Hostname": "Host013",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7110173
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2958017
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 9627838
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2426013
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1526236
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4225870
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3177761
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9331656
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8885390
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9414055
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9574813
+      }
+    ]
+  },
+  {
+    "Hostname": "Host014",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1823642
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4222282
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6385012
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9639759
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7710585
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3548288
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1688505
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7488101
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4825339
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9320494
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6608682
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 4486203
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1101117
+      }
+    ]
+  },
+  {
+    "Hostname": "Host015",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9481318
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5056199
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4647286
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1849372
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4213031
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4419854
+      }
+    ]
+  },
+  {
+    "Hostname": "Host016",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4660156
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7717458
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6555223
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4890101
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5584118
+      },
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 5670175
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1008172
+      }
+    ]
+  },
+  {
+    "Hostname": "Host017",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": {
+      "FirstSeenDate": "12/9/2021",
+      "PatchID": 3979880
+    }
+  },
+  {
+    "Hostname": "Host018",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9601978
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1118344
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8868027
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9959048
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8913679
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7667108
+      }
+    ]
+  },
+  {
+    "Hostname": "Host019",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1241324
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 3498232
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9782492
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4924125
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6568507
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3534806
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3757499
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7049745
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9037645
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8926787
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4696726
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2771040
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5966093
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5123579
+      }
+    ]
+  },
+  {
+    "Hostname": "Host020",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5753088
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9336030
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8315730
+      },
+      {
+        "FirstSeenDate": "11/18/2021",
+        "PatchID": 6036511
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7205765
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7167838
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6577291
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4615863
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9832651
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9070035
+      }
+    ]
+  },
+  {
+    "Hostname": "Host021",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7758617
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2481415
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 6310332
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5973756
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6703697
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1503633
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9728942
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1739142
+      }
+    ]
+  },
+  {
+    "Hostname": "Host022",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/18/2021",
+        "PatchID": 8256057
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2584823
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4504216
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3499831
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4393713
+      }
+    ]
+  },
+  {
+    "Hostname": "Host023",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": null
+  },
+  {
+    "Hostname": "Host024",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": null
+  },
+  {
+    "Hostname": "Host025",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": null
+  },
+  {
+    "Hostname": "Host026",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": {
+      "FirstSeenDate": "11/25/2021",
+      "PatchID": 2530814
+    }
+  },
+  {
+    "Hostname": "Host027",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1243033
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1218396
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1707082
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3835366
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8101325
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2970893
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4430143
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7452389
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5712969
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5498188
+      }
+    ]
+  },
+  {
+    "Hostname": "Host028",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8528491
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3792449
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2168405
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1471053
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1885244
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6766205
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3977159
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2226463
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2367153
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3650943
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6524790
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3311162
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4497157
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2689316
+      }
+    ]
+  },
+  {
+    "Hostname": "Host029",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6385247
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8957734
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2755069
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4984665
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5415994
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1892023
+      }
+    ]
+  },
+  {
+    "Hostname": "Host030",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1284261
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7723289
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3986399
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2998733
+      }
+    ]
+  },
+  {
+    "Hostname": "Host031",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": null
+  },
+  {
+    "Hostname": "Host032",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": {
+      "FirstSeenDate": "11/25/2021",
+      "PatchID": 3326718
+    }
+  },
+  {
+    "Hostname": "Host033",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6042806
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6524832
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2185322
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9779533
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1832571
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6570846
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7260195
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4556589
+      }
+    ]
+  },
+  {
+    "Hostname": "Host034",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3051080
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3115922
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7140609
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4430059
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4521450
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9265523
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7897304
+      }
+    ]
+  },
+  {
+    "Hostname": "Host035",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4395365
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2214190
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2135235
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9592654
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1097211
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1174024
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8156975
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1313084
+      }
+    ]
+  },
+  {
+    "Hostname": "Host036",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8736167
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9155001
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 2126146
+      }
+    ]
+  },
+  {
+    "Hostname": "Host037",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8530314
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2698028
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1110545
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1579418
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2327053
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4882303
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3964503
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2544108
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8776272
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6335412
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2306495
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9555254
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1411687
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9736027
+      }
+    ]
+  },
+  {
+    "Hostname": "Host038",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6481547
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3327613
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1997850
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7482603
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5308163
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1680936
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6063547
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6273295
+      }
+    ]
+  },
+  {
+    "Hostname": "Host039",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4490704
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3240756
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2476936
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4161811
+      }
+    ]
+  },
+  {
+    "Hostname": "Host040",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9317341
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7313011
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2116093
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4209519
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7146225
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9951839
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1439769
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7895010
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6774375
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6332770
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6976759
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3060940
+      },
+      {
+        "FirstSeenDate": "11/18/2021",
+        "PatchID": 4193035
+      }
+    ]
+  },
+  {
+    "Hostname": "Host041",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3754334
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4288583
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9523369
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8518425
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7684460
+      }
+    ]
+  },
+  {
+    "Hostname": "Host042",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9076580
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4486427
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6225046
+      }
+    ]
+  },
+  {
+    "Hostname": "Host043",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8409544
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5279472
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6672413
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6035417
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6693410
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8888487
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3392412
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4752473
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4944325
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2421619
+      },
+      {
+        "FirstSeenDate": "11/18/2021",
+        "PatchID": 7892297
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2847383
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5494368
+      }
+    ]
+  },
+  {
+    "Hostname": "Host044",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 9478380
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1719126
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5921329
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2055635
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3223786
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4291817
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7902252
+      }
+    ]
+  },
+  {
+    "Hostname": "Host045",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1657338
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4417766
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5304735
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6690816
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3669432
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9669717
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4865339
+      }
+    ]
+  },
+  {
+    "Hostname": "Host046",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 6180888
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4371609
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7561493
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9024190
+      }
+    ]
+  },
+  {
+    "Hostname": "Host047",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": null
+  },
+  {
+    "Hostname": "Host048",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8419282
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5340563
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2036286
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3717141
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1982660
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5111918
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4774699
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3494729
+      }
+    ]
+  },
+  {
+    "Hostname": "Host049",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5808672
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 8558882
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9875187
+      }
+    ]
+  },
+  {
+    "Hostname": "Host050",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8756450
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1955810
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 1441134
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1578373
+      },
+      {
+        "FirstSeenDate": "11/18/2021",
+        "PatchID": 5399873
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4024622
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9132043
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6082109
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1831839
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9515876
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9601588
+      }
+    ]
+  },
+  {
+    "Hostname": "Host051",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": null
+  },
+  {
+    "Hostname": "Host052",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 6632329
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3453925
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2822820
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1986323
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3815899
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3981012
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9596056
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8525925
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8554502
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4675577
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3555877
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7997517
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3782631
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8687760
+      }
+    ]
+  },
+  {
+    "Hostname": "Host053",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6353100
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7387916
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1981379
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7796151
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5610022
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2734632
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3401198
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1458276
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9943342
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9455598
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7658124
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1298251
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7646356
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6673948
+      }
+    ]
+  },
+  {
+    "Hostname": "Host054",
+    "LastScanDate": "12/9/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2658097
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3925027
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8200936
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6046872
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6652841
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8687648
+      }
+    ]
+  },
+  {
+    "Hostname": "Host055",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": null
+  },
+  {
+    "Hostname": "Host056",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7178601
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6445837
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8701147
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6141515
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7106795
+      }
+    ]
+  },
+  {
+    "Hostname": "Host057",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3674964
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5375036
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4710286
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7334085
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8963868
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8294027
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8068463
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8704187
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4278667
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8127012
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8973952
+      }
+    ]
+  },
+  {
+    "Hostname": "Host058",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8072186
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3489146
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9344013
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5689929
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6742383
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1761451
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4672028
+      }
+    ]
+  },
+  {
+    "Hostname": "Host059",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2555549
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5220054
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8646093
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2162253
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9754531
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1996989
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5294477
+      }
+    ]
+  },
+  {
+    "Hostname": "Host060",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 8111704
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9786749
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3086714
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8002596
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6066768
+      }
+    ]
+  },
+  {
+    "Hostname": "Host061",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1099530
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9710476
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6101897
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6414213
+      }
+    ]
+  },
+  {
+    "Hostname": "Host062",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7098033
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3415350
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6850250
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9582151
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8851582
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2016986
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9124573
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9750713
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9402118
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7222204
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8432794
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2272308
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1383750
+      }
+    ]
+  },
+  {
+    "Hostname": "Host063",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9111025
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5553735
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1936614
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6366686
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3057391
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8513817
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7261398
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4176254
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7405323
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1875323
+      },
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 9320811
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9194915
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4929389
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9009875
+      }
+    ]
+  },
+  {
+    "Hostname": "Host064",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9493903
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3152425
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6246935
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8203858
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4160678
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9617837
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7608333
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2343832
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9513806
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5062558
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5986337
+      }
+    ]
+  },
+  {
+    "Hostname": "Host065",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1530574
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2171880
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2466829
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5270354
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1723912
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3002032
+      }
+    ]
+  },
+  {
+    "Hostname": "Host066",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9574877
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6274741
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1091134
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4519607
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9989378
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1024118
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3788433
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9374617
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3033529
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5196766
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4225696
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1723092
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4700583
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9218033
+      }
+    ]
+  },
+  {
+    "Hostname": "Host067",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 8465832
+      },
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 5113657
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5773059
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 3586720
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1819459
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8159607
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9625161
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8639270
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3876951
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1797299
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3047706
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2847549
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7591461
+      }
+    ]
+  },
+  {
+    "Hostname": "Host068",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2763061
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3456529
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8595569
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1952141
+      }
+    ]
+  },
+  {
+    "Hostname": "Host069",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4568146
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1100488
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9518906
+      }
+    ]
+  },
+  {
+    "Hostname": "Host070",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8057803
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3684653
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1957169
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4758219
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3324528
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9013478
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6223155
+      },
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 5148134
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7581162
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4020855
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1737025
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9015854
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5493322
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4820241
+      }
+    ]
+  },
+  {
+    "Hostname": "Host071",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6365018
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1895919
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9155433
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4909493
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8136585
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3641022
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5717223
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8146208
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3423960
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6949262
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3991332
+      }
+    ]
+  },
+  {
+    "Hostname": "Host072",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7671421
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6881504
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3113080
+      }
+    ]
+  },
+  {
+    "Hostname": "Host073",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7698365
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5156298
+      }
+    ]
+  },
+  {
+    "Hostname": "Host074",
+    "LastScanDate": "12/9/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5560185
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2999704
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1070890
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3180335
+      }
+    ]
+  },
+  {
+    "Hostname": "Host075",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 3129359
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 4786005
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9077518
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1805541
+      }
+    ]
+  },
+  {
+    "Hostname": "Host076",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6713229
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6564257
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4889346
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7530859
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8059395
+      }
+    ]
+  },
+  {
+    "Hostname": "Host077",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8430409
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5596822
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6916798
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2975201
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5067828
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8228675
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1138636
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4735868
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6496022
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7419472
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3511563
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4227485
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6840232
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8699532
+      }
+    ]
+  },
+  {
+    "Hostname": "Host078",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4597537
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1645955
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8086651
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1024940
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4872366
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6945092
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8681087
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5915114
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1574641
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2647097
+      }
+    ]
+  },
+  {
+    "Hostname": "Host079",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1451263
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5378658
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1116824
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8339800
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 8646289
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9928510
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5638932
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5124173
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4806881
+      }
+    ]
+  },
+  {
+    "Hostname": "Host080",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6630568
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7423662
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5671604
+      },
+      {
+        "FirstSeenDate": "11/18/2021",
+        "PatchID": 2353742
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3505102
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2421101
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4090721
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6278470
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4411736
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9547253
+      }
+    ]
+  },
+  {
+    "Hostname": "Host081",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2057059
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8790718
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1881605
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4470581
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4435547
+      }
+    ]
+  },
+  {
+    "Hostname": "Host082",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3837892
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7827735
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5326436
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5254784
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3445898
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1360805
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8365071
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3780760
+      }
+    ]
+  },
+  {
+    "Hostname": "Host083",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 8008772
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 4429234
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7316279
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9965162
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6024660
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8396223
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3671792
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9823769
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4661868
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1762873
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9807247
+      }
+    ]
+  },
+  {
+    "Hostname": "Host084",
+    "LastScanDate": "12/9/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2591308
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6488421
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 9363944
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9619370
+      }
+    ]
+  },
+  {
+    "Hostname": "Host085",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4660207
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7766115
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7857831
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9163219
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8852055
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5680919
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4907800
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3554075
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1553783
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4422911
+      }
+    ]
+  },
+  {
+    "Hostname": "Host086",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4646261
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2801598
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1937733
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2901864
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6656825
+      }
+    ]
+  },
+  {
+    "Hostname": "Host087",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8594363
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5571840
+      },
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 3191111
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8564643
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3638223
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3030900
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5690090
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3374218
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6459258
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5741891
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3294227
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7940663
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3473656
+      }
+    ]
+  },
+  {
+    "Hostname": "Host088",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 8449143
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7139149
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8166088
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1591138
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 8245794
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 7624424
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2773057
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3352379
+      }
+    ]
+  },
+  {
+    "Hostname": "Host089",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9160203
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1229804
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3439652
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1545882
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9935892
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8946290
+      }
+    ]
+  },
+  {
+    "Hostname": "Host090",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 1603147
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8325655
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5589601
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5107508
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6310395
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2237303
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9284367
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2306436
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5139060
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3889354
+      }
+    ]
+  },
+  {
+    "Hostname": "Host091",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5514478
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8939339
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7773046
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5258806
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1884983
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6201565
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2235655
+      },
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 8646884
+      },
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 6043607
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2495947
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1440092
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 3269742
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5711665
+      }
+    ]
+  },
+  {
+    "Hostname": "Host092",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2666370
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 2566440
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9994612
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6748436
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1993307
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 3638086
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1384799
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 9181426
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 7896119
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6206544
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 4454796
+      }
+    ]
+  },
+  {
+    "Hostname": "Host093",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6220496
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5704253
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 8580330
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5408633
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4330407
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4788502
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8017425
+      },
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 1259049
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7801075
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2116722
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9174991
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 8648006
+      }
+    ]
+  },
+  {
+    "Hostname": "Host094",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9517583
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2298753
+      }
+    ]
+  },
+  {
+    "Hostname": "Host095",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 1315917
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6398623
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6573134
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6285508
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 1825277
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5203543
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 2239598
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4575578
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9163614
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 5194244
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4727991
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 6127808
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6536740
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4824896
+      }
+    ]
+  },
+  {
+    "Hostname": "Host096",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "11/4/2021",
+        "PatchID": 3558369
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2715974
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 3170062
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7019066
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4246452
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1625657
+      },
+      {
+        "FirstSeenDate": "11/18/2021",
+        "PatchID": 2145367
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6953571
+      }
+    ]
+  },
+  {
+    "Hostname": "Host097",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7134656
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9137536
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 3832989
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7364744
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 5852100
+      }
+    ]
+  },
+  {
+    "Hostname": "Host098",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6969706
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8111829
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 6457133
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9551666
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8342248
+      }
+    ]
+  },
+  {
+    "Hostname": "Host099",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 9672518
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 4934273
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8300770
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 2256958
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 8380052
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 1479179
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9661747
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 4759229
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 5647252
+      }
+    ]
+  },
+  {
+    "Hostname": "Host100",
+    "LastScanDate": "12/16/2021",
+    "MissingPatches": [
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 5268052
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 6298011
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 9189778
+      },
+      {
+        "FirstSeenDate": "12/9/2021",
+        "PatchID": 7148595
+      },
+      {
+        "FirstSeenDate": "12/2/2021",
+        "PatchID": 8016698
+      },
+      {
+        "FirstSeenDate": "11/11/2021",
+        "PatchID": 1983041
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 2595981
+      },
+      {
+        "FirstSeenDate": "11/25/2021",
+        "PatchID": 9317788
+      },
+      {
+        "FirstSeenDate": "11/18/2021",
+        "PatchID": 4084741
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 7071573
+      },
+      {
+        "FirstSeenDate": "12/16/2021",
+        "PatchID": 6215175
+      }
+    ]
+  }
+]
