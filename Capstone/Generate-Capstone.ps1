@@ -17,11 +17,43 @@ $GroupNameList = @(
     "Users"
 )
 
+$SoftwareList = @(
+    "SANS 5X7 AV",
+    "SoapUI",
+    "7-Zip 19.00 (x64)",
+    "Git version",
+    "Mozilla Firefox ESR (x64 en-US)",
+    "OpenSSL (64-bit)",
+    "PuTTY (64-bit)",
+    "Windows Subsystem for Linux Update",
+    "AWS Command Line Interface",
+    "Java 8 (64-bit)",
+    "Microsoft Visual C++ 2019 X64 Additional Runtime",
+    "KeePassXC",
+    "Microsoft Visual C++ 2008 Redistributable",
+    "Microsoft Visual C++ 2019 X64 Minimum Runtime",
+    "PowerShell",
+    "VMware Tools",
+    "Microsoft Visual Studio Code",
+    "Wireshark 64-bit",
+    "Java 8 Update",
+    "Java Auto Updater",
+    "Citrix XenCenter",
+    "OpenOffice",
+    "Microsoft Visual C++ 2008 Redistributable",
+    "Microsoft Visual C++ 2015-2019 Redistributable (x64)",
+    "Microsoft Visual C++ 2019 X86 Additional Runtime",
+    "RVTools",
+    "Microsoft Visual C++ 2015-2019 Redistributable (x86)",
+    "Microsoft Visual C++ 2019 X86 Minimum Runtime",
+    "XmlNotepad",
+    "MySQL Connector Net",
+    "Microsoft OneDrive",
+    "Postman-win"
+)
+
 
 #============================================================
-
-
-
 
 #Utilities
 function Get-NumberedName {
@@ -40,7 +72,7 @@ function Get-NumberedName {
 
 #Generators
 
-Function Generate-HostScanData {
+Function Generate-HostPatchData {
     param( $PatchAgeMinWeeks = 0)
     $missingPatches = Get-Random -Minimum 0 -Maximum 15
     $patchList = @()
@@ -68,6 +100,95 @@ Function Generate-HostScanData {
      }
      $patchList 
 }
+
+Function Generate-HostVulnData {
+    param( $PatchAgeMinWeeks = 0)
+    $vulnCount = Get-Random -Minimum 0 -Maximum 15
+    $vulnList = @()
+    for( $i = 0; $i -lt $vulnCount; ++$i){
+        $ageFactor = Get-Random -Minimum 0 -Maximum 100
+
+        #95% chance of 1-4 weeks of age
+        if( $AgeFactor -lt 95 ){
+            $weeks = Get-Random -Minimum $patchAgeMinWeeks -Maximum 4
+        }
+        elseif ($patchAge -lt 98){
+            $weeks = Get-Random -Minimum 4 -Maximum 7
+        } 
+        else {
+            $weeks = Get-Random -Minimum 7 -Maximum 10
+        }
+        #93% low, 4% Medium, 2% High, 1% Critical
+        $critFactor = Get-Random -Minimum 0 -Maximum 100
+        if( $critFactor -lt 93 ){
+            $criticality = "Low"
+        }
+        elseif( $critFactor -lt 97 ){
+            $criticality = "Medium"
+        }
+        elseif( $critFactor -lt 99 ){
+            $criticality = "High"
+        }
+        else {
+            $criticality = "Critical"
+        }
+
+        $patchAge = ($weeks * 7) + 2
+        $CVENum = "CVE2021-" + (Get-Random -Minimum 1000 -Maximum 9999).ToString()
+        $firstSeenDate = ((Get-Date).AddDays(0 - $patchAge )).ToShortDateString()
+        $ageEntry = [PSCustomObject]@{
+            FirstSeenDate = $firstSeenDate
+            CVE = $CVENum
+            Criticality = $criticality
+        }
+        $vulnList += $ageEntry
+     }
+     $vulnList 
+}
+
+function Get-SoftwareList {
+    param (
+        [int]$MaxHosts = 100,
+        [int]$failPercent = 4
+    )
+    $softwareEntries = @()
+    for ($hostCount = 0; $hostCount -lt $MaxHosts; $hostCount++) {
+        $hostName = Get-NumberedName -Name "Host" -Digit ($hostCount + 1)
+
+        foreach( $appName in $SoftwareList){
+            if( $appName -eq "SANS 5X7 AV" ){
+                $failFactor = Get-Random -Minimum 0 -Maximum 100
+                if( $failFactor -lt $failPercent ){
+                    $appVersion = '1.234'
+                }
+                else {
+                    $appVersion = '1.235'
+                }
+            }
+            else {
+                $appVersion = ($appName -split " ").Count.ToString()
+                $appVersion += "." 
+                $appVersion += ($appName.Length - (Get-Random -Minimum 0 -Maximum 3)).ToString()
+                #$appVersion = [float](Get-Random -Minimum 1100 -Maximum 9999) / 1000.0
+            }
+
+            if( $appName -like '*64*'){
+                $installPath = "C:\Program Files\$appName"
+            }
+            else {
+                $installPath = "C:\Program Files (x86)\$appName"
+            }
+            $softwareEntry = [PSCustomObject] @{
+                "Hostname" = $hostName
+                "AppName" = $appname
+                "InstallPath" = $installPath
+                "AppVersion" = $appVersion
+            }
+            $softwareEntries += $softwareEntry
+        }
+    }
+    $softwareEntries
+}
 function Get-VulnScanData {
     param (
         [int]$MaxHosts = 100,
@@ -77,7 +198,6 @@ function Get-VulnScanData {
 
     #Setup
     $ScannedHosts = @()
-    $MissingPatches = @()
 
     for ($hostCount = 0; $hostCount -lt $MaxHosts; $hostCount++) {
         $hostName = Get-NumberedName -Name "Host" -Digit ($hostCount + 1)
@@ -92,11 +212,13 @@ function Get-VulnScanData {
         $scanAge = ($patchAgeMinWeeks * 7) + 2
         $lastScanDate = ((Get-Date).AddDays(0 - $scanAge )).ToShortDateString()
     
-        $patchList = Generate-HostScanData -PatchAgeMinWeeks $patchAgeMinWeeks
+        $patchList = Generate-HostPatchData -PatchAgeMinWeeks $patchAgeMinWeeks
+        $vulnList = Generate-HostVulnData -PatchAgeMinWeeks $patchAgeMinWeeks
         $patchEntry = [PSCustomObject]@{
             Hostname = $hostName
             LastScanDate = $lastScanDate
             MissingPatches = $patchList
+            Vulnerabilities = $vulnList
         }
         $ScannedHosts += $patchEntry
     }
@@ -215,6 +337,7 @@ $GroupListData | ConvertTo-Json -Depth 5 -Compress | Out-File "groupList.json"
 #.\Generate-Capstone.ps1 | ConvertFrom-Json | Select-Object @{Name="Hostname"; Expression={$_.Hostname}}, @{N="Admincount"; E={($_.Groups | Where-Object Groupname -eq "Administrators").Users.Count}}
 #Get-Content .\groupList.json | ConvertFrom-Json | Select-Object @{Name="Hostname"; Expression={$_.Hostname}}, @{N="Admincount"; E={($_.Groups | Where-Object Groupname -eq "Administrators").Users.Count}} | Where-Object Admincount -gt 4 | Measure-Object
 
-Get-VulnScanData -MaxHosts 100 -MaxMissingPatches 10 | ConvertTo-Json -Depth 5 | Out-File VulnScans.json
+Get-VulnScanData -MaxHosts 100 -MaxMissingPatches 10 | ConvertTo-Json -Depth 5  -Compress | Out-File VulnScans.json
 
+Get-SoftwareList -MaxHosts 100 | Export-Csv "softwareInventory.csv"
 #Get-Content .\VulnScans.json | ConvertFrom-Json | Select-Object Hostname, @{n='MaxPatchAge';e={(New-TimeSpan -Start ($_.MissingPatches | Sort-Object FirstSeenDate | Select-Object -first 1).FirstSeenDate -End (Get-Date)).TotalDays}} | Select-Object Hostname, MaxPatchAge, @{n='ZeroMax';e={if ($null -eq $_.MaxPatchAge){0} else {$_.MaxPatchAge}}}
