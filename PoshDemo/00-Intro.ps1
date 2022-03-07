@@ -49,6 +49,20 @@ gEt-locaLuSer
 ################################
 Get-LocalUser
 
+#Aliases allow multiple names for the same command
+#Unix users like to use 'ls' to list files in a directory
+ls
+#Older Windows users like to use 'dir'
+dir
+#Super-leet PowerShell admins use shortcuts like 'gci'
+gci
+#But the acutal PowerShell command is Get-ChildItem
+Get-ChildItem
+
+#The others are all aliases for Get-ChildItem
+#########################################
+Get-Alias gci,ls,dir
+
 #Parameters let us influence the way a command runs
 #User the -Name parameter for Get-Process to return only matching processes
 
