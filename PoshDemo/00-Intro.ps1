@@ -62,13 +62,18 @@ Get-Process "pwsh"
 Get-Process 'pwsh'
 
 #Double quotes allow for expanding the data in a variable into a string
+#Create a PowerShell variable to hold a process name (note the '$')
 $procName = 'pwsh'
+
+#View the contents of the $procName variable
 $procName
-Get-Process -Name "$procName"
+
+#To use the variable in a string, use double quotes
+"The process you are looking for is: $procName"
 
 ################################
 #Single quotes would have looked for all process named (literally) "$procName"
-Get-Process -Name '$procName'
+'The process you are looking for is: $procName'
 
 #Get-Help gives information about how to use commands (like Unix man)
 Get-Help -Name Get-LocalUser

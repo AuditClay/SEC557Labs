@@ -3,11 +3,19 @@
 #an object
 Get-Service | Get-Member
 
-#To show only properties, use the MemberType parameter
+#To show only methods, use the MemberType parameter
+Get-Service | Get-Member -MemberType Method
+
+#To show both properties and alias properties, use the MemberType parameter
+Get-Service | Get-Member -MemberType Properties
+
+#####################################
+#To show only properties, pass Property to the MemberType parameter
 Get-Service | Get-Member -MemberType Property
 
-#Show only methods
-Get-Service | Get-Member -MemberType Method
+
+#Select specific properties using the Select-Object cmdlet
+
 
 #Use Select-Object to specify what part of the output to consume 
 #Get NICs with only the default properties shown
