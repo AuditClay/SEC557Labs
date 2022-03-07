@@ -72,7 +72,7 @@ $procName
 "The process you are looking for is: $procName"
 
 ################################
-#Single quotes would have looked for all process named (literally) "$procName"
+#Single quotes would have included the literal string "$procName"
 'The process you are looking for is: $procName'
 
 #Get-Help gives information about how to use commands (like Unix man)
