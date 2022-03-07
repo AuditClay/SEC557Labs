@@ -78,7 +78,7 @@ $procName
 #Get-Help gives information about how to use commands (like Unix man)
 Get-Help -Name Get-LocalUser
 
-#-Name is postional
+#-Name is positional
 Get-Help Get-LocalUser
 
 #-Full parameter may give more help
