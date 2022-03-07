@@ -72,7 +72,7 @@ function Get-NumberedName {
 
 #Generators
 
-Function Generate-HostPatchData {
+Function Get-HostPatchData {
     param( $PatchAgeMinWeeks = 0)
     $missingPatches = Get-Random -Minimum 0 -Maximum 15
     $patchList = @()
@@ -101,7 +101,7 @@ Function Generate-HostPatchData {
      $patchList 
 }
 
-Function Generate-HostVulnData {
+Function Get-HostVulnData {
     param( $PatchAgeMinWeeks = 0)
     $vulnCount = Get-Random -Minimum 0 -Maximum 15
     $vulnList = @()
@@ -212,8 +212,8 @@ function Get-VulnScanData {
         $scanAge = ($patchAgeMinWeeks * 7) + 2
         $lastScanDate = ((Get-Date).AddDays(0 - $scanAge )).ToShortDateString()
     
-        $patchList = Generate-HostPatchData -PatchAgeMinWeeks $patchAgeMinWeeks
-        $vulnList = Generate-HostVulnData -PatchAgeMinWeeks $patchAgeMinWeeks
+        $patchList = Get-HostPatchData -PatchAgeMinWeeks $patchAgeMinWeeks
+        $vulnList = Get-HostVulnData -PatchAgeMinWeeks $patchAgeMinWeeks
         $patchEntry = [PSCustomObject]@{
             Hostname = $hostName
             LastScanDate = $lastScanDate

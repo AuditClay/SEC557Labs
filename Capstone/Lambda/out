@@ -1,0 +1,8 @@
+{
+  "errorType": "ParentContainsErrorRecordException",
+  "errorMessage": "You cannot call a method on a null-valued expression.",
+  "stackTrace": [
+    "at Amazon.Lambda.PowerShellHost.PowerShellFunctionHost.ExecuteFunction(Stream inputStream, ILambdaContext context)",
+    "at lambda_method(Closure , Stream , Stream , LambdaContextInternal )"
+  ]
+}
