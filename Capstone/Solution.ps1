@@ -89,8 +89,6 @@ foreach( $hostname in $hostList){
     #get all the missing patches for this host
     $missingPatches = ($vulnData | 
         Where-Object Hostname -eq $hostname).MissingPatches
-    
-    $missingPatchCount = $missingPatches.Count
 
     "$hostname $missingPatchCount"
     #if missing patches are found for a host...
