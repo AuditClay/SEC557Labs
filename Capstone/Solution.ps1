@@ -11,7 +11,7 @@ $epochTime = Get-Date -Hour 0 -Minute 0 -Second 0 -Millisecond 0 -AsUTC -UFormat
 $epochTime
 
 #Get the Send-TCPData function
-. C:\automation\AutomationFunctions.ps1
+. .\AutomationFunctions.ps1
 
 ###########################################
 #Demographic data needed throughout the script
