@@ -61,6 +61,8 @@ $groupList = (Get-Content .\groupList.json | ConvertFrom-Json)
 
 $outputLines = @()
 foreach( $hostname in $hostList){
+    $metricLocation = ($hostInventory | Where-Object Hostname -eq $hostname).location.ToLower() -replace " "
+    $metricOS = ($hostInventory | Where-Object Hostname -eq $hostname).OS.ToLower() -replace " "    
     #Find this host in the source data and get all the local admins
     $localAdminGroup = ($groupList |
         Where-Object Hostname -eq $hostname).Groups |
@@ -68,7 +70,7 @@ foreach( $hostname in $hostList){
     
     $localAdminCount = $localAdminGroup.Users.Count
 
-    $outputLines += "capstone.hoststats.$hostname.admincount $localAdminCount $epochTime"
+    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.admincount $localAdminCount $epochTime"
 }
 
 if( $GraphiteImport){
@@ -92,6 +94,9 @@ foreach( $hostname in $hostList){
     
     $missingPatchCount = $missingPatches.Count
 
+    $metricLocation = ($hostInventory | Where-Object Hostname -eq $hostname).location.ToLower() -replace " "
+    $metricOS = ($hostInventory | Where-Object Hostname -eq $hostname).OS.ToLower() -replace " "    
+
     #if missing patches are found for a host...
     if( $missingPatchCount -ne 0){
         #get the date of the oldest missing patch
@@ -108,7 +113,7 @@ foreach( $hostname in $hostList){
         $patchLag = 0
     }
     
-    $outputLines += "capstone.hoststats.$hostname.patchlag $patchLag $epochTime"
+    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.patchlag $patchLag $epochTime"
 }
 
 if( $GraphiteImport){
@@ -126,6 +131,9 @@ $vulnData = (Get-Content .\VulnScans.json | ConvertFrom-Json)
 
 $outputLines = @()
 foreach( $hostname in $hostList){
+    $metricLocation = ($hostInventory | Where-Object Hostname -eq $hostname).location.ToLower() -replace " "
+    $metricOS = ($hostInventory | Where-Object Hostname -eq $hostname).OS.ToLower() -replace " "    
+
     #get all the missing patches for this host
     $vulns = ($vulnData | 
         Where-Object Hostname -eq $hostname).Vulnerabilities
@@ -133,10 +141,8 @@ foreach( $hostname in $hostList){
     foreach ( $crit in 'critical', 'high','medium','low' ) { 
       $count = ($vulns | Where-Object Criticality -eq $crit).Count
 
-      $outputLines += "capstone.hoststats.$hostname.vuln.$crit $count $epochTime"
+      $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.vuln.$crit $count $epochTime"
     }
-
-    
 }
 
 if( $GraphiteImport){
