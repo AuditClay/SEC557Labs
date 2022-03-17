@@ -96,6 +96,9 @@ $softwareInventory = import-csv .\softwareInventory.csv
 
 $outputLines = @()
 foreach( $hostname in $hostList){
+    $metricLocation = ($hostInventory | Where-Object Hostname -eq $hostname).location.ToLower() -replace " "
+    $metricOS = ($hostInventory | Where-Object Hostname -eq $hostname).OS.ToLower() -replace " "    
+
     #get the version of AV running on this host
     $avVersion = ($softwareInventory | 
       Where-Object { ($_.Hostname -eq $hostname) -and ($_.AppName -eq 'SANS 5X7 AV') }).AppVersion
@@ -107,6 +110,7 @@ foreach( $hostname in $hostList){
       #fail - set risk score to 100
       $riskScore[$hostname] = 100
     }
+    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.riskscore $score $epochTime"
 
 }
 
