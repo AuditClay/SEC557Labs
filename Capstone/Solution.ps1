@@ -29,6 +29,14 @@ $osTypes = $HostInventory.OS | Sort-Object -Unique
 #Get an array of hostnames
 $hostList = $hostInventory.Hostname
 
+#hash table for risk scores
+$riskScore = @{}
+$vulnScore = @{}
+$vulnScore['critical']=8
+$vulnScore['high']=4
+$vulnScore['medium']=2
+$vulnScore['low']=1
+
 ###########################################
 #Host inventory
 ###########################################
@@ -94,15 +102,12 @@ foreach( $hostname in $hostList){
 
     if( $avVersion -eq '1.235' ) {
       #Pass - set risk score to 0
-      $riskScore = 0
+      $riskScore[$hostname] = 0
     } else {
       #fail - set risk score to 100
-      $riskScore = 100
+      $riskScore[$hostname] = 100
     }
-    $metricLocation = ($hostInventory | Where-Object Hostname -eq $hostname).location.ToLower() -replace " "
-    $metricOS = ($hostInventory | Where-Object Hostname -eq $hostname).OS.ToLower() -replace " "    
 
-    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.riskScore $riskScore $epochTime"
 }
 
 if( $GraphiteImport){
@@ -173,10 +178,15 @@ foreach( $hostname in $hostList){
   
     foreach ( $crit in 'critical', 'high','medium','low' ) { 
       $count = ($vulns | Where-Object Criticality -eq $crit).Count
-
       $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.vuln.$crit $count $epochTime"
+
+      $riskScore[$hostname] += ($vulnScore[$crit] * $count)
     }
-}
+    $score = $riskScore[$hostname]
+    $score
+    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.riskscore $score $epochTime"
+
+  }
 
 if( $GraphiteImport){
     $outputLines | Send-TCPData -remoteHost ubuntu -remotePort 2003 -Verbose
