@@ -129,15 +129,13 @@ foreach( $hostname in $hostList){
     #get all the missing patches for this host
     $vulns = ($vulnData | 
         Where-Object Hostname -eq $hostname).Vulnerabilities
-    
-    $vulns | Group-Object Criticality | 
-      Select-Object @{Name='criticality';expression={($_.Name).tolower()}}, 
-      @{name='vulnCount';e={$_.Count}} | foreach-object {
-        $crit = $_.criticality
-        $count = $_.vulnCount
-        $outputLines += "capstone.hoststats.$hostname.vuln.$crit $count $epochTime"
-      }
-        
+  
+    foreach ( $crit in 'critical', 'high','medium','low' ) { 
+      $count = ($vulns | Where-Object Criticality -eq $crit).Count
+
+      $outputLines += "capstone.hoststats.$hostname.vuln.$crit $count $epochTime"
+    }
+
     
 }
 
