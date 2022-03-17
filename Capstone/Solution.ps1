@@ -79,6 +79,40 @@ if( $GraphiteImport){
 else {
     $outputLines
 }
+
+###########################################
+#AV Status
+###########################################
+#get the file data into an object
+$softwareInventory = import-csv .\softwareInventory.csv
+
+$outputLines = @()
+foreach( $hostname in $hostList){
+    #get the version of AV running on this host
+    $avVersion = $softwareInventory | 
+      Where-Object { ($_.Hostname -eq $hostname) -and ($_.AppName -eq 'SANS 5X7 AV') }
+
+    if( $avVersion -eq '1.235' ) {
+      #Pass - set risk score to 0
+      $riskScore = 0
+    }
+    else {
+      #fail - set risk score to 100
+      $riskScore = 100
+    }
+    $metricLocation = ($hostInventory | Where-Object Hostname -eq $hostname).location.ToLower() -replace " "
+    $metricOS = ($hostInventory | Where-Object Hostname -eq $hostname).OS.ToLower() -replace " "    
+
+    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.riskScore $riskScore $epochTime"
+}
+
+if( $GraphiteImport){
+    $outputLines | Send-TCPData -remoteHost ubuntu -remotePort 2003 -Verbose
+}
+else {
+    $outputLines
+}
+
 ###########################################
 #Patch Lag
 ###########################################
