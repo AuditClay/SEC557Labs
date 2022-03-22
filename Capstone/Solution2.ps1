@@ -29,8 +29,8 @@ $osTypes = $HostInventory.OS | Sort-Object -Unique
 #Get an array of hostnames
 $hostList = $hostInventory.Hostname
 
-$vulnScore = @{}
 #hash table for risk scores
+$vulnScore = @{}
 $vulnScore['critical']=8
 $vulnScore['high']=4
 $vulnScore['medium']=2
