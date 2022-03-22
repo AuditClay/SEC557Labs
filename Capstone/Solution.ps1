@@ -4,7 +4,7 @@ param(
 )
 
 Set-Location C:\users\auditor\SEC557Labs\Capstone\
-.\Generate-sec557.ps1
+.\Generate-capstone.ps1
 
 # Store an epoch time for all metrics
 $epochTime = Get-Date -Hour 0 -Minute 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s
