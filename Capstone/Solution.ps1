@@ -4,7 +4,7 @@ param(
 )
 
 Set-Location C:\users\auditor\SEC557Labs\Capstone\
-.\Generate-Capstone.ps1
+.\Generate-sec557.ps1
 
 # Store an epoch time for all metrics
 $epochTime = Get-Date -Hour 0 -Minute 0 -Second 0 -Millisecond 0 -AsUTC -UFormat %s
@@ -50,7 +50,7 @@ foreach( $osType  in $osTypes){
         $metricLocation = $location.ToLower() -replace " "
         $metricOS = $osType.ToLower() -replace " "
         $count = ($HostInventory | Where-Object { ($_.Location -eq $location) -and ($_.OS -eq $osType)} ).Count
-        $outputLines += "capstone.inventory.$metricLocation.$metricOS $count $epochTime"
+        $outputLines += "sec557.inventory.$metricLocation.$metricOS $count $epochTime"
     }
 }
 
@@ -78,7 +78,7 @@ foreach( $hostname in $hostList){
     
     $localAdminCount = $localAdminGroup.Users.Count
 
-    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.admincount $localAdminCount $epochTime"
+    $outputLines += "sec557.hoststats.$metricLocation.$metricOS.$hostname.admincount $localAdminCount $epochTime"
 }
 
 if( $GraphiteImport){
@@ -110,7 +110,7 @@ foreach( $hostname in $hostList){
       #fail - set risk score to 100
       $riskScore[$hostname] = 100
     }
-    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.riskscore $score $epochTime"
+    $outputLines += "sec557.hoststats.$metricLocation.$metricOS.$hostname.riskscore $score $epochTime"
 
 }
 
@@ -155,7 +155,7 @@ foreach( $hostname in $hostList){
         $patchLag = 0
     }
     
-    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.patchlag $patchLag $epochTime"
+    $outputLines += "sec557.hoststats.$metricLocation.$metricOS.$hostname.patchlag $patchLag $epochTime"
 }
 
 if( $GraphiteImport){
@@ -182,13 +182,12 @@ foreach( $hostname in $hostList){
   
     foreach ( $crit in 'critical', 'high','medium','low' ) { 
       $count = ($vulns | Where-Object Criticality -eq $crit).Count
-      $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.vuln.$crit $count $epochTime"
+      $outputLines += "sec557.hoststats.$metricLocation.$metricOS.$hostname.vuln.$crit $count $epochTime"
 
       $riskScore[$hostname] += ($vulnScore[$crit] * $count)
     }
     $score = $riskScore[$hostname]
-    $score
-    $outputLines += "capstone.hoststats.$metricLocation.$metricOS.$hostname.riskscore $score $epochTime"
+    $outputLines += "sec557.hoststats.$metricLocation.$metricOS.$hostname.riskscore $score $epochTime"
 
   }
 
