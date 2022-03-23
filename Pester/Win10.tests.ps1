@@ -37,12 +37,19 @@ Describe 'Tests for Win10 VM' {
         }
     }
     Context 'Lab1.1'{
-        It 'test name' {
+        It 'Get-LocalUser returns 6 users' {
+            (Get-LocalUser).count | Should -be 6
+        }
+        It 'Get-LocalUser returns 2 enabled users' {
             $true | Should -beTrue
         }
 
+
     }
     Context 'Lab1.2'{
+        It 'Books.xml exists' {
+            $true | Should -beTrue
+        }
 
     }
     Context 'Lab1.3'{
