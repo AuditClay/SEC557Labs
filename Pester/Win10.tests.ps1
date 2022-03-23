@@ -50,6 +50,13 @@ Describe 'Tests for Win10 VM' {
         It 'Books.xml exists' {
             $true | Should -beTrue
         }
+        It 'Books cataloge contains 12' {
+            Set-Location C:\Users\auditor\SEC557Labs\Lab1.2
+            $xBooks = New-Object System.Xml.XmlDocument
+            $file=Resolve-Path .\books.xml
+            $xBooks.Load($file)
+            $xBooks.catalog.book.count | Should -be 12
+        }
 
     }
     Context 'Lab1.3'{
