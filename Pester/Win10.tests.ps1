@@ -87,7 +87,7 @@ Describe 'Tests for Win10 VM' {
     }
 
     Context 'Lab2.1'{
-        It ''{
+        It 'Test Name'{
             $true | Should -beTrue
         }
     }
