@@ -14,6 +14,13 @@ Describe 'Tests for Win10 VM' {
             $elapsed = New-TimeSpan -Start $startTime -End $endTime
             $elapsed.totalSeconds | Should -BeLessThan 30
         }
+
+        It 'OSqueryi returns results' {
+            $true | Should -beTrue
+        }
+        It 'OSqueryd service is running' {
+            $true | Should -beTrue
+        }
     }
     Context 'Lab0'{
         BeforeAll {
@@ -29,7 +36,6 @@ Describe 'Tests for Win10 VM' {
             $true | Should -beTrue
         }
         It 'Git is on correct branch' {
-            $gitStatus
             $gitStatus[0] | Should -Be 'On branch H01'
         }
 
