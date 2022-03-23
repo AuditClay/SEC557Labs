@@ -87,6 +87,10 @@ Describe 'Tests for Win10 VM' {
     }
 
     Context 'Lab2.1'{
+        It 'Windows PowerShell can call web service' {
+            $result = powershell.exe -file .\wsp.ps1
+            $result | Should -Be 'one dollar'
+        }
         It 'Test Name'{
             $true | Should -beTrue
         }
