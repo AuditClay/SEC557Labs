@@ -17,7 +17,7 @@ Describe 'Tests for Win10 VM' {
     }
     Context 'Lab0'{
         BeforeAll {
-            $gitStatus = (git pull)
+            $gitStatus = (git status)
         }
         It 'VMTools is installed' {
             $true | Should -beTrue
