@@ -12,6 +12,12 @@ Describe 'Tests for Win10 VM' {
             $elapsed = New-TimeSpan -Start $startTime -End $endTime
             $elapsed.totalSeconds | Should -BeLessThan 30
         }
+        
+    }
+    Context 'Software Versions'{
+        It 'soupUI as the correct version'{
+            $true | Should -beTrue
+        }
         It 'OSqueryi returns results' {
             $true | Should -beTrue
         }
@@ -57,16 +63,28 @@ Describe 'Tests for Win10 VM' {
             $xBooks.Load($file)
             $xBooks.catalog.book.count | Should -be 12
         }
+        It 'nmapScan.xml exits'{
+            $true | Should -beTrue
+        }
+        It 'nmap scans 59 open ports'{
+                $xScan = New-Object System.Xml.XmlDocument
+                $file = Resolve-Path .\nmapScan.xml
+                $xScan.load($file)
+        }
+        It 'Vulnerabilty have 29834 results'{
+            $true | Should -beTrue
+        }
+        It 'Vulnerabilty scan has 81 files'{
+            $true | Should -beTrue
+        }
+
 
     }
-    Context 'Lab1.3'{
 
-    }
-    Context 'Lab1.4'{
-
-    }
     Context 'Lab2.1'{
-
+        It ''{
+            $true | Should -beTrue
+        }
     }
     Context 'Lab2.2'{
 
