@@ -15,8 +15,14 @@ Describe 'Tests for Win10 VM' {
         
     }
     Context 'Software Versions'{
+        BeforeAll {
+            $softwareVersions = osqueryi 'select name,version from programs;' --json | ConvertFrom-Json
+        }
+        It 'VMware tools is installed' {
+            $softwareVersions.Name | Should -Contain 'VMware Tools'
+        }
         It 'soupUI as the correct version'{
-            $true | Should -beTrue
+            ($softwareVersions | Where-Object name -like 'SoapUI*').Version | Should -Be '5.6.0'
         }
         It 'OSqueryi returns results' {
             $true | Should -beTrue
