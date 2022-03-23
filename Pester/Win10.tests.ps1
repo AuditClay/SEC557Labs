@@ -11,7 +11,7 @@ Describe 'Tests for Win10 VM' {
         }
 
         It 'DNS resolves in < 30 seconds' {
-            $elpased = New-TimeSpan -Start $startTime -End $endTime
+            $elapsed = New-TimeSpan -Start $startTime -End $endTime
             $elapsed.totalSeconds | Should -BeLessThan 30
         }
     }
