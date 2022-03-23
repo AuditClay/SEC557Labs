@@ -16,6 +16,9 @@ Describe 'Tests for Win10 VM' {
         }
     }
     Context 'Lab0'{
+        BeforeAll {
+            $gitStatus = (git pull)
+        }
         It 'VMTools is installed' {
             $true | Should -beTrue
         }
@@ -26,8 +29,7 @@ Describe 'Tests for Win10 VM' {
             $true | Should -beTrue
         }
         It 'Git is on correct branch' {
-            Set-Location 'c:\users\auditor\sec557Labs\'
-            $gitStatus = (git pull)
+            $gitStatus
             $gitStatus[0] | Should -Be 'On branch H01'
         }
 
