@@ -63,9 +63,8 @@ Describe 'Tests for Win10 VM' {
             $true | Should -beTrue
         }
         It 'Books cataloge contains 12' {
-            Set-Location C:\Users\auditor\SEC557Labs\Lab1.2
             $xBooks = New-Object System.Xml.XmlDocument
-            $file=Resolve-Path .\books.xml
+            $file=Resolve-Path 'C:\Users\auditor\SEC557Labs\Lab1.2\books.xml'
             $xBooks.Load($file)
             $xBooks.catalog.book.count | Should -be 12
         }
@@ -74,7 +73,7 @@ Describe 'Tests for Win10 VM' {
         }
         It 'nmap scans 59 open ports'{
                 $xScan = New-Object System.Xml.XmlDocument
-                $file = Resolve-Path .\nmapScan.xml
+                $file = Resolve-Path 'C:\Users\auditor\SEC557Labs\Lab1.2\nmapScan.xml'
                 $xScan.load($file)
         }
         It 'Vulnerabilty have 29834 results'{
