@@ -5,16 +5,13 @@ Describe 'Tests for Win10 VM' {
             $ip = Resolve-DnsName 'dns.google'
             $endTime = Get-Date
         }
-
         It 'DNS resolves IP for dns.google' {
             $ip.IPAddress | Should -Contain '8.8.8.8'
         }
-
         It 'DNS resolves in < 30 seconds' {
             $elapsed = New-TimeSpan -Start $startTime -End $endTime
             $elapsed.totalSeconds | Should -BeLessThan 30
         }
-
         It 'OSqueryi returns results' {
             $true | Should -beTrue
         }
@@ -38,17 +35,11 @@ Describe 'Tests for Win10 VM' {
         It 'Git is on correct branch' {
             $gitStatus[0] | Should -Be 'On branch H01'
         }
-
-        It 'test name' {
-            $true | Should -beTrue
-        }
-
-        It 'test name' {
-            $true | Should -beTrue
-        }
-
     }
     Context 'Lab1.1'{
+        It 'test name' {
+            $true | Should -beTrue
+        }
 
     }
     Context 'Lab1.2'{
