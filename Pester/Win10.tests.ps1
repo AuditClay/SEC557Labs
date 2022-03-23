@@ -16,6 +16,28 @@ Describe 'Tests for Win10 VM' {
         }
     }
     Context 'Lab0'{
+        It 'VMTools is installed' {
+            $true | Should -beTrue
+        }
+        It 'Grafana is reachable' {
+            $true | Should -beTrue
+        }
+        It 'Fleet is reachable' {
+            $true | Should -beTrue
+        }
+        It 'Git is on correct branch' {
+            Set-Location 'c:\users\auditor\sec557Labs\'
+            $gitStatus = (git pull)
+            $gitStatus[0] | Should -Be 'On branch H01'
+        }
+
+        It 'test name' {
+            $true | Should -beTrue
+        }
+
+        It 'test name' {
+            $true | Should -beTrue
+        }
 
     }
     Context 'Lab1.1'{
