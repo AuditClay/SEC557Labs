@@ -224,6 +224,16 @@ Describe 'Tests for Win10 VM' {
         }
     }
     Context 'Lab3.2'{
+        #Students are asked to use secedit to export local security policy
+        BeforeAll {
+            Push-Location C:\users\auditor\SEC557Labs\Lab3.2\
+            SecEdit.exe /export /cfg localSecPolicy.txt
+            $localPolicy = Get-Content .\localSecPolicy.txt
+        }
+        AfterAll {
+            Remove-Item C:\users\auditor\SEC557Labs\Lab3.2\localSecPolicy.txt
+            Pop-Location
+        }
         #Use Get-Module to check the version of the Pester module
         It 'Pester is at least version 5'{
             $true | Should -beFalse
@@ -259,8 +269,19 @@ Describe 'Tests for Win10 VM' {
         It 'LSA RestrictAnonymous is 0' {
             $true | Should -beFalse
         }
-        #Students are asked to use secedit as an admin
-        #TODO: Should we run the tests in an elevated PowerShell?
+        It 'Minimum Password Age is 0' {
+            #Find the MinimumPasswordAge setting in the text file
+            $MinPwdAge = ($localPolicy | Select-String "MinimumPasswordAge" -NoEmphasis) `
+                -Replace 'MinimumPasswordAge = ', ''
+            $MinPwdAge | Should -Be '0'
+        }
+        It 'BackupPrivilege Contains Administrators and backup Operators Groups'{
+            $backupUsers = ($localPolicy | Select-String "SeBackupPrivilege" -NoEmphasis) `
+                -Replace 'SeBackupPrivilege = ', '' -Split "," -replace '\*', ''
+            $groupNames=($backupUsers | foreach { Get-LocalGroup | Where-Object Sid -eq $_ }).Name
+            $groupName | Should -Contain 'Administrators'
+            $groupName | Should -Contain 'Backup Operators'
+        }
 
     }
     Context 'Lab3.3'{
