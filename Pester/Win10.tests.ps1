@@ -36,7 +36,7 @@ Describe 'Tests for Win10 VM' {
             $softwareVersions.Count | Should -beGreaterThan 0
         }
         It 'OSqueryd service is running' {
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab0'{
@@ -44,7 +44,7 @@ Describe 'Tests for Win10 VM' {
             $gitStatus = (git status)
         }
         It 'VMTools is installed' {
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
         #Check that the web UI for Grafana is reachable
         #The Ubuntu VM needs to be running for this test to pass
@@ -55,7 +55,7 @@ Describe 'Tests for Win10 VM' {
                 Should -Be 200
         }
         It 'Fleet is reachable' {
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
         It 'Git is on correct branch' {
             $gitStatus[0] | Should -Be 'On branch H01'
@@ -66,7 +66,7 @@ Describe 'Tests for Win10 VM' {
             (Get-LocalUser).count | Should -be 6
         }
         It 'Get-LocalUser returns 2 enabled users' {
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
 
 
@@ -75,7 +75,7 @@ Describe 'Tests for Win10 VM' {
         #Use Test-Path to ensure that the XML file for the books
         #database exists
         It 'Books.xml exists' {
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
         #Check that the file contains the correct data
         It 'Books catalog contains 12 books' {
@@ -87,7 +87,7 @@ Describe 'Tests for Win10 VM' {
         #Use Test-Path to ensure that the XML file for the NMAP
         #scan exists
         It 'nmapScan.xml exits'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
         #Check that the NMAP XML file has correct results in it
         It 'NMAP scan has 59 open ports'{
@@ -95,17 +95,17 @@ Describe 'Tests for Win10 VM' {
             $file = Resolve-Path 'C:\Users\auditor\SEC557Labs\Lab1.2\nmapScan.xml'
             $xScan.load($file)
 
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
         #Check that the 81 CSV files are in the VulnScanResults subdirectory
         #Use Get-ChildItem on that full directory path and count the results
         It 'Vulnerabilty scan directory has 81 CSV files'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
         #Ingest the CSVs and make sure that the correct number of
         #Nessus results are there
         It 'Vulnerabilty scans have 29834 results'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
 
@@ -119,91 +119,91 @@ Describe 'Tests for Win10 VM' {
     }
     Context 'Lab2.2'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab2.3'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }    }
     Context 'Lab2.4'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab3.1'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab3.2'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab3.3'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab3.4'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab3.5'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab3.6'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab4.1'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab4.2'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab4.3'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab4.4'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab5.1'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab5.2'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab5.3'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'Lab5.4'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     Context 'CapStone'{
         It 'Test Name'{
-            $true | Should -beTrue
+            $true | Should -beFalse
         }
     }
     
