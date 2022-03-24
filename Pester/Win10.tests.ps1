@@ -72,27 +72,39 @@ Describe 'Tests for Win10 VM' {
 
     }
     Context 'Lab1.2'{
+        #Use Test-Path to ensure that the XML file for the books
+        #database exists
         It 'Books.xml exists' {
             $true | Should -beTrue
         }
-        It 'Books cataloge contains 12' {
+        #Check that the file contains the correct data
+        It 'Books catalog contains 12 books' {
             $xBooks = New-Object System.Xml.XmlDocument
             $file=Resolve-Path 'C:\Users\auditor\SEC557Labs\Lab1.2\books.xml'
             $xBooks.Load($file)
             $xBooks.catalog.book.count | Should -be 12
         }
+        #Use Test-Path to ensure that the XML file for the NMAP
+        #scan exists
         It 'nmapScan.xml exits'{
             $true | Should -beTrue
         }
+        #Check that the NMAP XML file has correct results in it
         It 'NMAP scan has 59 open ports'{
-                $xScan = New-Object System.Xml.XmlDocument
-                $file = Resolve-Path 'C:\Users\auditor\SEC557Labs\Lab1.2\nmapScan.xml'
-                $xScan.load($file)
-        }
-        It 'Vulnerabilty have 29834 results'{
+            $xScan = New-Object System.Xml.XmlDocument
+            $file = Resolve-Path 'C:\Users\auditor\SEC557Labs\Lab1.2\nmapScan.xml'
+            $xScan.load($file)
+
             $true | Should -beTrue
         }
+        #Check that the 81 CSV files are in the VulnScanResults subdirectory
+        #Use Get-ChildItem on that full directory path and count the results
         It 'Vulnerabilty scan directory has 81 CSV files'{
+            $true | Should -beTrue
+        }
+        #Ingest the CSVs and make sure that the correct number of
+        #Nessus results are there
+        It 'Vulnerabilty scans have 29834 results'{
             $true | Should -beTrue
         }
     }
