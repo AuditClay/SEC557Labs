@@ -107,6 +107,8 @@ Describe 'Tests for Win10 VM' {
             $xScan = New-Object System.Xml.XmlDocument
             $file = Resolve-Path 'C:\Users\auditor\SEC557Labs\Lab1.2\nmapScan.xml'
             $xScan.load($file)
+            ($xScan.SelectNodes("/nmaprun/host/ports/port") |  
+                select portid -ExpandProperty state | Where-Object state -eq open).count
 
             $true | Should -beFalse
         }
