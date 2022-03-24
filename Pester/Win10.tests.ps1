@@ -78,7 +78,7 @@ Describe 'Tests for Win10 VM' {
             (Get-LocalUser).count | Should -be 6
         }
         It 'Get-LocalUser returns 2 enabled users' {
-            $true | Should -beFalse
+             (Get-LocalUser |  Where-Object Enabled -eq $true).count | Should -be 2
         }
 
 
