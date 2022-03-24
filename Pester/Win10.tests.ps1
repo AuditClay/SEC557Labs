@@ -232,7 +232,7 @@ Describe 'Tests for Win10 VM' {
         }
         AfterAll {
             Remove-Item C:\users\auditor\SEC557Labs\Lab3.2\localSecPolicy.txt
-            #Pop-Location
+            Pop-Location
         }
         #Use Get-Module to check the version of the Pester module
         It 'Pester is at least version 5'{
@@ -287,7 +287,7 @@ Describe 'Tests for Win10 VM' {
             ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
                 Should -Be 1
         }
-
+        #More tests will be needed for part 3 and following
     }
     Context 'Lab3.3'{
         It 'Test Name'{
