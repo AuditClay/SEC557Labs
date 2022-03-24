@@ -232,7 +232,7 @@ Describe 'Tests for Win10 VM' {
         }
         AfterAll {
             Remove-Item C:\users\auditor\SEC557Labs\Lab3.2\localSecPolicy.txt
-            Pop-Location
+            #Pop-Location
         }
         #Use Get-Module to check the version of the Pester module
         It 'Pester is at least version 5'{
