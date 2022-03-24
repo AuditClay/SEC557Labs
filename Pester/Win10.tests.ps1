@@ -1,3 +1,4 @@
+#Requires -RunAsAdministrator
 Describe 'Tests for Win10 VM' {
     Context 'General Setup' {
         #Check that DNS resolution is happening quickly
@@ -258,6 +259,9 @@ Describe 'Tests for Win10 VM' {
         It 'LSA RestrictAnonymous is 0' {
             $true | Should -beFalse
         }
+        #Students are asked to use secedit as an admin
+        #TODO: Should we run the tests in an elevated PowerShell?
+
     }
     Context 'Lab3.3'{
         It 'Test Name'{
