@@ -99,7 +99,7 @@ Describe 'Tests for Win10 VM' {
         #Use Test-Path to ensure that the XML file for the NMAP
         #scan exists
         It 'nmapScan.xml exits'{
-            $true | Should -beFalse
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab1.2\nmapScan.xml -Pathtype Leaf | Should -beTrue
         }
         #Check that the NMAP XML file has correct results in it
         #TODO: Finish this test
