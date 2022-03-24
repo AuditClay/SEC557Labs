@@ -13,7 +13,11 @@ Describe 'Tests for Win10 VM' {
             $elapsed = New-TimeSpan -Start $startTime -End $endTime
             $elapsed.totalSeconds | Should -BeLessThan 5
         }
-        
+        #Use test-net connection to verify that TCP port 2003 
+        #is reachable on ubuntu host
+        It 'Graphite service is reachable on Ubuntu' {
+            $true | Should -beFalse
+        }
     }
     #Check versions for installed software
     Context 'Software Versions'{
@@ -150,12 +154,43 @@ Describe 'Tests for Win10 VM' {
                 Should -BeGreaterThan 0
         }
     }
+    #This lab rehashes some of the commands from the previous lab,
+    #but it needs the secrets modules, so test that they are installed
+    #and working
     Context 'Lab2.3'{
-        It 'Test Name'{
+        #Load the modules so we can test them
+        BeforeAll {
+            Import-Module Microsoft.PowerShell.SecretManagement
+            Import-Module Microsoft.PowerShell.SecretStore
+        }
+        #Use Get-Command to make sure that Get-Secret is included 
+        #in the SecretManagement module
+        It 'SecretManagement module contains Get-Secret command'{
             $true | Should -beFalse
-        }    }
+        }
+        #Use Get-Command to make sure that  Get-SecretStoreConfiguration is included 
+        #in the SecretStore module  
+        It 'SecretStore module contains Get-SecretStoreConfiguration command'{
+            $true | Should -beFalse
+        }    
+    }
+    #Students manually configure a scheduled task in this lab
+    #We'll just check to see that the correct files all exist
+    #using the Test-path command and full file paths
     Context 'Lab2.4'{
-        It 'Test Name'{
+        It 'AutomationFunctions.ps1 exists in lab directory'{
+            $true | Should -beFalse
+        }
+        It 'GithubIssues.ps1 exists in lab directory'{
+            $true | Should -beFalse
+        }
+        It 'Run-GithubIssues.ps1 exists in lab directory'{
+            $true | Should -beFalse
+        }
+        It 'GithubIssues.xml exists in lab directory'{
+            $true | Should -beFalse
+        }
+        It 'issues.json exists in lab directory'{
             $true | Should -beFalse
         }
     }
