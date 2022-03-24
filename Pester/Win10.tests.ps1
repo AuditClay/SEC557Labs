@@ -141,12 +141,12 @@ Describe 'Tests for Win10 VM' {
                 Should -Not -BeNullOrEmpty
         }
         #Make sure that the student MTTR calculation returns a number > 0
-        It 'MTTR returns calculation resturns a positive result' {
-            $issues | 
+        It 'MTTR returns calculation returns a positive result' {
+            ($issues | 
                 Select-Object @{n='TimeToResolve'; `
                     e={(New-TimeSpan -Start (Get-Date -date $_.created_at) `
                     -End ($_.closed_at)).TotalDays} } |  
-                Measure-Object -Property TimeToResolve -Average | 
+                Measure-Object -Property TimeToResolve -Average).Average | 
                 Should -BeGreaterThan 0
         }
     }
