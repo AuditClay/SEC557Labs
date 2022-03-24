@@ -107,10 +107,10 @@ Describe 'Tests for Win10 VM' {
             $xScan = New-Object System.Xml.XmlDocument
             $file = Resolve-Path 'C:\Users\auditor\SEC557Labs\Lab1.2\nmapScan.xml'
             $xScan.load($file)
-            ($xScan.SelectNodes("/nmaprun/host/ports/port") |  
+            $cnt = ($xScan.SelectNodes("/nmaprun/host/ports/port") |  
                 select portid -ExpandProperty state | Where-Object state -eq open).count
 
-            $true | Should -beFalse
+            $cnt | Should -be 59
         }
         #Check that the 81 CSV files are in the VulnScanResults subdirectory
         #Use Get-ChildItem on that full directory path and count the results
