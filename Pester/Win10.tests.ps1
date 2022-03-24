@@ -215,11 +215,13 @@ Describe 'Tests for Win10 VM' {
             Remove-Item patchAge.csv
             Pop-Location
         }
-        It 'Get-patchData.ps1 script exists'{
+        It 'GetpatchData.ps1 script exists'{
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.1\GetPatchData.ps1 -Pathtype Leaf | Should -beTrue
             $true | Should -beFalse
         }
         It 'patchAge.csv contains 36600 records'{
-            $true | Should -beFalse
+            $scanResults = Get-childitem $patchAgeData 
+            $scanResults.count | should -be 36600
         }
         It 'patches.csv has 12840 records' {
             $true | Should -beFalse
