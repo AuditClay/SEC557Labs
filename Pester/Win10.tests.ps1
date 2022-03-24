@@ -282,6 +282,11 @@ Describe 'Tests for Win10 VM' {
             $groupNames | Should -Contain 'Administrators'
             $groupNames | Should -Contain 'Backup Operators'
         }
+        It 'InstalledSoftware.ps1 shows Firefox' {
+            $programNames = (C:\users\auditor\SEC557Labs\Lab3.2\InstalledSoftware.ps1)
+            ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
+                Should -Be 1
+        }
 
     }
     Context 'Lab3.3'{
