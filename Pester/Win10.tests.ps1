@@ -115,7 +115,7 @@ Describe 'Tests for Win10 VM' {
         #Check that the 81 CSV files are in the VulnScanResults subdirectory
         #Use Get-ChildItem on that full directory path and count the results
         It 'Vulnerabilty scan directory has 81 CSV files'{
-            $true | Should -beFalse
+            (get-childitem -path C:\Users\auditor\SEC557Labs\Lab1.2\VulnScanResults\*.csv).count | should -be 81
         }
         #Ingest the CSVs and make sure that the correct number of
         #Nessus results are there
