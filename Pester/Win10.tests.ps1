@@ -31,6 +31,11 @@ Describe 'Tests for Win10 VM' {
         It 'SoapUI as the correct version'{
             ($softwareVersions | Where-Object name -like 'SoapUI*').Version | Should -Be '5.6.0'
         }
+        #use 'jq.exe -V' to check version of jq.exe
+        #current version is 'jq-1.6'
+        It 'jq.exe is correct version' {
+            $true | Should -beFalse
+        }
         #Check that we got results from OSQuery
         It 'OSqueryi returns results' {
             $softwareVersions.Count | Should -beGreaterThan 0
@@ -90,6 +95,7 @@ Describe 'Tests for Win10 VM' {
             $true | Should -beFalse
         }
         #Check that the NMAP XML file has correct results in it
+        #TODO: Finish this test
         It 'NMAP scan has 59 open ports'{
             $xScan = New-Object System.Xml.XmlDocument
             $file = Resolve-Path 'C:\Users\auditor\SEC557Labs\Lab1.2\nmapScan.xml'
@@ -117,7 +123,32 @@ Describe 'Tests for Win10 VM' {
             $result | Should -Be 'one dollar'
         }
     }
+
     Context 'Lab2.2'{
+        #Get 100 Github closed issues into a variable for testing
+        BeforeAll {
+            $uri = "https://api.github.com/repos/PowerShell/PowerShell/issues?per_page=10`&state=closed"
+            $issueResponse = Invoke-WebRequest -Uri $uri
+            $issueContent = $issueResponse.Content
+            $issues = Invoke-RestMethod -Method Get -Uri $uri
+        }
+        It 'Github issues API returns 10 results' {
+            $issues.Count | Should -Be 10
+        }
+        #Make sure that the student MTTR calculation returns a number > 0
+        It 'MTTR returns calculation resturns a positive result' {
+            $issues | 
+                Select-Object @{n='TimeToResolve'; `
+                    e={(New-TimeSpan -Start (Get-Date -date $_.created_at) `
+                    -End ($_.closed_at)).TotalDays} } |  
+                Measure-Object -Property TimeToResolve -Average | 
+                Should -BeGreaterThan 0
+        }
+        #Run a command with jq to make sure it processes okay
+        It 'jq parses issue title'{
+            $issueContent | jq '.[0].created_at' |
+                Should -Not -BeNullOrEmpty
+        }
         It 'Test Name'{
             $true | Should -beFalse
         }
