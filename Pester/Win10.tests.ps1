@@ -87,7 +87,7 @@ Describe 'Tests for Win10 VM' {
         #Use Test-Path to ensure that the XML file for the books
         #database exists
         It 'Books.xml exists' {
-            $true | Should -beFalse
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab1.2\books.xml -Pathtype Leaf | Should -beTrue
         }
         #Check that the file contains the correct data
         It 'Books catalog contains 12 books' {
