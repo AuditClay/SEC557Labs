@@ -189,16 +189,16 @@ Describe 'Tests for Win10 VM' {
             
         }
         It 'GithubIssues.ps1 exists in lab directory'{
-            $true | Should -beFalse
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab2.4\GithubIssues.ps1 -Pathtype Leaf | Should -beTrue
         }
         It 'Run-GithubIssues.ps1 exists in lab directory'{
-            $true | Should -beFalse
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab2.4\Run-GithubIssues.ps1 -Pathtype Leaf | Should -beTrue
         }
         It 'GithubIssues.xml exists in lab directory'{
-            $true | Should -beFalse
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab2.4\GithubIssues.xml -Pathtype Leaf | Should -beTrue
         }
         It 'issues.json exists in lab directory'{
-            $true | Should -beFalse
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab2.4\issues.json -Pathtype Leaf | Should -beTrue
         }
     }
     Context 'Lab3.1'{
