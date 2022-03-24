@@ -185,7 +185,8 @@ Describe 'Tests for Win10 VM' {
     #using the Test-path command and full file paths
     Context 'Lab2.4'{
         It 'AutomationFunctions.ps1 exists in lab directory'{
-            $true | Should -beFalse
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab2.4\AutomationFunctions.ps1 -Pathtype Leaf | Should -beTrue
+            
         }
         It 'GithubIssues.ps1 exists in lab directory'{
             $true | Should -beFalse
