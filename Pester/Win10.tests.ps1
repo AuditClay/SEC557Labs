@@ -172,7 +172,7 @@ Describe 'Tests for Win10 VM' {
         #Use Get-Command to make sure that Get-Secret is included 
         #in the SecretManagement module
         It 'SecretManagement module contains Get-Secret command'{
-            $true | Should -beFalse
+            (get-command -module Microsoft.PowerShell.SecretManagement).Name |should -contain 'Get-secret'
         }
         #Use Get-Command to make sure that  Get-SecretStoreConfiguration is included 
         #in the SecretStore module  
