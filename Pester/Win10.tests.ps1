@@ -220,8 +220,7 @@ Describe 'Tests for Win10 VM' {
             $true | Should -beFalse
         }
         It 'patchAge.csv contains 36600 records'{
-            $scanResults = Get-childitem $patchAgeData 
-            $scanResults.count | should -be 36600
+            $patchAgeData.count | should -be 36600
         }
         It 'patches.csv has 12840 records' {
             $true | Should -beFalse
