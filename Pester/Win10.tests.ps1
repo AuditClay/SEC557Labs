@@ -223,7 +223,7 @@ Describe 'Tests for Win10 VM' {
             $patchAgeData.count | should -be 36600
         }
         It 'patches.csv has 12840 records' {
-            $true | Should -beFalse
+            $patchData.count | should -be 12840
         }
         It 'patchAge.csv contains 100 servers' {
             $servers = $patchdata | Select-Object Source -Unique
