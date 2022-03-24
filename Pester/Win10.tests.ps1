@@ -177,7 +177,7 @@ Describe 'Tests for Win10 VM' {
         #Use Get-Command to make sure that  Get-SecretStoreConfiguration is included 
         #in the SecretStore module  
         It 'SecretStore module contains Get-SecretStoreConfiguration command'{
-            $true | Should -beFalse
+            (get-command -module Microsoft.PowerShell.SecretStore).Name |should -contain 'Get-SecretStoreConfiguration'
         }    
     }
     #Students manually configure a scheduled task in this lab
