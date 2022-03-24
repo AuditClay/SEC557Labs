@@ -223,7 +223,39 @@ Describe 'Tests for Win10 VM' {
         }
     }
     Context 'Lab3.2'{
-        It 'Test Name'{
+        #Use Get-Module to check the version of the Pester module
+        It 'Pester is at least version 5'{
+            $true | Should -beFalse
+        }
+        #Verify that user testing results will match the lab
+        It 'Local administrator account is disabled' {
+            $true | Should -beFalse
+        }
+        It 'Local guest account is disabled' {
+            $true | Should -beFalse
+        }
+        It 'Local administrator group has 2 members' {
+            $true | Should -beFalse
+        }
+        #Verify OSQueryd results will match lab
+        It 'OSQueryd is installed' {
+            $true | Should -beFalse
+        }
+        It 'OSQueryd is running' {
+            $true | Should -beFalse
+        }
+        It 'OSQueryd is has automatic startup' {
+            $true | Should -beFalse
+        }
+        #Validate that the registry tests done by the student 
+        #will return correct results
+        It 'LSA LimitBlankPasswordUse is 1' {
+            $true | Should -beFalse
+        }
+        It 'LSA NoLMHash is 1' {
+            $true | Should -beFalse
+        }
+        It 'LSA RestrictAnonymous is 0' {
             $true | Should -beFalse
         }
     }
