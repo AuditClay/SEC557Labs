@@ -120,7 +120,8 @@ Describe 'Tests for Win10 VM' {
         #Ingest the CSVs and make sure that the correct number of
         #Nessus results are there
         It 'Vulnerabilty scans have 29834 results'{
-            $true | Should -beFalse
+            $scanResults = Import-Csv -path (Get-childitem C:\Users\auditor\SEC557Labs\Lab1.2\VulnScanResults\*.csv ) 
+            $scanResults.count | should -be 29834
         }
     }
 
