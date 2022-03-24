@@ -279,8 +279,8 @@ Describe 'Tests for Win10 VM' {
             $backupUsers = ($localPolicy | Select-String "SeBackupPrivilege" -NoEmphasis) `
                 -Replace 'SeBackupPrivilege = ', '' -Split "," -replace '\*', ''
             $groupNames=($backupUsers | foreach { Get-LocalGroup | Where-Object Sid -eq $_ }).Name
-            $groupName | Should -Contain 'Administrators'
-            $groupName | Should -Contain 'Backup Operators'
+            $groupNames | Should -Contain 'Administrators'
+            $groupNames | Should -Contain 'Backup Operators'
         }
 
     }
