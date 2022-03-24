@@ -65,7 +65,9 @@ Describe 'Tests for Win10 VM' {
                 Should -Be 200
         }
         It 'Fleet is reachable' {
-            $true | Should -beFalse
+            $uri = 'https://fleet.sec557.local:8443'
+            (Invoke-WebRequest -SkipCertificateCheck -Uri $uri).StatusCode | 
+                Should -Be 200
         }
         It 'Git is on correct branch' {
             $gitStatus[0] | Should -Be 'On branch H01'
