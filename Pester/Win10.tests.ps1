@@ -195,8 +195,31 @@ Describe 'Tests for Win10 VM' {
         }
     }
     Context 'Lab3.1'{
-        It 'Test Name'{
+        #Run the script to create the student data files
+        #Using Push- and Pop-Location so that the file will be created in the right place
+        BeforeAll{
+            Push-Location C:\Users\auditor\SEC557Labs\Lab3.1\
+            .\GetPatchData.ps1
+            $patchAgeData = Import-Csv .\patchAge.csv
+            $patchdata = Import-Csv .\patches.csv
+        }
+        AfterAll{
+            Remove-Item patches.csv
+            Remove-Item patchAge.csv
+            Pop-Location
+        }
+        It 'Get-patchData.ps1 script exists'{
             $true | Should -beFalse
+        }
+        It 'patchAge.csv contains 36600 records'{
+            $true | Should -beFalse
+        }
+        It 'patches.csv has 12840 records' {
+            $true | Should -beFalse
+        }
+        It 'patchAge.csv contains 100 servers' {
+            $servers = $patchdata | Select-Object Source -Unique
+            $servers.Count | Should -Be 100
         }
     }
     Context 'Lab3.2'{
