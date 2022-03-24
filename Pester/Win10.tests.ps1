@@ -135,6 +135,11 @@ Describe 'Tests for Win10 VM' {
         It 'Github issues API returns 10 results' {
             $issues.Count | Should -Be 10
         }
+        #Run a command with jq to make sure it processes okay
+        It 'jq parses issue title'{
+            $issueContent | jq '.[0].created_at' |
+                Should -Not -BeNullOrEmpty
+        }
         #Make sure that the student MTTR calculation returns a number > 0
         It 'MTTR returns calculation resturns a positive result' {
             $issues | 
@@ -143,14 +148,6 @@ Describe 'Tests for Win10 VM' {
                     -End ($_.closed_at)).TotalDays} } |  
                 Measure-Object -Property TimeToResolve -Average | 
                 Should -BeGreaterThan 0
-        }
-        #Run a command with jq to make sure it processes okay
-        It 'jq parses issue title'{
-            $issueContent | jq '.[0].created_at' |
-                Should -Not -BeNullOrEmpty
-        }
-        It 'Test Name'{
-            $true | Should -beFalse
         }
     }
     Context 'Lab2.3'{
