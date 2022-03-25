@@ -234,11 +234,11 @@ Describe 'Tests for Win10 VM' {
         #Students are asked to use secedit to export local security policy
         BeforeAll {
             Push-Location C:\users\auditor\SEC557Labs\Lab3.2\
-            SecEdit.exe /export /cfg localSecPolicy.txt
-            $localPolicy = Get-Content .\localSecPolicy.txt
+            SecEdit.exe /export /cfg localSecPolicyPester.txt
+            $localPolicy = Get-Content .\localSecPolicyPester.txt
         }
         AfterAll {
-            Remove-Item C:\users\auditor\SEC557Labs\Lab3.2\localSecPolicy.txt
+            Remove-Item C:\users\auditor\SEC557Labs\Lab3.2\localSecPolicyPester.txt
             Pop-Location
         }
         #Use Get-Module to check the version of the Pester module
