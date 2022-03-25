@@ -1,5 +1,11 @@
 #Requires -RunAsAdministrator
 Describe 'Tests for Win10 VM' {
+    BeforeAll {
+        $password = ConvertTo-SecureString "Password1" -AsPlainText -Force
+        $auditorCred = New-Object System.Management.Automation.PSCredential ("auditor", $password)
+        $password = ConvertTo-SecureString "Password1!" -AsPlainText -Force
+        $esxiCred = New-Object System.Management.Automation.PSCredential ("auditor", $password)
+    }
     Context 'General Setup' {
         #Check that DNS resolution is happening quickly
         BeforeAll {
@@ -307,12 +313,35 @@ Describe 'Tests for Win10 VM' {
         It 'PesterIntro.tests.ps1 has 2 failed tests' {
             $true | Should -beFalse
         }
+        #verify that C:\tools\extent.exe exists on the VM
         It 'ExtentReport is installed' {
             $true | Should -beFalse
         }
     }
     Context 'Lab3.3'{
-        It 'Test Name'{
+        BeforeAll{
+            Import-Module ActiveDirectory
+            $ServerPort = "10.50.7.10:389"
+            New-PSDrive -name "ADAudit" -PSProvider ActiveDirectory -Root "" `
+                -Server $ServerPort -Credential $auditorCred
+            Push-Location ADAudit:
+            $InactiveDays = 120
+        }
+        AfterAll {
+            Pop-Location
+            Remove-PSDrive -name "ADAudit"
+        }
+        It 'AD NetBIOS name is AUD507'{
+            $NetBIOSName = (Get-ADDomain | Select-Object NetBIOSName).NetBIOSName
+            $NetBIOSName | Should -Be 'AUD507'
+        }
+        It 'AD DNSRoot name is AUD507.local'{
+            $true | Should -beFalse
+        }
+        It 'AD Forest name is AUD507'{
+            $true | Should -beFalse
+        }
+        It 'AD functional level is  Windows2016Domain'{
             $true | Should -beFalse
         }
     }
