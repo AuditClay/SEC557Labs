@@ -282,7 +282,7 @@ Describe 'Tests for Win10 VM' {
                 -Replace 'MinimumPasswordAge = ', ''
             $MinPwdAge | Should -Be '0'
         }
-        It 'BackupPrivilege Contains Administrators and backup Operators Groups'{
+        It 'BackupPrivilege Contains Administrators and backup Operators Groups' {
             $backupUsers = ($localPolicy | Select-String "SeBackupPrivilege" -NoEmphasis) `
                 -Replace 'SeBackupPrivilege = ', '' -Split "," -replace '\*', ''
             $groupNames=($backupUsers | foreach { Get-LocalGroup | Where-Object Sid -eq $_ }).Name
@@ -294,7 +294,22 @@ Describe 'Tests for Win10 VM' {
             ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
                 Should -Be 1
         }
-        #More tests will be needed for part 3 and following
+        It 'Windows.Tests.ps1 has 7 passed tests' {
+            $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
+            $pesterResult.FailedCount | Should -Be 7
+        }
+        It 'Windows.Tests.ps1 has 2 failed tests' {
+            $true | Should -beFalse
+        }
+        It 'PesterIntro.tests.ps1 has 10 passed tests' {
+            $true | Should -beFalse
+        }
+        It 'PesterIntro.tests.ps1 has 2 failed tests' {
+            $true | Should -beFalse
+        }
+        It 'ExtentReport is installed' {
+            $true | Should -beFalse
+        }
     }
     Context 'Lab3.3'{
         It 'Test Name'{
