@@ -356,6 +356,24 @@ Describe 'Tests for Win10 VM' {
             $TotalUsers = (Get-ADUser -filter * | Measure-Object).Count
             $TotalUsers | Should -be 989
         }
+        It 'Stale password users count should be 977' {
+            $true | Should -beFalse
+        }
+        It 'Inactive users count should be 977' {
+            $true | Should -beFalse
+        }
+        #We'll pad a bit on this one, since the auditor user may show up as active
+        #Most of the time, the result should be zero
+        It 'Active users count should be less than 2' {
+            $true | Should -beFalse
+        }
+        It 'Password never expires users count should be less than 2' {
+            $true | Should -beFalse
+        }
+        It 'Password not required users count should be less than 2' {
+            $true | Should -beFalse
+        }
+        
     }
     Context 'Lab3.4'{
         It 'Test Name'{
