@@ -296,7 +296,7 @@ Describe 'Tests for Win10 VM' {
         }
         It 'Windows.Tests.ps1 has 7 passed tests' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
-            $pesterResult.FailedCount | Should -Be 7
+            $pesterResult.PassedCount | Should -Be 7
         }
         It 'Windows.Tests.ps1 has 2 failed tests' {
             $true | Should -beFalse
