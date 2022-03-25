@@ -344,6 +344,18 @@ Describe 'Tests for Win10 VM' {
         It 'AD functional level is  Windows2016Domain'{
             $true | Should -beFalse
         }
+        It 'AD active users count should be 977' {
+            $EnabledUsers = (Get-ADUser -Filter 'enabled -eq $true' | Measure-Object).Count
+            $EnabledUsers | Should -Be 977
+        }
+        It 'AD disabled users count should be 12' {
+            $DisabledUsers = (Get-ADUser -Filter 'enabled -eq $false').Count
+            $DisabledUsers | Should -Be 12
+        }
+        It 'AD total users count should be 989' {
+            $TotalUsers = (Get-ADUser -filter * | Measure-Object).Count
+            $TotalUsers | Should -be 989
+        }
     }
     Context 'Lab3.4'{
         It 'Test Name'{
