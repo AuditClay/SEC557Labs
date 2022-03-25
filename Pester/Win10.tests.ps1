@@ -56,7 +56,7 @@ Describe 'Tests for Win10 VM' {
         }
         It 'WSL netcat is installed' {
             $res = wsl nc -h 2>&1
-            $res[0] | Should -BeLike 'netcat'
+            $res[0] | Should -BeLike '*netcat*'
         }
     }
     Context 'Lab0'{
