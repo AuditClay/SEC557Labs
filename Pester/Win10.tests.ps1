@@ -54,6 +54,10 @@ Describe 'Tests for Win10 VM' {
         It 'OSqueryd service is running' {
             $true | Should -beFalse
         }
+        It 'WSL netcat is installed' {
+            $res = wsl nc -h 2>&1
+            $res[0] | Should -BeLike 'netcat'
+        }
     }
     Context 'Lab0'{
         BeforeAll {
@@ -371,6 +375,15 @@ Describe 'Tests for Win10 VM' {
             $true | Should -beFalse
         }
         It 'Password not required users count should be less than 2' {
+            $true | Should -beFalse
+        }
+        It 'Domain admin count is 70' {
+            $true | Should -beFalse
+        }
+        It 'Schema admin count is 70' {
+            $true | Should -beFalse
+        }
+        It 'ADDemographics.ps1 script exists' {
             $true | Should -beFalse
         }
         
