@@ -272,7 +272,7 @@ Describe 'Tests for Win10 VM' {
             (Get-Service -name 'osqueryd').status | should -be 'running' 
         }
         It 'OSQueryd is has automatic startup' {
-            (Get-Service -name 'osqueryd').startType | should -be 'automatic*'
+            (Get-Service -name 'osqueryd').startType | should -be 'automatic'
         }
         #Validate that the registry tests done by the student 
         #will return correct results
