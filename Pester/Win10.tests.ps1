@@ -256,7 +256,7 @@ Describe 'Tests for Win10 VM' {
         }
         #Verify that user testing results will match the lab
         It 'Local administrator account is disabled' {
-            (Get-LocalUser -Name Administrator).Enabled | Should -beFalse
+            (Get-LocalUser -Name Administrator).Enabled | should -beFalse
         }
         It 'Local guest account is disabled' {
             (Get-LocalUser -Name guest).Enabled | Should -beFalse
@@ -266,7 +266,7 @@ Describe 'Tests for Win10 VM' {
         }
         #Verify OSQueryd results will match lab
         It 'OSQueryd is installed' {
-            $true | Should -beFalse
+            Get-Service -Name | should -contain 'osqueryd'
         }
         It 'OSQueryd is running' {
             $true | Should -beFalse
