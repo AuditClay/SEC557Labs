@@ -282,11 +282,11 @@ Describe 'Tests for Win10 VM' {
         }
         It 'LSA NoLMHash is 1' {
             $lsa = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa")
-            ($lsa.LimitBlankPasswordUse).NoLMHash | should -be 1
+            ($lsa.NoLMHash).count | should -be 1
         }
         It 'LSA RestrictAnonymous is 0' {
             $lsa = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa")
-            ($lsa.LimitBlankPasswordUse).RestrictAnonymous | should -be 0
+            ($lsa.RestrictAnonymous).count | should -be 0
         }
         It 'Minimum Password Age is 0' {
             #Find the MinimumPasswordAge setting in the text file
