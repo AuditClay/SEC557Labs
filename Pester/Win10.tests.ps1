@@ -256,7 +256,7 @@ Describe 'Tests for Win10 VM' {
         }
         #Verify that user testing results will match the lab
         It 'Local administrator account is disabled' {
-            $true | Should -beFalse
+            (Get-LocalUser -Name Administrator).Enabled | Should -beFalse
         }
         It 'Local guest account is disabled' {
             $true | Should -beFalse
