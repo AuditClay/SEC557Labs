@@ -227,7 +227,6 @@ Describe 'Tests for Win10 VM' {
         }
         It 'GetpatchData.ps1 script exists'{
             Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.1\GetPatchData.ps1 -Pathtype Leaf | Should -beTrue
-            $true | Should -beFalse
         }
         It 'patchAge.csv contains 36600 records'{
             $patchAgeData.count | should -be 36600
@@ -253,7 +252,7 @@ Describe 'Tests for Win10 VM' {
         }
         #Use Get-Module to check the version of the Pester module
         It 'Pester is at least version 5'{
-            $true | Should -beFalse
+            (Get-Module -ListAvailable Pester).version.major |should -contain 5
         }
         #Verify that user testing results will match the lab
         It 'Local administrator account is disabled' {
