@@ -262,7 +262,7 @@ Describe 'Tests for Win10 VM' {
             (Get-LocalUser -Name guest).Enabled | Should -beFalse
         }
         It 'Local administrator group has 2 members' {
-            $true | Should -beFalse
+            (Get-LocalGroupMember -Name Administrators | Measure-Object).Count | Should -be 2
         }
         #Verify OSQueryd results will match lab
         It 'OSQueryd is installed' {
