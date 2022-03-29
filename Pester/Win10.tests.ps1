@@ -277,7 +277,8 @@ Describe 'Tests for Win10 VM' {
         #Validate that the registry tests done by the student 
         #will return correct results
         It 'LSA LimitBlankPasswordUse is 1' {
-            $true | Should -beFalse
+            $lsa = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa")
+            ($lsa.LimitBlankPasswordUse).count | should -be 1
         }
         It 'LSA NoLMHash is 1' {
             $true | Should -beFalse
