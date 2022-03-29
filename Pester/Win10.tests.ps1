@@ -285,7 +285,8 @@ Describe 'Tests for Win10 VM' {
             ($lsa.LimitBlankPasswordUse).NoLMHash | should -be 1
         }
         It 'LSA RestrictAnonymous is 0' {
-            $true | Should -beFalse
+            $lsa = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa")
+            ($lsa.LimitBlankPasswordUse).RestrictAnonymous | should -be 0
         }
         It 'Minimum Password Age is 0' {
             #Find the MinimumPasswordAge setting in the text file
