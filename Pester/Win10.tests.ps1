@@ -269,7 +269,7 @@ Describe 'Tests for Win10 VM' {
             (Get-Service).name | should -contain 'osqueryd'
         }
         It 'OSQueryd is running' {
-            $true | Should -beFalse
+            (Get-Service -name 'osqueryd').status | should -be 'running' 
         }
         It 'OSQueryd is has automatic startup' {
             $true | Should -beFalse
