@@ -266,7 +266,7 @@ Describe 'Tests for Win10 VM' {
         }
         #Verify OSQueryd results will match lab
         It 'OSQueryd is installed' {
-            Get-Service | should -contain 'osqueryd'
+            (Get-Service).name | should -contain 'osqueryd'
         }
         It 'OSQueryd is running' {
             $true | Should -beFalse
