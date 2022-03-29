@@ -259,7 +259,7 @@ Describe 'Tests for Win10 VM' {
             (Get-LocalUser -Name Administrator).Enabled | Should -beFalse
         }
         It 'Local guest account is disabled' {
-            $true | Should -beFalse
+            (Get-LocalUser -Name guest).Enabled | Should -beFalse
         }
         It 'Local administrator group has 2 members' {
             $true | Should -beFalse
