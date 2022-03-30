@@ -316,11 +316,12 @@ Describe 'Tests for Win10 VM' {
         }
         It 'PesterIntro.tests.ps1 has 10 passed tests' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
-            $pesterResult.PassedCount | Should -Be 10
+            $pesterResult.failedCount | Should -Be 10
             
         }
         It 'PesterIntro.tests.ps1 has 2 failed tests' {
-            $true | Should -beFalse
+            $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
+            $pesterResult.PassedCount | Should -Be 2
         }
         #verify that C:\tools\extent.exe exists on the VM
         It 'ExtentReport is installed' {
