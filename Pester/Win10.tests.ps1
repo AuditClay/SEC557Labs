@@ -333,7 +333,6 @@ Describe 'Tests for Win10 VM' {
     }
     Context 'Lab3.3'{
         BeforeAll{
-            Set-Location C:\Users\auditor\SEC557Labs\Lab3.3\
             Import-Module ActiveDirectory
             $ServerPort = "10.50.7.10:389"
             New-PSDrive -name "ADAudit" -PSProvider ActiveDirectory -Root "" `
