@@ -349,7 +349,8 @@ Describe 'Tests for Win10 VM' {
             $NetBIOSName | Should -Be 'AUD507'
         }
         It 'AD DNSRoot name is AUD507.local'{
-            $true | Should -beFalse
+            $NetBIOSRoot = (Get-ADDomain | Select-Object DNSRoot).DNSRoot
+            $NetBIOSRoot | Should -Be 'AUD507.local'
         }
         It 'AD Forest name is AUD507'{
             $true | Should -beFalse
