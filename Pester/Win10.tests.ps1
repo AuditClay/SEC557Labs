@@ -307,6 +307,7 @@ Describe 'Tests for Win10 VM' {
             ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
                 Should -Be 1
         }
+<#
         It 'Windows.Tests.ps1 has 7 passed tests' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
             $pesterResult.PassedCount | Should -Be 7
@@ -324,6 +325,7 @@ Describe 'Tests for Win10 VM' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
             $pesterResult.failedCount | Should -Be 2
         }
+#>
         #verify that C:\tools\extent.exe exists on the VM
         It 'ExtentReport is installed' {
             Test-Path -path C:\tools\extent.exe -Pathtype Leaf | Should -beTrue
