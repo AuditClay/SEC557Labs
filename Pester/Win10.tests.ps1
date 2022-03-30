@@ -1,5 +1,6 @@
 #Requires -RunAsAdministrator
 Describe 'Tests for Win10 VM' {
+<#
     BeforeAll {
         $password = ConvertTo-SecureString "Password1" -AsPlainText -Force
         $auditorCred = New-Object System.Management.Automation.PSCredential ("auditor", $password)
@@ -239,6 +240,7 @@ Describe 'Tests for Win10 VM' {
             $servers.Count | Should -Be 100
         }
     }
+    #>
     Context 'Lab3.2'{
         #Students are asked to use secedit to export local security policy
         BeforeAll {
@@ -328,6 +330,7 @@ Describe 'Tests for Win10 VM' {
             $true | Should -beFalse
         }
     }
+    <#
     Context 'Lab3.3'{
         BeforeAll{
             Import-Module ActiveDirectory
@@ -456,3 +459,4 @@ Describe 'Tests for Win10 VM' {
     }
     
 }
+#>
