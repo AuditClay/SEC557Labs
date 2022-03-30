@@ -1,6 +1,6 @@
 #Requires -RunAsAdministrator
 Describe 'Tests for Win10 VM' {
-<#
+
     BeforeAll {
         $password = ConvertTo-SecureString "Password1" -AsPlainText -Force
         $auditorCred = New-Object System.Management.Automation.PSCredential ("auditor", $password)
@@ -240,9 +240,7 @@ Describe 'Tests for Win10 VM' {
             $servers.Count | Should -Be 100
         }
     }
-    #>
     Context 'Lab3.2'{
-        <#
         #Students are asked to use secedit to export local security policy
         BeforeAll {
             Push-Location C:\users\auditor\SEC557Labs\Lab3.2\
@@ -309,7 +307,6 @@ Describe 'Tests for Win10 VM' {
             ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
                 Should -Be 1
         }
-        #>
         It 'Windows.Tests.ps1 has 7 passed tests' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
             $pesterResult.PassedCount | Should -Be 7
@@ -332,7 +329,6 @@ Describe 'Tests for Win10 VM' {
             Test-Path -path C:\tools\extent.exe -Pathtype Leaf | Should -beTrue
         }
     }
-    <#
     Context 'Lab3.3'{
         BeforeAll{
             Import-Module ActiveDirectory
@@ -461,5 +457,4 @@ Describe 'Tests for Win10 VM' {
     }
     
 }
-#>
-}
+
