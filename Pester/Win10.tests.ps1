@@ -381,7 +381,11 @@ Describe 'Tests for Win10 VM' {
             $StalePasswordUsers | Should -be 977
         }
         It 'Inactive users count should be 977' {
-            $true | Should -beFalse
+            $InactiveUsers = (Get-ADUser -Filter 'enabled -eq $true' `
+                -Properties SAMAccountName,LastLogonDate,WhenCreated,PasswordLastSet |
+                Where-Object { `
+                ($_.LastLogonDate -lt (Get-Date).AddDays( -$InactiveDays )) } ).Count
+            $InactiveUsers | should -be 977
         }
         #We'll pad a bit on this one, since the auditor user may show up as active
         #Most of the time, the result should be zero
