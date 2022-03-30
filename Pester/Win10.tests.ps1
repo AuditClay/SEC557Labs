@@ -242,6 +242,7 @@ Describe 'Tests for Win10 VM' {
     }
     #>
     Context 'Lab3.2'{
+        <#
         #Students are asked to use secedit to export local security policy
         BeforeAll {
             Push-Location C:\users\auditor\SEC557Labs\Lab3.2\
@@ -308,6 +309,7 @@ Describe 'Tests for Win10 VM' {
             ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
                 Should -Be 1
         }
+        #>
         It 'Windows.Tests.ps1 has 7 passed tests' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
             $pesterResult.PassedCount | Should -Be 7
@@ -318,12 +320,12 @@ Describe 'Tests for Win10 VM' {
         }
         It 'PesterIntro.tests.ps1 has 10 passed tests' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
-            $pesterResult.failedCount | Should -Be 10
+            $pesterResult.passedCount | Should -Be 10
             
         }
         It 'PesterIntro.tests.ps1 has 2 failed tests' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
-            $pesterResult.PassedCount | Should -Be 2
+            $pesterResult.failedCount | Should -Be 2
         }
         #verify that C:\tools\extent.exe exists on the VM
         It 'ExtentReport is installed' {
