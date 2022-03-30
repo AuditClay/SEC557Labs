@@ -336,7 +336,7 @@ Describe 'Tests for Win10 VM' {
             Import-Module ActiveDirectory
             $ServerPort = "10.50.7.10:389"
             New-PSDrive -name "ADAudit" -PSProvider ActiveDirectory -Root "" `
-                -Server $ServerPort -Credential $auditorCred
+                -Server $ServerPort -Credential $Credential
             Push-Location ADAudit:
             $InactiveDays = 120
         }
@@ -352,11 +352,13 @@ Describe 'Tests for Win10 VM' {
             $NetBIOSRoot = (Get-ADDomain | Select-Object DNSRoot).DNSRoot
             $NetBIOSRoot | Should -Be 'AUD507.local'
         }
-        It 'AD Forest name is AUD507'{
-            $true | Should -beFalse
+        It 'AD Forest name is AUD507.local'{
+            $forest = (Get-ADDomain | Select-Object Forest).Forest
+            $forest | Should -Be 'AUD507.local'
         }
         It 'AD functional level is  Windows2016Domain'{
-            $true | Should -beFalse
+            $ADFunctionalLevel = (Get-ADDomain | Select-Object DomainMode).DomainMode.ToString()
+            $ADFunctionalLevel | Should -Be 'Windows2016Domain'
         }
         It 'AD active users count should be 977' {
             $EnabledUsers = (Get-ADUser -Filter 'enabled -eq $true' | Measure-Object).Count
