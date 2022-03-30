@@ -329,7 +329,7 @@ Describe 'Tests for Win10 VM' {
         }
         #verify that C:\tools\extent.exe exists on the VM
         It 'ExtentReport is installed' {
-            $true | Should -beFalse
+            Test-Path -path C:\tools\extent.exe -Pathtype Leaf | Should -beTrue
         }
     }
     <#
