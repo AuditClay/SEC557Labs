@@ -336,7 +336,7 @@ Describe 'Tests for Win10 VM' {
             Import-Module ActiveDirectory
             $ServerPort = "10.50.7.10:389"
             New-PSDrive -name "ADAudit" -PSProvider ActiveDirectory -Root "" `
-                -Server $ServerPort -Credential $Credential
+                -Server $ServerPort -Credential $auditorCred
             Push-Location ADAudit:
             $InactiveDays = 120
         }
