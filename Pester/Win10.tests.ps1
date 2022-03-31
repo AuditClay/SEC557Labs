@@ -385,7 +385,7 @@ Describe 'Tests for Win10 VM' {
                 -Properties SAMAccountName,LastLogonDate,WhenCreated,PasswordLastSet |
                 Where-Object { `
                 ($_.LastLogonDate -lt (Get-Date).AddDays( -$InactiveDays )) } ).Count
-            $InactiveUsers | should -be 977
+            $InactiveUsers | should -beGreaterThan 970
         }
         #We'll pad a bit on this one, since the auditor user may show up as active
         #Most of the time, the result should be zero
