@@ -398,10 +398,14 @@ Describe 'Tests for Win10 VM' {
             $ActiveUsers | should -beLessThan 2
         }
         It 'Password never expires users count should be less than 2' {
-            $true | Should -beFalse
+            $PasswordNeverExpires = (Get-ADUser -filter `
+                {PasswordNeverExpires -eq $true -and Enabled -eq $true} ).Count
+            $PasswordNeverExpires | Should -be 8
         }
         It 'Password not required users count should be less than 2' {
-            $true | Should -beFalse
+            $PasswordNotRequired = `(Get-ADUser -Filter 'enabled -eq $true -and PasswordNotRequired -eq $true' |  
+                Measure-Object).Count
+            $PasswordNotRequired | Should -beLessThan 2
         }
         It 'Domain admin count is 70' {
             $DomainAdmins = (Get-ADGroupMember -Recursive `
