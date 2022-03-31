@@ -46,7 +46,7 @@ Describe 'Tests for Win10 VM' {
         #use 'jq.exe -V' to check version of jq.exe
         #current version is 'jq-1.6'
         It 'jq.exe is correct version' {
-            $true | Should -beFalse
+            jq.exe -V | should -be 'jq-1.6'
         }
         #Check that we got results from OSQuery
         It 'OSqueryi returns results' {
