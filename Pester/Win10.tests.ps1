@@ -419,7 +419,6 @@ Describe 'Tests for Win10 VM' {
         }
         It 'ADDemographics.ps1 script exists' {
             Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.3\ADDemographics.ps1 -Pathtype Leaf | Should -beTrue
-            $true | Should -beFalse
         }
         
     }
