@@ -390,7 +390,12 @@ Describe 'Tests for Win10 VM' {
         #We'll pad a bit on this one, since the auditor user may show up as active
         #Most of the time, the result should be zero
         It 'Active users count should be less than 2' {
-            $true | Should -beFalse
+            $ActiveUsers = (Get-ADUser -Filter 'enabled -eq $true' `
+                -Properties SAMAccountName,LastLogonDate,WhenCreated,PasswordLastSet |
+                Where-Object { ($_.LastLogonDate -gt (Get-Date).AddDays( -$InactiveDays )) `
+                -or ($_.passwordLastSet -gt (Get-Date).AddDays( -$InactiveDays )) } | 
+                Measure-Object).Count
+            $ActiveUsers | should -beLessThan 2
         }
         It 'Password never expires users count should be less than 2' {
             $true | Should -beFalse
