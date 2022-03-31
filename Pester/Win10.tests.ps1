@@ -404,7 +404,9 @@ Describe 'Tests for Win10 VM' {
             $true | Should -beFalse
         }
         It 'Domain admin count is 70' {
-            $true | Should -beFalse
+            $DomainAdmins = (Get-ADGroupMember -Recursive `
+                -Identity "Domain Admins" ).Count
+            $DomainAdmins | should -be 70
         }
         It 'Schema admin count is 70' {
             $true | Should -beFalse
