@@ -409,7 +409,9 @@ Describe 'Tests for Win10 VM' {
             $DomainAdmins | should -be 70
         }
         It 'Schema admin count is 70' {
-            $true | Should -beFalse
+            $SchemaAdmins = (Get-ADGroupMember -Recursive `
+                -Identity "Schema Admins" ).Count
+            $SchemaAdmins | should -be 70
         }
         It 'ADDemographics.ps1 script exists' {
             $true | Should -beFalse
