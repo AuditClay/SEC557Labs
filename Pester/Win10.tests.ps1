@@ -53,8 +53,7 @@ Describe 'Tests for Win10 VM' {
             $softwareVersions.Count | Should -beGreaterThan 0
         }
         It 'OSqueryd service is running' {
-            #osqueryi | should -be 'Using a virtual database.*'
-            $true | Should -beFalse
+            osqueryi | should -be 'Using a virtual database.*'
         }
         It 'WSL netcat is installed' {
             $res = wsl nc -h 2>&1
