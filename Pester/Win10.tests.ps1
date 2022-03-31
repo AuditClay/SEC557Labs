@@ -403,7 +403,7 @@ Describe 'Tests for Win10 VM' {
             $PasswordNeverExpires | Should -be 8
         }
         It 'Password not required users count should be less than 2' {
-            $PasswordNotRequired = `(Get-ADUser -Filter 'enabled -eq $true -and PasswordNotRequired -eq $true' |  
+            $PasswordNotRequired = ` (Get-ADUser -Filter 'enabled -eq $true -and PasswordNotRequired -eq $true' |  
                 Measure-Object).Count
             $PasswordNotRequired | Should -beLessThan 2
         }
