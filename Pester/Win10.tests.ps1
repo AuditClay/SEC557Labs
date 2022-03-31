@@ -397,7 +397,7 @@ Describe 'Tests for Win10 VM' {
                 Measure-Object).Count
             $ActiveUsers | should -beLessThan 2
         }
-        It 'Password never expires users count should be less than 2' {
+        It 'Password never expires users count should be 8' {
             $PasswordNeverExpires = (Get-ADUser -filter `
                 {PasswordNeverExpires -eq $true -and Enabled -eq $true} ).Count
             $PasswordNeverExpires | Should -be 8
@@ -418,6 +418,7 @@ Describe 'Tests for Win10 VM' {
             $SchemaAdmins | should -be 70
         }
         It 'ADDemographics.ps1 script exists' {
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.3\ADDemographics.ps1 -Pathtype Leaf | Should -beTrue
             $true | Should -beFalse
         }
         
