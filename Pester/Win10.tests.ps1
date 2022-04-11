@@ -372,7 +372,7 @@ Describe 'Tests for Win10 VM' {
             $TotalUsers = (Get-ADUser -filter * | Measure-Object).Count
             $TotalUsers | Should -be 989
         }
-        It 'Stale password users count should be 977' {
+        It 'Stale password users count should be > 970' {
             $StalePasswordUsers = `
                 (Get-ADUser -Filter 'enabled -eq $true' `
                 -Properties SAMAccountName,PasswordLastSet,WhenCreated | 
@@ -380,7 +380,7 @@ Describe 'Tests for Win10 VM' {
                 ($_.passwordLastSet -lt (Get-Date).AddDays( -$InactiveDays )) } ).Count
             $StalePasswordUsers | Should -be 977
         }
-        It 'Inactive users count should be 977' {
+        It 'Inactive users count should be > 970' {
             $InactiveUsers = (Get-ADUser -Filter 'enabled -eq $true' `
                 -Properties SAMAccountName,LastLogonDate,WhenCreated,PasswordLastSet |
                 Where-Object { `
