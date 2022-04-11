@@ -11,8 +11,8 @@
 
     To see the difference in speed between parallel and serial processing, compare the output of these two commands:
 
-    .\Demo-Parallel.ps1 -Verbose -NumHosts 8 -FailInterval 5
-    .\Demo-Parallel.ps1 -NumHosts 254 -ThrottleLimit 50 -FailInterval 5 -Verbose -Parallel
+    .\Demo-Parallel.ps1 -Verbose -NumHosts 5 -FailInterval 3
+    .\Demo-Parallel.ps1 -NumHosts 128 -ThrottleLimit 50 -FailInterval 5 -Verbose -Parallel
 #>
 
 #Allow for the Verbose flag to work
