@@ -423,9 +423,86 @@ Describe 'Tests for Win10 VM' {
         
     }
     Context 'Lab3.4'{
-        It 'Test Name'{
-            $true | Should -beFalse
+        #Lab prep
+        BeforeAll{
+            $password = ConvertTo-SecureString 'Password1!' -AsPlainText -Force
+            $cred = New-Object System.Management.Automation.PSCredential ('auditor', $password)
+            Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
+            Connect-VIServer -Server esxi1 -Credential $cred
         }
+        #Get back to the initial state for lab 3.4
+        AfterAll {
+            Set-PowerCLIConfiguration -scope user -InvalidCertificateAction Unset -Confirm:$false
+        }
+        
+        It 'Get-VM returns 2 results'{
+            Get-VM | Should -HaveCount 2
+        }
+
+        It 'DNS addresses for VMHost are correct' {
+            (Get-VMHost).ExtensionData.Config.Network.DNSConfig.Address | 
+                Should -Contain '8.8.8.8'
+            (Get-VMHost).ExtensionData.Config.Network.DNSConfig.Address | 
+                Should -Contain '10.50.7.253'
+        }
+
+        It 'NTP server is pool.ntp.org' {
+            $true | Should -BeFalse
+        }
+
+        It 'NTP Policy is OFF' {
+            $true | Should -BeFalse
+        }
+
+        It 'NTP Running is false' {
+            $true | Should -BeFalse
+        }
+
+        It 'NTP Required is false' {
+            $true | Should -BeFalse
+        }
+
+        It 'Patch count is 76' {
+            $true | Should -BeFalse
+        }
+
+        It 'Datastore version is > 6' {
+            $true | Should -BeFalse
+        }
+
+        It 'VMWare version is correct' {
+            $uri = "https://kb.vmware.com/services/apexrest/v1/article?docid=2143832&lang=en_us"
+            (Invoke-WebRequest -UseBasicParsing -Uri $uri).content | out-file .\page.json
+            $source = (Get-Content .\page.json | ConvertFrom-Json).Content[1].Resolution
+            #Create an HTML object
+            $html = New-Object -ComObject "HTMLFile"
+            $html.write([System.Text.Encoding]::Unicode.GetBytes($source))
+            $tables = $html.getElementsByTagName('Table')
+            $esxiVersions = @()
+
+            #Grab rows in the table (except the first one) and put them in the $esxiVersions variable
+            foreach( $row in ($tables[0].rows | Select-Object -Skip 1) ){
+            #Don't process the row at the bottom of the table with no date
+                if( $row.cells[2].innerText -match "^\d+" ){
+                    $versionResult = [PSCustomObject]@{
+                    Version = $row.cells[0].innerText
+                    Product = ($row.cells[0].innerText) -replace '(ESX[i]? [0-9]\.[0-9]).*', '$1'
+                    ReleaseName = $row.cells[1].innerText
+                    ReleaseDate = Get-Date -Date $row.cells[2].innerText
+                    Build = [int]$row.cells[3].innerText
+                    }
+                    $esxiVersions += $versionResult
+                }
+            }
+            $build = (Get-VMHost).Build
+            $myVersion = $esxiVersions | Where-Object Build -eq $build 
+            $myVersion.build | Should -Be 17867351
+        }
+
+       #TODO: Replicate the passing pester tests from the Lab3.4\Esxi.Tests.ps1 
+       #and use -not in the others to make them pass.
+       #This will save having to save the ESXi credentials jsut so the pester tests can run
+
     }
     Context 'Lab3.5'{
         It 'Test Name'{
