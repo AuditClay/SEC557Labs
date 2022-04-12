@@ -380,7 +380,7 @@ Describe 'Tests for Win10 VM' {
                 -Properties SAMAccountName,PasswordLastSet,WhenCreated | 
                 Where-Object { ($_.WhenCreated -lt (Get-Date).AddDays( -$InactiveDays )) -and `
                 ($_.passwordLastSet -lt (Get-Date).AddDays( -$InactiveDays )) } ).Count
-            $StalePasswordUsers | Should -be 977
+            $StalePasswordUsers | Should -beGreaterThan 970
         }
         It 'Inactive users count should be > 970' {
             $InactiveUsers = (Get-ADUser -Filter 'enabled -eq $true' `
@@ -430,6 +430,7 @@ Describe 'Tests for Win10 VM' {
             $password = ConvertTo-SecureString 'Password1!' -AsPlainText -Force
             $cred = New-Object System.Management.Automation.PSCredential ('auditor', $password)
             Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
+            Set-PowerCLIConfiguration -Scope User -DefaultVIServerMode Single -Confirm:$false
             Connect-VIServer -Server esxi1 -Credential $cred
         }
         #Get back to the initial state for lab 3.4
@@ -505,12 +506,11 @@ Describe 'Tests for Win10 VM' {
        #and use -not in the others to make them pass.This will save having to save 
        #the ESXi credentials in the secret vault just so the pester tests can run
 
+
+       #Inspec testing is done from the Ubuntu host and will be tested there
     }
-    Context 'Lab3.5'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
-    }
+    
+    #Lab3.5 is done from the Ubuntu host
     Context 'Lab3.6'{
         It 'Test Name'{
             $true | Should -beFalse
