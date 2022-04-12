@@ -53,7 +53,9 @@ Describe 'Tests for Win10 VM' {
             $softwareVersions.Count | Should -beGreaterThan 0
         }
         It 'OSqueryd service is running' {
-            osqueryi | should -be 'Using a virtual database.*'
+            #TODO: use get-service to see if the service is running
+            #osqueryi | should -be 'Using a virtual database.*'
+            $true | Should -BeFalse
         }
         It 'WSL netcat is installed' {
             $res = wsl nc -h 2>&1
@@ -500,8 +502,8 @@ Describe 'Tests for Win10 VM' {
         }
 
        #TODO: Replicate the passing pester tests from the Lab3.4\Esxi.Tests.ps1 
-       #and use -not in the others to make them pass.
-       #This will save having to save the ESXi credentials jsut so the pester tests can run
+       #and use -not in the others to make them pass.This will save having to save 
+       #the ESXi credentials in the secret vault just so the pester tests can run
 
     }
     Context 'Lab3.5'{
