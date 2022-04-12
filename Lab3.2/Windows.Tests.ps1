@@ -1,3 +1,4 @@
+#Requires -RunAsAdministrator
 #This demonstrates Pester by automating some the tests which students perform
 #manually earlier in the exercise. It uses Context and Describe blocks to 
 #logically organize the tests and results
