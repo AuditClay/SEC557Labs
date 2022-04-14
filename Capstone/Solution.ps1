@@ -3,7 +3,6 @@ param(
     [Switch]$GraphiteImport
 )
 
-Set-Location C:\users\auditor\SEC557Labs\Capstone\
 .\Generate-capstone.ps1
 
 # Store an epoch time for all metrics
@@ -110,7 +109,7 @@ foreach( $hostname in $hostList){
       #fail - set risk score to 100
       $riskScore[$hostname] = 100
     }
-    $outputLines += "sec557.hoststats.$metricLocation.$metricOS.$hostname.riskscore $score $epochTime"
+    #$outputLines += "sec557.hoststats.$metricLocation.$metricOS.$hostname.riskscore $score $epochTime"
 
 }
 
