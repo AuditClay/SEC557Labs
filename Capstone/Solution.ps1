@@ -48,7 +48,9 @@ foreach( $osType  in $osTypes){
     foreach( $location in $locations){
         $metricLocation = $location.ToLower() -replace " "
         $metricOS = $osType.ToLower() -replace " "
-        $count = ($HostInventory | Where-Object { ($_.Location -eq $location) -and ($_.OS -eq $osType)} ).Count
+        $count = ($HostInventory | 
+            Where-Object { ($_.Location -eq $location) `
+                -and ($_.OS -eq $osType)} ).Count
         $outputLines += "sec557.inventory.$metricLocation.$metricOS $count $epochTime"
     }
 }
