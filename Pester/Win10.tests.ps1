@@ -21,10 +21,11 @@ Describe 'Tests for Win10 VM' {
             $elapsed = New-TimeSpan -Start $startTime -End $endTime
             $elapsed.totalSeconds | Should -BeLessThan 5
         }
-        #Use test-net connection to verify that TCP port 2003 
+        #Use test-netConnection to verify that TCP port 2003 
         #is reachable on ubuntu host
         It 'Graphite service is reachable on Ubuntu' {
-            $true | Should -beFalse
+            (Test-NetConnection -ComputerName ubuntu -Port 2003).TcpTestSucceeded | 
+                Should -beTrue
         }
     }
     #Check versions for installed software
@@ -66,9 +67,7 @@ Describe 'Tests for Win10 VM' {
         BeforeAll {
             $gitStatus = (git status)
         }
-        It 'VMTools is installed' {
-            $true | Should -beFalse
-        }
+
         #Check that the web UI for Grafana is reachable
         #The Ubuntu VM needs to be running for this test to pass
         #Ensure that a 200 status code is returned by the server
@@ -199,7 +198,6 @@ Describe 'Tests for Win10 VM' {
     Context 'Lab2.4'{
         It 'AutomationFunctions.ps1 exists in lab directory'{
             Test-Path -path C:\Users\auditor\SEC557Labs\Lab2.4\AutomationFunctions.ps1 -Pathtype Leaf | Should -beTrue
-            
         }
         It 'GithubIssues.ps1 exists in lab directory'{
             Test-Path -path C:\Users\auditor\SEC557Labs\Lab2.4\GithubIssues.ps1 -Pathtype Leaf | Should -beTrue
@@ -309,7 +307,7 @@ Describe 'Tests for Win10 VM' {
             ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
                 Should -Be 1
         }
-<#
+
         It 'Windows.Tests.ps1 has 7 passed tests' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
             $pesterResult.PassedCount | Should -Be 7
@@ -327,7 +325,7 @@ Describe 'Tests for Win10 VM' {
             $pesterResult = Invoke-Pester -Path C:\users\auditor\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
             $pesterResult.failedCount | Should -Be 2
         }
-#>
+
         #verify that C:\tools\extent.exe exists on the VM
         It 'ExtentReport is installed' {
             Test-Path -path C:\tools\extent.exe -Pathtype Leaf | Should -beTrue
@@ -432,6 +430,15 @@ Describe 'Tests for Win10 VM' {
             Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
             Set-PowerCLIConfiguration -Scope User -DefaultVIServerMode Single -Confirm:$false
             Connect-VIServer -Server esxi1 -Credential $cred
+
+            $ntpStatus = (Get-VMHost | Sort Name | Select Name,  `
+                @{N="NTPServer"; E={$_ | Get-VMHostNtpServer}}, `
+                @{N="ServiceRunning"; E={(Get-VmHostService -VMHost $_ |  
+                    Where-Object {$_.key-eq "ntpd"} ).Running}}, `
+                @{N="Policy"; E={(Get-VmHostService -VMHost $_ |  
+                        Where-Object {$_.key-eq "ntpd"} ).Policy}}, `
+                @{N="ServiceRequired"; E={(Get-VmHostService -VMHost $_ |  
+                    Where-Object {$_.key-eq "ntpd"} ).Required}})
         }
         #Get back to the initial state for lab 3.4
         AfterAll {
@@ -450,19 +457,19 @@ Describe 'Tests for Win10 VM' {
         }
 
         It 'NTP server is pool.ntp.org' {
-            $true | Should -BeFalse
+            $ntpStatus.NTPServer | Should -Be 'pool.ntp.org'
         }
 
         It 'NTP Policy is OFF' {
-            $true | Should -BeFalse
+            $ntpStatus.Policy | Should -Be "off"
         }
 
         It 'NTP Running is false' {
-            $true | Should -BeFalse
+            $ntpStatus.ServiceRunning | Should -BeFalse
         }
 
         It 'NTP Required is false' {
-            $true | Should -BeFalse
+            $ntpStatus.ServiceRequired | Should -BeFalse
         }
 
         It 'Patch count is 76' {
