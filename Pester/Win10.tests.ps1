@@ -54,9 +54,7 @@ Describe 'Tests for Win10 VM' {
             $softwareVersions.Count | Should -beGreaterThan 0
         }
         It 'OSqueryd service is running' {
-            #TODO: use get-service to see if the service is running
-            #osqueryi | should -be 'Using a virtual database.*'
-            $true | Should -BeFalse
+            (Get-Service osqueryd).Status | Should -Be 'Running'
         }
         It 'WSL netcat is installed' {
             $res = wsl nc -h 2>&1
@@ -521,15 +519,15 @@ Describe 'Tests for Win10 VM' {
     #Lab3.5 is done from the Ubuntu host
     Context 'Lab3.6'{
         It 'OSQuery has at least 100 tables'{
-            (osqueryi ".tables").Count | -Should -BeGreaterOrEqual 100
+            (osqueryi ".tables").Count | Should -BeGreaterOrEqual 100
         }
         It 'OSQuery returns firefox in programs table' {
             (osqueryi "select name from programs;" --json | convertFrom-Json) | 
-            Where-Object name -like '*firefox*' | -Should -HaveCount 1
+            Where-Object name -like '*firefox*' | Should -HaveCount 1
         }
         It 'Osquery Local Admins returns two users' {
             $res = (osqueryi "select username, groupname, type from users join user_groups on user_groups.UID = users.uid join groups on groups.gid = user_groups.gid where groups.groupname ='Administrators';" --json | ConvertFrom-Json)
-            $res | -Should -HaveCount 2
+            $res | Should -HaveCount 2
         }
     }
     Context 'Lab4.1'{
