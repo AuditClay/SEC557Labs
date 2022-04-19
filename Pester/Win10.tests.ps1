@@ -531,49 +531,23 @@ Describe 'Tests for Win10 VM' {
         }
     }
     Context 'Lab4.1'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
     }
     Context 'Lab4.2'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
     }
     Context 'Lab4.3'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
     }
     Context 'Lab4.4'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
     }
     Context 'Lab5.1'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
     }
     Context 'Lab5.2'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
     }
+
     Context 'Lab5.3'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
     }
     Context 'Lab5.4'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
     }
     Context 'CapStone'{
-        It 'Test Name'{
-            $true | Should -beFalse
-        }
     }
     
 }
