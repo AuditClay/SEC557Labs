@@ -279,15 +279,15 @@ Describe 'Tests for Win10 VM' {
         #will return correct results
         It 'LSA LimitBlankPasswordUse is 1' {
             $lsa = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa")
-            ($lsa.LimitBlankPasswordUse).count | should -be 1
+            $lsa.LimitBlankPasswordUse | should -be 1
         }
         It 'LSA NoLMHash is 1' {
             $lsa = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa")
-            ($lsa.NoLMHash).count | should -be 1
+            $lsa.NoLMHash | should -be 1
         }
         It 'LSA RestrictAnonymous is 0' {
             $lsa = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa")
-            ($lsa.RestrictAnonymous).count | should -be 0
+            $lsa.RestrictAnonymous | should -be 0
         }
         It 'Minimum Password Age is 0' {
             #Find the MinimumPasswordAge setting in the text file
@@ -473,11 +473,12 @@ Describe 'Tests for Win10 VM' {
         }
 
         It 'Patch count is 76' {
-            $true | Should -BeFalse
+            (Get-ESXCli -Server esxi1).software.vib.list() | Should -HaveCount 76
         }
 
         It 'Datastore version is > 6' {
-            $true | Should -BeFalse
+            (Get-VMHost -Server esxi1 | Get-Datastore).FileSystemVersion | 
+                Should -BeGreaterOrEqual 6.0
         }
 
         It 'VMWare version is correct' {
@@ -519,8 +520,16 @@ Describe 'Tests for Win10 VM' {
     
     #Lab3.5 is done from the Ubuntu host
     Context 'Lab3.6'{
-        It 'Test Name'{
-            $true | Should -beFalse
+        It 'OSQuery has at least 100 tables'{
+            (osqueryi ".tables").Count | -Should -BeGreaterOrEqual 100
+        }
+        It 'OSQuery returns firefox in programs table' {
+            (osqueryi "select name from programs;" --json | convertFrom-Json) | 
+            Where-Object name -like '*firefox*' | -Should -HaveCount 1
+        }
+        It 'Osquery Local Admins returns two users' {
+            $res = (osqueryi "select username, groupname, type from users join user_groups on user_groups.UID = users.uid join groups on groups.gid = user_groups.gid where groups.groupname ='Administrators';" --json | ConvertFrom-Json)
+            $res | -Should -HaveCount 2
         }
     }
     Context 'Lab4.1'{
