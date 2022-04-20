@@ -1,12 +1,6 @@
 #Test that all required graphite schemas exist
 #Check installed software versions
 Describe 'Tests for Ubuntu VM' {
-    BeforeAll {
-        $accessKeyCount = (cat /home/auditor/.aws/credentials | egrep -c "^aws_access_key_iD = \S+$")
-        if( $accessKeyCount -ne 1 ) {
-            throw "NO AWS CREDENTIALS!!!"
-        }
-    }
     Context 'Lab 0 and General Setup' {
         #Check Graphite setup
         It 'Graphite schemas.conf is correct'{
