@@ -174,7 +174,66 @@ Describe 'Tests for Ubuntu VM' {
     
     #Exercise 4.1 is all on the Win10 VM
     #Exercise 4.2 is all on the Win10 VM
+    Context 'Exercise 4.3' {
+        BeforeAll {
+            $iam = (aws iam get-account-password-policy | ConvertFrom-Json).PasswordPolicy
+            inspec exec /home/auditor/inspec/aws-foundations-cis-baseline/ -t aws:// --reporter cli json:/home/auditor/inspec/aws.json
+        }
+        AfterAll {
+            Remove-Item /home/auditor/inspec/aws.json
+        }
 
+        It 'Password policy has MinimumPasswordLength of 20' {
+            $iam.MinimumPasswordLength | Should -Be 20
+        }
+
+        It 'Password policy has RequireSymbols true' {
+
+        }
+
+        It 'Password policy has RequireNumbers true' {
+
+        }
+
+        It 'Password policy has RequireUppercaseCharacters true' {
+
+        }
+
+        It 'Password policy has RequireLowercaseCharacters true' {
+
+        }
+
+        It 'Password policy has AllowUsersToChangePassword true' {
+
+        }
+
+        It 'Password policy has ExpirePasswords true' {
+
+        }
+
+        It 'Password policy has MaxPasswordAge of 90' {
+
+        }
+
+        It 'Password policy has PasswordReusePrevention of 24' {
+
+        }
+
+        It 'Inspec benchmark on AWS has 46 *failed* tests' {
+            ((Get-Content /home/auditor/inspec/aws.json | 
+                ConvertFrom-Json).profiles.controls.results.status | 
+                Where-Object { $_ -eq 'failed' }).Count | 
+                Should -Be 46
+        }
+
+        It 'Inspec benchmark on AWS has 65 *passed* tests' {
+        
+        }
+
+        It 'Inspec benchmark on AWS has 9 *skipped* tests' {
+        
+        }
+    }
 
 
     #AWS credential checks:
