@@ -1,6 +1,12 @@
 #Test that all required graphite schemas exist
 #Check installed software versions
 Describe 'Tests for Ubuntu VM' {
+    BeforeAll {
+        $accessKeyCount = (cat /home/auditor/.aws/credentials | egrep -c "^aws_access_key_iD = \S+$")
+        if( $accessKeyCount -ne 1 ) {
+            throw "NO AWS CREDENTIALS!!!"
+        }
+    }
     Context 'Lab 0 and General Setup' {
         #Check Graphite setup
         It 'Graphite schemas.conf is correct'{
@@ -42,6 +48,11 @@ Describe 'Tests for Ubuntu VM' {
         #Git status
         It 'Git is on correct branch' {
             #Match what we did on win 10 - including beforeall{}
+        }
+
+        It 'OSQuery service is running' {
+            systemctl status osqueryd.service | egrep -c "active \(running\)" |
+                Should -Be 1
         }
     }
     
@@ -129,18 +140,53 @@ Describe 'Tests for Ubuntu VM' {
                 Should -BeGreaterOrEqual 1
         }
 
-        It 'Inspec benchmark on Ubuntu has 381 failed tests' {
+        It 'Inspec benchmark on Ubuntu has 381 *failed* tests' {
             ((Get-Content /home/auditor/inspec/ubuntu.json | 
                 ConvertFrom-Json).profiles.controls.results.status | 
                 Where-Object { $_ -eq 'failed' }).Count | 
                 Should -Be 381
         }
+
+        It 'Inspec benchmark on Ubuntu has 1188 *passed* tests' {
+        
+        }
+
+        It 'Inspec benchmark on Ubuntu has 65 *skipped* tests' {
+        
+        }
     }
+
+    Context 'Exercise 3.6' {
+        It 'OSQuery has at least 100 tables'{
+            (osqueryi ".tables").Count | Should -BeGreaterOrEqual 100
+        }
+
+        It 'OSQuery returns correct kernel version' {
+            (osqueryi "Select * from kernel_info" --json | 
+                ConvertFrom-Json).version | 
+            Should -Be '5.4.0-90-generic'
+        }
+
+        It 'OSQuery SSH configs returns 4 rows' {
+            (osqueryi "select * from ssh_configs" --json | 
+                ConvertFrom-Json).Count | 
+                Should -Be 4
+        }
+
+        It 'Fleetctl binary exists' {
+            #test that /usr/bin/fleetctl exists
+        }
+    }
+    
+    #Exercise 4.1 is all on the Win10 VM
+    #Exercise 4.2 is all on the Win10 VM
+
+
 
     #AWS credential checks:
     <# ALL SHOULD RETURN VALUE OF 1:
 
-    cat /home/auditor/.aws/credentials | egrep -c "^aws_access_key_id = \S+$"
+    
     cat /home/auditor/.aws/credentials | egrep -c "^aws_secret_access_key = \S+$"
     cat /home/auditor/.aws/config | egrep -c "^region = \S+$"
     cat /home/auditor/.aws/config | egrep -c "^output = \S+$"
