@@ -535,6 +535,10 @@ Describe 'Tests for Win10 VM' {
             $myVersion.build | Should -Be 17867351
         }
 
+        It 'Compliance.json exists' {
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.5\Compliance.json -Pathtype Leaf | Should -beTrue
+        }
+
        #TODO: Replicate the passing pester tests from the Lab3.4\Esxi.Tests.ps1 
        #and use -not in the others to make them pass.This will save having to save 
        #the ESXi credentials in the secret vault just so the pester tests can run
