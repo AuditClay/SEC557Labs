@@ -144,6 +144,12 @@ Describe 'Tests for Win10 VM' {
         }
     }
 
+    Context 'Lab1.3'{
+        It 'tabledemo.json exist in directory'{
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab1.3\tabledemo.json -Pathtype Leaf | Should -beTrue
+        }
+    }
+
     Context 'Lab2.1'{
         #Validate that the web service is available and returning values
         #Windows PowerShell is easier to test with
