@@ -248,6 +248,9 @@ Describe 'Tests for Win10 VM' {
         It 'GetpatchData.ps1 script exists'{
             Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.1\GetPatchData.ps1 -Pathtype Leaf | Should -beTrue
         }
+        It 'patches.json exists'{
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.1\patches.json -Pathtype Leaf | Should -beTrue
+        }
         It 'patchAge.csv contains 36600 records'{
             $patchAgeData.count | should -be 36600
         }
