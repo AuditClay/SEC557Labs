@@ -1,12 +1,4 @@
 #Requires -RunAsAdministrator
-<# TODO: Check for import json files for these labs:
-1.3
-1.4
-3.1
-3.3
-3.5
-
-#>
 
 Describe 'Tests for Win10 VM' {
 
@@ -144,6 +136,18 @@ Describe 'Tests for Win10 VM' {
         }
     }
 
+    Context 'Lab1.3'{
+        It 'tabledemo.json exist in directory'{
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab1.3\tabledemo.json -Pathtype Leaf | Should -beTrue
+        }
+    }
+
+    Context 'Lab1.4'{
+        It 'pyramid.json exist in directory'{
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab1.4\pyramid.json -Pathtype Leaf | Should -beTrue
+        }
+    }
+
     Context 'Lab2.1'{
         #Validate that the web service is available and returning values
         #Windows PowerShell is easier to test with
@@ -235,6 +239,9 @@ Describe 'Tests for Win10 VM' {
         }
         It 'GetpatchData.ps1 script exists'{
             Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.1\GetPatchData.ps1 -Pathtype Leaf | Should -beTrue
+        }
+        It 'patches.json exists'{
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.1\patches.json -Pathtype Leaf | Should -beTrue
         }
         It 'patchAge.csv contains 36600 records'{
             $patchAgeData.count | should -be 36600
@@ -427,6 +434,9 @@ Describe 'Tests for Win10 VM' {
         It 'ADDemographics.ps1 script exists' {
             Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.3\ADDemographics.ps1 -Pathtype Leaf | Should -beTrue
         }
+        It 'AD.json exists' {
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.3\AD.json -Pathtype Leaf | Should -beTrue
+        }
         
     }
     Context 'Lab3.4'{
@@ -515,6 +525,10 @@ Describe 'Tests for Win10 VM' {
             $build = (Get-VMHost).Build
             $myVersion = $esxiVersions | Where-Object Build -eq $build 
             $myVersion.build | Should -Be 17867351
+        }
+
+        It 'Compliance.json exists' {
+            Test-Path -path C:\Users\auditor\SEC557Labs\Lab3.5\Compliance.json -Pathtype Leaf | Should -beTrue
         }
 
        #TODO: Replicate the passing pester tests from the Lab3.4\Esxi.Tests.ps1 
