@@ -7,7 +7,7 @@ Describe 'Tests for Ubuntu VM' {
             #ensure the file /opt/graphite/conf/storage-schemas.conf
             #has sha1 hash of cd6ef60b158b77f30e6faf34416a8096e415e142
             sudo cat /opt/graphite/conf/storage-schemas.conf | sha1sum | 
-                Should -BeLike 'cd6ef60b158b77f30e6faf34416a8096e415e14'
+                Should -BeLike 'cd6ef60b158b77f30e6faf34416a8096e415e142*'
         }
         It 'TCP port 2003 is open' {
             (sudo netstat -antp | grep -i 'listen' |
