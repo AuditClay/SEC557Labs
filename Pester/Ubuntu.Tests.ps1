@@ -19,18 +19,29 @@ Describe 'Tests for Ubuntu VM' {
             #/usr/local/bin/whisper-dump.py
 
         }
-
         #Grafana Setup
         It 'Grafana is listening on TCP port 3000' {
             (sudo netstat -antp | grep -i 'listen'  | 
                 grep -c '.*3000.*grafana-server') |
                 Should -Be 1
         }
-
         It 'Grafana Graphite datasource provisioning file is correct' {
-            #Use the get-filehash cmd to ensure the file
-            # 
-            #has sha1 hash of cd6ef60b158b77f30e6faf34416a8096e415e142
+            #ensure the file /etc/grafana/provisioning/datasources/graphite.yaml
+            #has sha1 hash of 6faa4d640c92bb09ce595b7c6ae91ff1fb0d4074
+        }
+        It 'Grafana MySQL datasource provisioning file is correct' {
+            #ensure the file /etc/grafana/provisioning/datasources/mysql.yaml
+            #has sha1 hash of 535276379ad610283bbbaf14fd47cdf604d6f401
+        }
+
+        #Fleet Setup
+        It 'Fleet is listening on port 8443' {
+
+        }
+
+        #Git status
+        It 'Git is on correct branch' {
+            #Match what we did on win 10 - including beforeall{}
         }
     }
 }
