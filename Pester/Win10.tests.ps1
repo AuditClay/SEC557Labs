@@ -1,12 +1,4 @@
 #Requires -RunAsAdministrator
-<# TODO: Check for import json files for these labs:
-1.3
-1.4
-3.1
-3.3
-3.5
-
-#>
 
 Describe 'Tests for Win10 VM' {
 
