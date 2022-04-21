@@ -134,11 +134,11 @@ Describe 'Tests for Ubuntu VM' {
                 Should -BeGreaterOrEqual 1
         }
 
-        It 'Inspec benchmark on Ubuntu has 381 *failed* tests' {
+        It 'Inspec benchmark on Ubuntu has 378 *failed* tests' {
             ((Get-Content /home/auditor/inspec/ubuntu.json | 
                 ConvertFrom-Json).profiles.controls.results.status | 
                 Where-Object { $_ -eq 'failed' }).Count | 
-                Should -Be 381
+                Should -Be 378
         }
 
         It 'Inspec benchmark on Ubuntu has 1188 *passed* tests' {
