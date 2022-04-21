@@ -25,7 +25,7 @@ Describe 'Tests for Win10 VM' {
         #Use test-netConnection to verify that TCP port 2003 
         #is reachable on ubuntu host
         It 'Graphite service is reachable on Ubuntu' {
-            (Test-NetConnection -ComputerName ubuntu -Port 2003).TcpTestSucceeded | 
+            (Test-NetConnection -ComputerName ubuntu -Port 2003 -InformationLevel Quiet).TcpTestSucceeded | 
                 Should -beTrue
         }
     }
