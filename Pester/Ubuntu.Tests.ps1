@@ -26,6 +26,8 @@ Describe 'Tests for Ubuntu VM' {
                 Should -Be 1
         }
         It 'Grafana Graphite datasource provisioning file is correct' {
+            sudo cat /etc/grafana/provisioning/datasources/graphite.yaml | sha1sum | 
+                Should -BeLike '6faa4d640c92bb09ce595b7c6ae91ff1fb0d4074*'
             #ensure the file /etc/grafana/provisioning/datasources/graphite.yaml
             #has sha1 hash of 6faa4d640c92bb09ce595b7c6ae91ff1fb0d4074
         }
