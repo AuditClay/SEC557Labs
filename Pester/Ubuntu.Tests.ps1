@@ -40,9 +40,7 @@ Describe 'Tests for Ubuntu VM' {
 
         #Fleet Setup
         It 'Fleet is listening on port 8443' {
-            (sudo netstat -antp | grep -i 'listen' |
-                grep -c '.*8843.*Fleet*') | 
-                Should -Be 1
+            
         }
 
         #Git status
