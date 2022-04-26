@@ -17,7 +17,7 @@ Describe 'Tests for Ubuntu VM' {
         It 'Whisper dump is installed'{
             #Ensure that this file exists:
             #/usr/local/bin/whisper-dump.py
-
+            $true | Should -BeFalse
         }
         #Grafana Setup
         It 'Grafana is listening on TCP port 3000' {
