@@ -40,7 +40,9 @@ Describe 'Tests for Ubuntu VM' {
 
         #Fleet Setup
         It 'Fleet is listening on port 8443' {
-
+            (sudo netstat -antp | grep -i 'listen' |
+                grep -c '.*8843.*Fleet') | 
+                Should -Be 1
         }
 
         #Git status
@@ -61,7 +63,7 @@ Describe 'Tests for Ubuntu VM' {
 
     Context 'Exercise 1.3' {
         It 'TableDemo.ps1 script returns 227 lines' {
-
+            wc -l /home/auditor/SEC557Labs/Lab1.3/tableDemo.ps1
         }
 
         It 'TableDemo.ps1 inserts 110 rows' { 
