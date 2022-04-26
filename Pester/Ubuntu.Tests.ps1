@@ -159,10 +159,10 @@ Describe 'Tests for Ubuntu VM' {
             (osqueryi ".tables").Count | Should -BeGreaterOrEqual 100
         }
 
-        It 'OSQuery returns correct kernel version' {
+        It 'OSQuery returns reasonable kernel version' {
             (osqueryi "Select * from kernel_info" --json | 
                 ConvertFrom-Json).version | 
-            Should -Be '5.4.0-90-generic'
+            Should -BeLike '5*generic'
         }
 
         It 'OSQuery SSH configs returns 4 rows' {
