@@ -46,6 +46,8 @@ Describe 'Tests for Ubuntu VM' {
         #Git status
         It 'Git is on correct branch' {
             #Match what we did on win 10 - including beforeall{}
+            $gitStatus = (git status)
+            $gitStatus[0] | Should -Be 'On branch H01'
         }
 
         It 'OSQuery service is running' {
