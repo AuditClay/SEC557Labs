@@ -32,6 +32,8 @@ Describe 'Tests for Ubuntu VM' {
             #has sha1 hash of 6faa4d640c92bb09ce595b7c6ae91ff1fb0d4074
         }
         It 'Grafana MySQL datasource provisioning file is correct' {
+            sudo cat /etc/grafana/provisioning/datasources/mysql.yaml | sha1sum | 
+                Should -BeLike '535276379ad610283bbbaf14fd47cdf604d6f401*'
             #ensure the file /etc/grafana/provisioning/datasources/mysql.yaml
             #has sha1 hash of 535276379ad610283bbbaf14fd47cdf604d6f401
         }
