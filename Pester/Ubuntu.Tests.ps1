@@ -63,6 +63,11 @@ Describe 'Tests for Ubuntu VM' {
 
     Context 'Exercise 1.3' {
         It 'TableDemo.ps1 script returns 227 lines' {
+            /home/auditor/SEC557Labs/Lab1.3/tableDemo.ps1 | 
+                mysql -pPassword1
+            $res = "SELECT COUNT(*) FROM grafana.serverstats;" | 
+                mysql -pPassword1
+            $res -c | Should -Be 227
         }
 
         It 'TableDemo.ps1 inserts 110 rows' { 
