@@ -63,7 +63,6 @@ Describe 'Tests for Ubuntu VM' {
 
     Context 'Exercise 1.3' {
         It 'TableDemo.ps1 script returns 227 lines' {
-            wc -l /home/auditor/SEC557Labs/Lab1.3/tableDemo.ps1
         }
 
         It 'TableDemo.ps1 inserts 110 rows' { 
