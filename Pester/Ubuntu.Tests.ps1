@@ -19,7 +19,6 @@ Describe 'Tests for Ubuntu VM' {
             #/usr/local/bin/whisper-dump.py
             Test-Path -path /usr/local/bin/whisper-dump.py -Pathtype Leaf | Should -beTrue
         }
-        }
         #Grafana Setup
         It 'Grafana is listening on TCP port 3000' {
             (sudo netstat -antp | grep -i 'listen'  | 
