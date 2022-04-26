@@ -65,7 +65,7 @@ Describe 'Tests for Ubuntu VM' {
                 mysql -pPassword1
             $res = "SELECT COUNT(*) FROM grafana.serverstats;" | 
                 mysql -pPassword1
-            $res -c | Should -Be 227
+            ($res).count | Should -Be 227
         }
 
         It 'TableDemo.ps1 inserts 110 rows' { 
