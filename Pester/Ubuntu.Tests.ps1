@@ -130,7 +130,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Pester returns 2 passed tests' {
-
+     
         }
 
         It 'Pester returns 4 failed tests' {
@@ -151,11 +151,17 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Inspec benchmark on Ubuntu has 1188 *passed* tests' {
-        
+             ((Get-Content /home/auditor/inspec/ubuntu.json | 
+                ConvertFrom-Json).profiles.controls.results.status | 
+                Where-Object { $_ -eq 'passed' }).Count | 
+                Should -Be 1188
         }
 
         It 'Inspec benchmark on Ubuntu has 65 *skipped* tests' {
-        
+             ((Get-Content /home/auditor/inspec/ubuntu.json | 
+                ConvertFrom-Json).profiles.controls.results.status | 
+                Where-Object { $_ -eq 'skipped' }).Count | 
+                Should -Be 65
         }
     }
 
