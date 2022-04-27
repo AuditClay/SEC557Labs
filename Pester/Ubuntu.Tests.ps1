@@ -118,7 +118,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'ssh config PermitRootLogin value is correct' {
-
+            sudo sshd -T | grep -i PermitRootLogin | Should -be 'permitrootlogin without-password'
         }
 
         It 'SSH X11Forwarding value is correct' {
