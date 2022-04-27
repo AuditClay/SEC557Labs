@@ -110,7 +110,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'uname -r returns correct value' {
-            uname -r | Should -be '5.4.0-generic'
+            uname -r | Should -belike '5.4.0*-generic'
         }
 
         It 'sysctl syncookies value is correct' {
