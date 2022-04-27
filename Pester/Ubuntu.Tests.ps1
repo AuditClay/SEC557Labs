@@ -232,7 +232,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Password policy has PasswordReusePrevention of 24' {
-
+            $iam.PasswordReusePrevention | Should -Be 24
         }
 
         It 'Inspec benchmark on AWS has 46 *failed* tests' {
