@@ -114,7 +114,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'sysctl syncookies value is correct' {
-
+            sysctl net.ipv4.tcp_syncookies | Should -be 'net.ipv4.tcp_syncookies = 1'
         }
 
         It 'ssh config PermitRootLogin value is correct' {
