@@ -216,11 +216,11 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Password policy has RequireLowercaseCharacters true' {
-            $iam.RequireLowercaseCharacters| Should -Be 'true'
+            $iam.RequireLowercaseCharacters | Should -Be 'true'
         }
 
         It 'Password policy has AllowUsersToChangePassword true' {
-
+            $iam.AllowUsersToChangePassword | Should -Be 'true'
         }
 
         It 'Password policy has ExpirePasswords true' {
