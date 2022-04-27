@@ -73,13 +73,15 @@ Describe 'Tests for Ubuntu VM' {
             $res[1] | Should -Be 110
         }
         It 'TableDemoGraphite returns 330 lines' {
-
+            (/home/auditor/SEC557Labs/Lab1.3/tableDemoGraphite.ps1).Count
+                | Should -Be 330
         }
     }
 
     Context 'Exercise 1.4' {
         It 'PyramidData.ps1 returns 22256 lines' {
-
+            (/home/auditor/SEC557Labs/Lab1.4/PyramidData.ps1).Count
+                | Should -Be 22256
         }
     }
 
