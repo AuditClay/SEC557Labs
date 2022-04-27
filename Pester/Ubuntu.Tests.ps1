@@ -208,7 +208,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Password policy has RequireNumbers true' {
-
+            $iam.RequireNumbers | Should -Be 'true'
         }
 
         It 'Password policy has RequireUppercaseCharacters true' {
