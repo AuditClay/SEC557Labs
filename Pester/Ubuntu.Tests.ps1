@@ -228,7 +228,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Password policy has MaxPasswordAge of 90' {
-
+            $iam.MaxPasswordAge | Should -Be 90
         }
 
         It 'Password policy has PasswordReusePrevention of 24' {
