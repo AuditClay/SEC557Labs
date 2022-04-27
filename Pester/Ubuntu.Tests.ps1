@@ -126,7 +126,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Python version is correct' {
-
+            python3 -V | Should -belike '*3.8.10'
         }
 
         It 'Pester returns 2 passed tests' {
