@@ -184,6 +184,7 @@ Describe 'Tests for Ubuntu VM' {
 
         It 'Fleetctl binary exists' {
             #test that /usr/bin/fleetctl exists
+            Test-Path -path /usr/bin/fleetctl -Pathtype Leaf | Should -beTrue
         }
     }
     
