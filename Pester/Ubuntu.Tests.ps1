@@ -243,11 +243,17 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Inspec benchmark on AWS has 65 *passed* tests' {
-        
+            ((Get-Content /home/auditor/inspec/aws.json | 
+                ConvertFrom-Json).profiles.controls.results.status | 
+                Where-Object { $_ -eq 'passed' }).Count | 
+                Should -Be 65
         }
 
         It 'Inspec benchmark on AWS has 9 *skipped* tests' {
-        
+            ((Get-Content /home/auditor/inspec/aws.json | 
+                ConvertFrom-Json).profiles.controls.results.status | 
+                Where-Object { $_ -eq 'skipped' }).Count | 
+                Should -Be 9
         }
     }
 
