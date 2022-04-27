@@ -204,7 +204,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Password policy has RequireSymbols true' {
-
+            $iam.RequireSymbols | Should -Be 'true'
         }
 
         It 'Password policy has RequireNumbers true' {
