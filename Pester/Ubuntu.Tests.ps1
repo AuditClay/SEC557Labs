@@ -224,7 +224,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Password policy has ExpirePasswords true' {
-
+            $iam.ExpirePasswords | Should -Be 'true'
         }
 
         It 'Password policy has MaxPasswordAge of 90' {
