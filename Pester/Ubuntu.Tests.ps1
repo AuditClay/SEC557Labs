@@ -212,7 +212,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Password policy has RequireUppercaseCharacters true' {
-
+            $iam.RequireUppercaseCharacters | Should -Be 'true'
         }
 
         It 'Password policy has RequireLowercaseCharacters true' {
