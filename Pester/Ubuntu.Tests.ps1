@@ -122,7 +122,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'SSH X11Forwarding value is correct' {
-
+            sudo sshd -T | grep -i X11Forwarding | Should -be 'x11forwarding yes'
         }
 
         It 'Python version is correct' {
