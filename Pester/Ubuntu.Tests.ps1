@@ -106,7 +106,7 @@ Describe 'Tests for Ubuntu VM' {
             Remove-Item /home/auditor/inspec/ubuntu.json
         }
         It 'lsb_release returns correct value' {
-            lsb_release -d | Should -be 'Description:\tUbuntu 20.04.1 LTS'
+            lsb_release -d | Should -be 'Description*Ubuntu 20.04.1 LTS'
         }
 
         It 'uname -r returns correct value' {
