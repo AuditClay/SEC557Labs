@@ -40,7 +40,7 @@ Describe 'Tests for Ubuntu VM' {
 
         #Fleet Setup
         It 'Fleet is listening on port 8443' {
-            
+            $true | should -befalse
         }
 
         #Git status
@@ -130,11 +130,11 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Pester returns 2 passed tests' {
-     
+            $true | should -befalse
         }
 
         It 'Pester returns 4 failed tests' {
-
+            $true | should -befalse
         }
 
         It 'PatchAge command returns at least 1 result' {
