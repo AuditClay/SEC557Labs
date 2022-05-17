@@ -43,7 +43,7 @@ Describe 'Tests for Win10 VM' {
         #Expected version of SOAP UI is installed
         #New versions may require new screenshots
         It 'SoapUI as the correct version'{
-            ($softwareVersions | Where-Object name -like 'SoapUI*').Version | Should -Be '5.6.0'
+            ($softwareVersions | Where-Object name -like 'SoapUI*').Version | Should -BeLike '5.*'
         }
         #use 'jq.exe -V' to check version of jq.exe
         #current version is 'jq-1.6'
@@ -277,7 +277,7 @@ Describe 'Tests for Win10 VM' {
             (Get-LocalUser -Name guest).Enabled | Should -beFalse
         }
         It 'Local administrator group has 2 members' {
-            (Get-LocalGroupMember -Name Administrators | Measure-Object).Count | Should -be 2
+            (Get-LocalGroupMember -Name Administrators | Measure-Object).Count | Should -BeGreaterOrEqual 2
         }
         #Verify OSQueryd results will match lab
         It 'OSQueryd is installed' {
@@ -549,8 +549,8 @@ Describe 'Tests for Win10 VM' {
             Where-Object name -like '*firefox*' | Should -HaveCount 1
         }
         It 'Osquery Local Admins returns two users' {
-            $res = (osqueryi "select username, groupname, type from users join user_groups on user_groups.UID = users.uid join groups on groups.gid = user_groups.gid where groups.groupname ='Administrators';" --json | ConvertFrom-Json)
-            $res | Should -HaveCount 2
+            $res = (osqueryi "select username, groupname, type from users join user_groups on user_groups.UID = users.uid join groups on groups.gid = user_groups.gid where groups.groupname ='Administrators';" --json | ConvertFrom-Json).count
+            $res | Should -BeGreaterOrEqual 2
         }
     }
     Context 'Lab4.1'{
