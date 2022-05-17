@@ -57,10 +57,10 @@ Describe 'Tests for Win10 VM' {
         It 'OSqueryd service is running' {
             (Get-Service osqueryd).Status | Should -Be 'Running'
         }
-        It 'WSL netcat is installed' {
-            $res = wsl nc -h 2>&1
-            $res[0] | Should -BeLike '*netcat*'
-        }
+        # It 'WSL netcat is installed' {
+        #     $res = wsl nc -h 2>&1
+        #     $res[0] | Should -BeLike '*netcat*'
+        # }
     }
     Context 'Lab0'{
         BeforeAll {
