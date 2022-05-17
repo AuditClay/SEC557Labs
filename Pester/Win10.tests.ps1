@@ -322,23 +322,23 @@ Describe 'Tests for Win10 VM' {
                 Should -Be 1
         }
 
-        # It 'Windows.Tests.ps1 has 7 passed tests' {
-        #     $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
-        #     $pesterResult.PassedCount | Should -Be 7
-        # }
-        # It 'Windows.Tests.ps1 has 2 failed tests' {
-        #     $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
-        #     $pesterResult.FailedCount | Should -Be 2
-        # }
-        # It 'PesterIntro.tests.ps1 has 10 passed tests' {
-        #     $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
-        #     $pesterResult.passedCount | Should -Be 10
+        It 'Windows.Tests.ps1 has 7 passed tests' {
+            $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
+            $pesterResult.PassedCount | Should -Be 7
+        }
+        It 'Windows.Tests.ps1 has 2 failed tests' {
+            $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
+            $pesterResult.FailedCount | Should -Be 2
+        }
+        It 'PesterIntro.tests.ps1 has 10 passed tests' {
+            $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
+            $pesterResult.passedCount | Should -Be 10
             
-        # }
-        # It 'PesterIntro.tests.ps1 has 2 failed tests' {
-        #     $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
-        #     $pesterResult.failedCount | Should -Be 2
-        #}
+        }
+        It 'PesterIntro.tests.ps1 has 2 failed tests' {
+            $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
+            $pesterResult.failedCount | Should -Be 2
+        }
 
         #verify that C:\tools\extent.exe exists on the VM
         It 'ExtentReport is installed' {
