@@ -4,9 +4,9 @@ Describe 'Tests for Win10 VM' {
 
     BeforeAll {
         $password = ConvertTo-SecureString "Password1" -AsPlainText -Force
-        $studentCred = New-Object System.Management.Automation.PSCredential ("student", $password)
+        $studentCred = New-Object System.Management.Automation.PSCredential ("auditor", $password)
         $password = ConvertTo-SecureString "Password1!" -AsPlainText -Force
-        $esxiCred = New-Object System.Management.Automation.PSCredential ("student", $password)
+        $esxiCred = New-Object System.Management.Automation.PSCredential ("auditor", $password)
     }
     Context 'General Setup' {
         #Check that DNS resolution is happening quickly
@@ -443,7 +443,7 @@ Describe 'Tests for Win10 VM' {
         #Lab prep
         BeforeAll{
             $password = ConvertTo-SecureString 'Password1!' -AsPlainText -Force
-            $cred = New-Object System.Management.Automation.PSCredential ('student', $password)
+            $cred = New-Object System.Management.Automation.PSCredential ('auditor', $password)
             Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
             Set-PowerCLIConfiguration -Scope User -DefaultVIServerMode Single -Confirm:$false
             Connect-VIServer -Server esxi1 -Credential $cred
