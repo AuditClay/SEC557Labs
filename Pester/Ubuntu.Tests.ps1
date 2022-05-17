@@ -61,26 +61,26 @@ Describe 'Tests for Ubuntu VM' {
 
     Context 'Exercise 1.3' {
         It 'TableDemo.ps1 script returns 227 lines' {
-            (/home/auditor/SEC557Labs/Lab1.3/tableDemo.ps1).Count
+            (/home/student/SEC557Labs/Lab1.3/tableDemo.ps1).Count
                 | Should -Be 227
         }
 
         It 'TableDemo.ps1 inserts 110 rows' { 
-            /home/auditor/SEC557Labs/Lab1.3/tableDemo.ps1 | 
+            /home/student/SEC557Labs/Lab1.3/tableDemo.ps1 | 
                 mysql -pPassword1
             $res = "SELECT COUNT(*) FROM grafana.serverstats;" | 
                 mysql -pPassword1
             $res[1] | Should -Be 110
         }
         It 'TableDemoGraphite returns 330 lines' {
-            (/home/auditor/SEC557Labs/Lab1.3/tableDemoGraphite.ps1).Count
+            (/home/student/SEC557Labs/Lab1.3/tableDemoGraphite.ps1).Count
                 | Should -Be 330
         }
     }
 
     Context 'Exercise 1.4' {
         It 'PyramidData.ps1 returns 22256 lines' {
-            (/home/auditor/SEC557Labs/Lab1.4/PyramidData.ps1).Count
+            (/home/student/SEC557Labs/Lab1.4/PyramidData.ps1).Count
                 | Should -Be 22256
         }
     }
@@ -100,10 +100,10 @@ Describe 'Tests for Ubuntu VM' {
 
     Context 'Exercise 3.5' {
         BeforeAll {
-            inspec exec /home/auditor/inspec/cis-dil-benchmark/ --reporter cli json:/home/auditor/inspec/ubuntu.json
+            inspec exec /home/student/inspec/cis-dil-benchmark/ --reporter cli json:/home/student/inspec/ubuntu.json
         }
         AfterAll {
-            Remove-Item /home/auditor/inspec/ubuntu.json
+            Remove-Item /home/student/inspec/ubuntu.json
         }
         It 'lsb_release returns correct value' {
             lsb_release -d | Should -belike '*Ubuntu 20.04* LTS'
@@ -144,21 +144,21 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Inspec benchmark on Ubuntu has 378 *failed* tests' {
-            ((Get-Content /home/auditor/inspec/ubuntu.json | 
+            ((Get-Content /home/student/inspec/ubuntu.json | 
                 ConvertFrom-Json).profiles.controls.results.status | 
                 Where-Object { $_ -eq 'failed' }).Count | 
                 Should -Be 378
         }
 
         It 'Inspec benchmark on Ubuntu has 1228 *passed* tests' {
-             ((Get-Content /home/auditor/inspec/ubuntu.json | 
+             ((Get-Content /home/student/inspec/ubuntu.json | 
                 ConvertFrom-Json).profiles.controls.results.status | 
                 Where-Object { $_ -eq 'passed' }).Count | 
                 Should -Be 1228
         }
 
         It 'Inspec benchmark on Ubuntu has 65 *skipped* tests' {
-             ((Get-Content /home/auditor/inspec/ubuntu.json | 
+             ((Get-Content /home/student/inspec/ubuntu.json | 
                 ConvertFrom-Json).profiles.controls.results.status | 
                 Where-Object { $_ -eq 'skipped' }).Count | 
                 Should -Be 65
@@ -193,10 +193,10 @@ Describe 'Tests for Ubuntu VM' {
     Context 'Exercise 4.3' {
         BeforeAll {
             $iam = (aws iam get-account-password-policy | ConvertFrom-Json).PasswordPolicy
-            inspec exec /home/auditor/inspec/aws-foundations-cis-baseline/ -t aws:// --reporter cli json:/home/auditor/inspec/aws.json
+            inspec exec /home/student/inspec/aws-foundations-cis-baseline/ -t aws:// --reporter cli json:/home/student/inspec/aws.json
         }
         AfterAll {
-            Remove-Item /home/auditor/inspec/aws.json
+            Remove-Item /home/student/inspec/aws.json
         }
 
         It 'Password policy has MinimumPasswordLength of 20' {
@@ -236,21 +236,21 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'Inspec benchmark on AWS has 46 *failed* tests' {
-            ((Get-Content /home/auditor/inspec/aws.json | 
+            ((Get-Content /home/student/inspec/aws.json | 
                 ConvertFrom-Json).profiles.controls.results.status | 
                 Where-Object { $_ -eq 'failed' }).Count | 
                 Should -Be 46
         }
 
         It 'Inspec benchmark on AWS has 65 *passed* tests' {
-            ((Get-Content /home/auditor/inspec/aws.json | 
+            ((Get-Content /home/student/inspec/aws.json | 
                 ConvertFrom-Json).profiles.controls.results.status | 
                 Where-Object { $_ -eq 'passed' }).Count | 
                 Should -Be 65
         }
 
         It 'Inspec benchmark on AWS has 9 *skipped* tests' {
-            ((Get-Content /home/auditor/inspec/aws.json | 
+            ((Get-Content /home/student/inspec/aws.json | 
                 ConvertFrom-Json).profiles.controls.results.status | 
                 Where-Object { $_ -eq 'skipped' }).Count | 
                 Should -Be 9
@@ -262,8 +262,8 @@ Describe 'Tests for Ubuntu VM' {
     <# ALL SHOULD RETURN VALUE OF 1:
 
     
-    cat /home/auditor/.aws/credentials | egrep -c "^aws_secret_access_key = \S+$"
-    cat /home/auditor/.aws/config | egrep -c "^region = \S+$"
-    cat /home/auditor/.aws/config | egrep -c "^output = \S+$"
+    cat /home/student/.aws/credentials | egrep -c "^aws_secret_access_key = \S+$"
+    cat /home/student/.aws/config | egrep -c "^region = \S+$"
+    cat /home/student/.aws/config | egrep -c "^output = \S+$"
     #>
 }
