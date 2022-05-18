@@ -117,7 +117,7 @@ Describe 'Tests for Win10 VM' {
         #TODO: Finish this test
         It 'NMAP scan has 59 open ports'{
             $xScan = New-Object System.Xml.XmlDocument
-            $file = Resolve-Path '$basePath\SEC557Labs\Lab1.2\nmapScan.xml'
+            $file = Resolve-Path "$basePath\SEC557Labs\Lab1.2\nmapScan.xml"
             $xScan.load($file)
             $cnt = ($xScan.SelectNodes("/nmaprun/host/ports/port") |  
                 select portid -ExpandProperty state | Where-Object state -eq open).count
