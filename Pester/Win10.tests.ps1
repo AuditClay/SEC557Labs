@@ -318,7 +318,7 @@ Describe 'Tests for Win10 VM' {
             $groupNames | Should -Contain 'Backup Operators'
         }
         It 'InstalledSoftware.ps1 shows Firefox' {
-            $programNames = (pwsh "$basePath\SEC557Labs\Lab3.2\InstalledSoftware.ps1")
+            $programNames = (& "$basePath\SEC557Labs\Lab3.2\InstalledSoftware.ps1")
             ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
                 Should -Be 1
         }
