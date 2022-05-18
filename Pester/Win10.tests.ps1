@@ -7,6 +7,7 @@ Describe 'Tests for Win10 VM' {
         $studentCred = New-Object System.Management.Automation.PSCredential ("auditor", $password)
         $password = ConvertTo-SecureString "Password1!" -AsPlainText -Force
         $esxiCred = New-Object System.Management.Automation.PSCredential ("auditor", $password)
+        $basePath = (Get-Item ENV:UserProfile).Value
     }
     Context 'General Setup' {
         #Check that DNS resolution is happening quickly
@@ -98,25 +99,25 @@ Describe 'Tests for Win10 VM' {
         #Use Test-Path to ensure that the XML file for the books
         #database exists
         It 'Books.xml exists' {
-            Test-Path -path C:\Users\student\SEC557Labs\Lab1.2\books.xml -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab1.2\books.xml -Pathtype Leaf | Should -beTrue
         }
         #Check that the file contains the correct data
         It 'Books catalog contains 12 books' {
             $xBooks = New-Object System.Xml.XmlDocument
-            $file=Resolve-Path 'C:\Users\student\SEC557Labs\Lab1.2\books.xml'
+            $file=Resolve-Path '$basePath\SEC557Labs\Lab1.2\books.xml'
             $xBooks.Load($file)
             $xBooks.catalog.book.count | Should -be 12
         }
         #Use Test-Path to ensure that the XML file for the NMAP
         #scan exists
         It 'nmapScan.xml exits'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab1.2\nmapScan.xml -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab1.2\nmapScan.xml -Pathtype Leaf | Should -beTrue
         }
         #Check that the NMAP XML file has correct results in it
         #TODO: Finish this test
         It 'NMAP scan has 59 open ports'{
             $xScan = New-Object System.Xml.XmlDocument
-            $file = Resolve-Path 'C:\Users\student\SEC557Labs\Lab1.2\nmapScan.xml'
+            $file = Resolve-Path '$basePath\SEC557Labs\Lab1.2\nmapScan.xml'
             $xScan.load($file)
             $cnt = ($xScan.SelectNodes("/nmaprun/host/ports/port") |  
                 select portid -ExpandProperty state | Where-Object state -eq open).count
@@ -126,25 +127,25 @@ Describe 'Tests for Win10 VM' {
         #Check that the 81 CSV files are in the VulnScanResults subdirectory
         #Use Get-ChildItem on that full directory path and count the results
         It 'Vulnerabilty scan directory has 81 CSV files'{
-            (get-childitem -path C:\Users\student\SEC557Labs\Lab1.2\VulnScanResults\*.csv).count | should -be 81
+            (get-childitem -path $basePath\SEC557Labs\Lab1.2\VulnScanResults\*.csv).count | should -be 81
         }
         #Ingest the CSVs and make sure that the correct number of
         #Nessus results are there
         It 'Vulnerabilty scans have 29834 results'{
-            $scanResults = Import-Csv -path (Get-childitem C:\Users\student\SEC557Labs\Lab1.2\VulnScanResults\*.csv ) 
+            $scanResults = Import-Csv -path (Get-childitem $basePath\SEC557Labs\Lab1.2\VulnScanResults\*.csv ) 
             $scanResults.count | should -be 29834
         }
     }
 
     Context 'Lab1.3'{
         It 'tabledemo.json exist in directory'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab1.3\tabledemo.json -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab1.3\tabledemo.json -Pathtype Leaf | Should -beTrue
         }
     }
 
     Context 'Lab1.4'{
         It 'pyramid.json exist in directory'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab1.4\pyramid.json -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab1.4\pyramid.json -Pathtype Leaf | Should -beTrue
         }
     }
 
@@ -208,26 +209,26 @@ Describe 'Tests for Win10 VM' {
     #using the Test-path command and full file paths
     Context 'Lab2.4'{
         It 'AutomationFunctions.ps1 exists in lab directory'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab2.4\AutomationFunctions.ps1 -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab2.4\AutomationFunctions.ps1 -Pathtype Leaf | Should -beTrue
         }
         It 'GithubIssues.ps1 exists in lab directory'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab2.4\GithubIssues.ps1 -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab2.4\GithubIssues.ps1 -Pathtype Leaf | Should -beTrue
         }
         It 'Run-GithubIssues.ps1 exists in lab directory'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab2.4\Run-GithubIssues.ps1 -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab2.4\Run-GithubIssues.ps1 -Pathtype Leaf | Should -beTrue
         }
         It 'GithubIssues.xml exists in lab directory'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab2.4\GithubIssues.xml -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab2.4\GithubIssues.xml -Pathtype Leaf | Should -beTrue
         }
         It 'issues.json exists in lab directory'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab2.4\issues.json -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab2.4\issues.json -Pathtype Leaf | Should -beTrue
         }
     }
     Context 'Lab3.1'{
         #Run the script to create the student data files
         #Using Push- and Pop-Location so that the file will be created in the right place
         BeforeAll{
-            Push-Location C:\Users\student\SEC557Labs\Lab3.1\
+            Push-Location $basePath\SEC557Labs\Lab3.1\
             .\GetPatchData.ps1
             $patchAgeData = Import-Csv .\patchAge.csv
             $patchdata = Import-Csv .\patches.csv
@@ -238,10 +239,10 @@ Describe 'Tests for Win10 VM' {
             Pop-Location
         }
         It 'GetpatchData.ps1 script exists'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab3.1\GetPatchData.ps1 -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab3.1\GetPatchData.ps1 -Pathtype Leaf | Should -beTrue
         }
         It 'patches.json exists'{
-            Test-Path -path C:\Users\student\SEC557Labs\Lab3.1\patches.json -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab3.1\patches.json -Pathtype Leaf | Should -beTrue
         }
         It 'patchAge.csv contains 36600 records'{
             $patchAgeData.count | should -be 36600
@@ -257,12 +258,12 @@ Describe 'Tests for Win10 VM' {
     Context 'Lab3.2'{
         #Students are asked to use secedit to export local security policy
         BeforeAll {
-            Push-Location C:\users\student\SEC557Labs\Lab3.2\
+            Push-Location $basePath\SEC557Labs\Lab3.2\
             SecEdit.exe /export /cfg localSecPolicyPester.txt
             $localPolicy = Get-Content .\localSecPolicyPester.txt
         }
         AfterAll {
-            Remove-Item C:\users\student\SEC557Labs\Lab3.2\localSecPolicyPester.txt
+            Remove-Item $basePath\SEC557Labs\Lab3.2\localSecPolicyPester.txt
             Pop-Location
         }
         #Use Get-Module to check the version of the Pester module
@@ -317,26 +318,26 @@ Describe 'Tests for Win10 VM' {
             $groupNames | Should -Contain 'Backup Operators'
         }
         It 'InstalledSoftware.ps1 shows Firefox' {
-            $programNames = (C:\users\student\SEC557Labs\Lab3.2\InstalledSoftware.ps1)
+            $programNames = ($basePath\SEC557Labs\Lab3.2\InstalledSoftware.ps1)
             ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
                 Should -Be 1
         }
 
         It 'Windows.Tests.ps1 has 7 passed tests' {
-            $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
+            $pesterResult = Invoke-Pester -Path $basePath\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
             $pesterResult.PassedCount | Should -Be 7
         }
         It 'Windows.Tests.ps1 has 2 failed tests' {
-            $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
+            $pesterResult = Invoke-Pester -Path $basePath\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
             $pesterResult.FailedCount | Should -Be 2
         }
         It 'PesterIntro.tests.ps1 has 10 passed tests' {
-            $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
+            $pesterResult = Invoke-Pester -Path $basePath\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
             $pesterResult.passedCount | Should -Be 10
             
         }
         It 'PesterIntro.tests.ps1 has 2 failed tests' {
-            $pesterResult = Invoke-Pester -Path C:\users\student\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
+            $pesterResult = Invoke-Pester -Path $basePath\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
             $pesterResult.failedCount | Should -Be 2
         }
 
@@ -432,10 +433,10 @@ Describe 'Tests for Win10 VM' {
             $SchemaAdmins | should -be 70
         }
         It 'ADDemographics.ps1 script exists' {
-            Test-Path -path C:\Users\student\SEC557Labs\Lab3.3\ADDemographics.ps1 -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab3.3\ADDemographics.ps1 -Pathtype Leaf | Should -beTrue
         }
         It 'AD.json exists' {
-            Test-Path -path C:\Users\student\SEC557Labs\Lab3.3\AD.json -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab3.3\AD.json -Pathtype Leaf | Should -beTrue
         }
         
     }
@@ -528,7 +529,7 @@ Describe 'Tests for Win10 VM' {
         }
 
         It 'Compliance.json exists' {
-            Test-Path -path C:\Users\student\SEC557Labs\Lab3.5\Compliance.json -Pathtype Leaf | Should -beTrue
+            Test-Path -path $basePath\SEC557Labs\Lab3.5\Compliance.json -Pathtype Leaf | Should -beTrue
         }
 
        #TODO: Replicate the passing pester tests from the Lab3.4\Esxi.Tests.ps1 
