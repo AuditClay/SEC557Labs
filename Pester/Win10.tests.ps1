@@ -104,7 +104,7 @@ Describe 'Tests for Win10 VM' {
         #Check that the file contains the correct data
         It 'Books catalog contains 12 books' {
             $xBooks = New-Object System.Xml.XmlDocument
-            $file=Resolve-Path '$basePath\SEC557Labs\Lab1.2\books.xml'
+            $file=Resolve-Path "$basePath\SEC557Labs\Lab1.2\books.xml"
             $xBooks.Load($file)
             $xBooks.catalog.book.count | Should -be 12
         }
