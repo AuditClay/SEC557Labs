@@ -318,26 +318,19 @@ Describe 'Tests for Win10 VM' {
             $groupNames | Should -Contain 'Backup Operators'
         }
         It 'InstalledSoftware.ps1 shows Firefox' {
-            $programNames = (pwsh "$basePath\SEC557Labs\Lab3.2\InstalledSoftware.ps1")
+            $programNames = (& "$basePath\SEC557Labs\Lab3.2\InstalledSoftware.ps1")
             ($programNames | Where-Object DisplayName -like '*firefox*').Count | 
                 Should -Be 1
         }
 
-        It 'Windows.Tests.ps1 has 7 passed tests' {
-            $pesterResult = Invoke-Pester -Path $basePath\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
-            $pesterResult.PassedCount | Should -Be 7
-        }
-        It 'Windows.Tests.ps1 has 2 failed tests' {
+        It 'Windows.Tests.ps1 has 7 passed tests and 2 failed' {
             $pesterResult = Invoke-Pester -Path $basePath\SEC557Labs\Lab3.2\\Windows.Tests.ps1 -PassThru
             $pesterResult.FailedCount | Should -Be 2
+            $pesterResult.PassedCount | Should -Be 7
         }
-        It 'PesterIntro.tests.ps1 has 10 passed tests' {
+        It 'PesterIntro.tests.ps1 has 10 passed tests and 2 failed' {
             $pesterResult = Invoke-Pester -Path $basePath\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
             $pesterResult.passedCount | Should -Be 10
-            
-        }
-        It 'PesterIntro.tests.ps1 has 2 failed tests' {
-            $pesterResult = Invoke-Pester -Path $basePath\SEC557Labs\Lab3.2\\pesterintro.Tests.ps1 -PassThru
             $pesterResult.failedCount | Should -Be 2
         }
 
