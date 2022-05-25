@@ -101,6 +101,7 @@ Describe 'Tests for Ubuntu VM' {
 
     Context 'Exercise 3.5' {
         BeforeAll {
+            inspec --chef-license accept 
             inspec exec $basePath/inspec/cis-dil-benchmark/ --reporter cli json:$basePath/inspec/ubuntu.json
         }
         AfterAll {
@@ -111,7 +112,7 @@ Describe 'Tests for Ubuntu VM' {
         }
 
         It 'uname -r returns correct value' {
-            uname -r | Should -belike '5.4.0*-generic'
+            uname -r | Should -belike '5.15.0*-generic'
         }
 
         It 'sysctl syncookies value is correct' {
