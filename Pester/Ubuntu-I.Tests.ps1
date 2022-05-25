@@ -107,7 +107,7 @@ Describe 'Tests for Ubuntu VM' {
             Remove-Item $basePath/inspec/ubuntu.json
         }
         It 'lsb_release returns correct value' {
-            lsb_release -d | Should -belike '*Ubuntu 20.04* LTS'
+            lsb_release -d | Should -belike '*Ubuntu 22.04* LTS'
         }
 
         It 'uname -r returns correct value' {
