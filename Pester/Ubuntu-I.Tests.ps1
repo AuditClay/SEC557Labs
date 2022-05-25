@@ -101,7 +101,6 @@ Describe 'Tests for Ubuntu VM' {
 
     Context 'Exercise 3.5' {
         BeforeAll {
-            inspec --chef-license accept 
             inspec exec $basePath/inspec/cis-dil-benchmark/ --reporter cli json:$basePath/inspec/ubuntu.json
         }
         AfterAll {
