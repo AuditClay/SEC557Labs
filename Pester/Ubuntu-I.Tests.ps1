@@ -9,8 +9,8 @@ Describe 'Tests for Ubuntu VM' {
         It 'Graphite schemas.conf is correct'{
             #ensure the file /opt/graphite/conf/storage-schemas.conf
             #has sha1 hash of cd6ef60b158b77f30e6faf34416a8096e415e142
-            sudo cat /opt/graphite/conf/storage-schemas.conf | sha1sum | 
-                Should -BeLike 'cd6ef60b158b77f30e6faf34416a8096e415e142*'
+            sudo cat /etc/carbon/storage-schemas.conf | sha1sum | 
+                Should -BeLike 'ff27d5ed3e33b0ae88e0baf562be4f070f345b85*'
         }
         It 'TCP port 2003 is open' {
             (sudo netstat -antp | grep -i 'listen' |
@@ -20,7 +20,7 @@ Describe 'Tests for Ubuntu VM' {
         It 'Whisper dump is installed'{
             #Ensure that this file exists:
             #/usr/local/bin/whisper-dump.py
-            Test-Path -path /usr/local/bin/whisper-dump.py -Pathtype Leaf | Should -beTrue
+            Test-Path -path /usr/bin/whisper-dump -Pathtype Leaf | Should -beTrue
         }
         #Grafana Setup
         It 'Grafana is listening on TCP port 3000' {
@@ -30,20 +30,18 @@ Describe 'Tests for Ubuntu VM' {
         }
         It 'Grafana Graphite datasource provisioning file is correct' {
             sudo cat /etc/grafana/provisioning/datasources/graphite.yaml | sha1sum | 
-            Should -BeLike '6faa4d640c92bb09ce595b7c6ae91ff1fb0d4074*'
-            #ensure the file /etc/grafana/provisioning/datasources/graphite.yaml
-            #has sha1 hash of 6faa4d640c92bb09ce595b7c6ae91ff1fb0d4074
+            Should -BeLike '79c4eb41a296bfc148edbf18a0dc20296088f600*'
         }
         It 'Grafana MySQL datasource provisioning file is correct' {
-            #ensure the file /etc/grafana/provisioning/datasources/mysql.yaml
-            #has sha1 hash of 535276379ad610283bbbaf14fd47cdf604d6f401
             (sudo cat /etc/grafana/provisioning/datasources/mysql.yaml | sha1sum) | 
-                Should -BeLike '535276379ad610283bbbaf14fd47cdf604d6f401*'
+                Should -BeLike '34c966b6d6665384ff474800d6f1dd34ce349068*'
         }
 
         #Fleet Setup
         It 'Fleet is listening on port 8443' {
-            $true | should -befalse
+            (sudo netstat -antp | grep -i 'listen' |
+                grep -c '.*8443.*fleet') | 
+                Should -Be 1
         }
 
         #Git status
