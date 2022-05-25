@@ -55,6 +55,12 @@ Describe 'Tests for Ubuntu VM' {
             systemctl status osqueryd.service | egrep -c "active \(running\)" |
                 Should -Be 1
         }
+
+        #TODO
+        It 'Version of inspec' {
+            true | Should -BeFalse
+        }
+
     }
     
     #Exercise 1.1 is all on the Win10 VM
